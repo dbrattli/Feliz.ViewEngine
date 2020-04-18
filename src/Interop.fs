@@ -68,3 +68,9 @@ module Interop =
 
     // let mkStyle (key: string) (value: obj) : IStyleAttribute = unbox (key, value)
     let mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
+
+type FunctionComponent<'Props> = 'Props -> XmlNode
+
+type React =
+    static member functionComponent(name: string, render: 'props -> XmlNode) : FunctionComponent<'props> =
+        render
