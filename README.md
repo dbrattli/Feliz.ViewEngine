@@ -11,15 +11,7 @@ open Feliz
 open Feliz.Giraffe
 #endif
 
-let view  =
-    Html.html [
-        prop.classes [ "has-navbar-fixed-top" ]
-        prop.children [
-            Html.head [
-                Html.meta [ prop.content "text/html" ]
-                Html.title [ rawText "One Happy Giraffe" ]
-            ]
-            Html.body [
-                ...
-            ]
+let view  = ...
 ```
+
+Giraffe example at https://github.com/dbrattli/Feliz.Giraffe/blob/master/examples/giraffe/Program.fs
