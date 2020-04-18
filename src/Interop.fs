@@ -11,7 +11,7 @@ type EraseAttribute () =
 type IStyleAttribute = interface end
 
 type StyleAttribute =
-    | Style of (string * obj)
+    | Style of string * obj
     interface IStyleAttribute
 
     override x.ToString () =
@@ -23,6 +23,7 @@ type XmlAttribute =
     | Children of XmlNode list
     | Text of string
 
+// Interop between Feliz React DSL and Giraffe XmlNode.
 [<RequireQualifiedAccess>]
 module Interop =
     let private getAttr = function
