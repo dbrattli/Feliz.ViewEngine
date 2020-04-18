@@ -1,3 +1,5 @@
 src/obj
 .ionide
 paket-files
+examples/giraffe/bin
+examples/giraffe/obj

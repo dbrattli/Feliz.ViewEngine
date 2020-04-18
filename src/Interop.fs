@@ -23,6 +23,8 @@ type XmlAttribute =
     | Children of XmlNode list
     | Text of string
 
+type XmlNode = Giraffe.GiraffeViewEngine.XmlNode
+
 // Interop between Feliz React DSL and Giraffe XmlNode.
 [<RequireQualifiedAccess>]
 module Interop =
@@ -66,4 +68,3 @@ module Interop =
 
     // let mkStyle (key: string) (value: obj) : IStyleAttribute = unbox (key, value)
     let mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
-

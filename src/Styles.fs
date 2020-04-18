@@ -83,7 +83,7 @@ type length =
     static member inline auto : ICssUnit = unbox "auto"
 
 [<Erase>]
-type style =
+type style () =
     /// The zIndex property sets or returns the stack order of a positioned element.
     ///
     /// An element with greater stack order (1) is always in front of another element with lower stack order (0).
@@ -392,15 +392,15 @@ type style =
     /// Sets the size of the font.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
-    static member inline fontSize(size: int) = Interop.mkStyle "fontSize" (unbox<string> size + "px")
+    static member inline fontSize(size: int) = Interop.mkStyle "font-size" (size.ToString() + "px")
     /// Sets the size of the font.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
-    static member inline fontSize(size: float) = Interop.mkStyle "fontSize" (unbox<string> size + "px")
+    static member inline fontSize(size: float) = Interop.mkStyle "font-size" (size.ToString() + "px")
     /// Sets the size of the font.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
-    static member inline fontSize(size: ICssUnit) = Interop.mkStyle "fontSize" size
+    static member inline fontSize(size: ICssUnit) = Interop.mkStyle "font-size" size
     /// Specifies the height of a text lines.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
@@ -674,10 +674,10 @@ type style =
     /// The number of times the animation runs.
     static member inline animationDurationCount(count: int) = Interop.mkStyle "animationDurationCount" count
     /// Sets the font family for the font specified in a @font-face rule.
-    static member inline fontFamily (family: string) = Interop.mkStyle "fontFamily" family
+    static member inline fontFamily (family: string) = Interop.mkStyle "font-family" family
     /// Defines from thin to thick characters. 400 is the same as normal, and 700 is the same as bold.
     /// Possible values are [100, 200, 300, 400, 500, 600, 700, 800, 900]
-    static member inline fontWeight (weight: int) = Interop.mkStyle "fontWeight" weight
+    static member inline fontWeight (weight: int) = Interop.mkStyle "font-weight" weight
     /// Sets the color of decorations added to text by text-decoration-line.
     static member inline textDecorationColor(color: string) = Interop.mkStyle "textDecorationColor" color
     /// Sets the kind of decoration that is used on text in an element, such as an underline or overline.

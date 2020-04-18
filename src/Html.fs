@@ -562,9 +562,9 @@ type Html =
     static member inline template (children: #seq<XmlNode>) = Interop.reactElementWithChildren "template" children
 
     static member inline text xs = Interop.createElement "text" xs
-    static member inline text (value: float) : XmlNode = unbox value
-    static member inline text (value: int) : XmlNode = unbox value
-    static member inline text (value: string) : XmlNode = unbox value
+    static member inline text (value: float) : XmlNode = str (value.ToString ())
+    static member inline text (value: int) : XmlNode = str (value.ToString ())
+    static member inline text (value: string) : XmlNode = str value
     static member inline text (value: System.Guid) : XmlNode = unbox (string value)
 
     static member inline textarea xs = Interop.createElement "textarea" xs
