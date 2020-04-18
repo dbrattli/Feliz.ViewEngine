@@ -36,13 +36,11 @@ module Interop =
 
     // let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) =
     let inline reactElementWithChildren (name: string) (children: #seq<XmlNode>) =
-        let children' = List.ofSeq children
-        tag name [] children'
+        List.ofSeq children |> tag name []
 
     // let inline reactElementWithChild (name: string) (child: 'a) =
     let inline reactElementWithChild (name: string) (child: 'a) =
-        let text = child.ToString ()
-        tag name [] [ str text ]
+        tag name [] [ child.ToString () |> str ]
 
     // let inline createElement name (properties: IReactProperty list) : ReactElement =
     let createElement name (props: XmlAttribute list) : XmlNode =
@@ -64,8 +62,7 @@ module Interop =
         | None -> voidTag name attributes
 
     // let mkAttr (key: string) (value: obj) : IReactProperty = unbox (key, value)
-    let mkAttr (key: string) (value: 'a) : XmlAttribute =
-        KeyValue (key, value.ToString ())
+    let mkAttr (key: string) (value: 'a) : XmlAttribute = KeyValue (key, value.ToString ())
 
     // let mkStyle (key: string) (value: obj) : IStyleAttribute = unbox (key, value)
     let mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _

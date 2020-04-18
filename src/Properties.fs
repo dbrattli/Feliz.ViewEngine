@@ -46,10 +46,10 @@ type prop =
     static member inline accept (value: string) = Interop.mkAttr "accept" value
 
     /// List of supported charsets.
-    static member inline acceptCharset (value: string) = Interop.mkAttr "acceptCharset" value
+    static member inline acceptCharset (value: string) = Interop.mkAttr "accept-charset" value
 
     /// Defines a keyboard shortcut to activate or add focus to the element.
-    static member inline accessKey (value: string) = Interop.mkAttr "accessKey" value
+    static member inline accessKey (value: string) = Interop.mkAttr "accesskey" value
 
     /// The URI of a program that processes the information submitted via the form.
     static member inline action (value: string) = Interop.mkAttr "action" value
@@ -293,13 +293,13 @@ type prop =
     static member inline async (value: bool) = Interop.mkAttr "async" value
 
     /// Indicates whether controls in this form can by default have their values automatically completed by the browser.
-    static member inline autoComplete (value: string) = Interop.mkAttr "autoComplete" value
+    static member inline autoComplete (value: string) = Interop.mkAttr "autocomplete" value
 
     /// The element should be automatically focused after the page loaded.
-    static member inline autoFocus (value: bool) = Interop.mkAttr "autoFocus" value
+    static member inline autoFocus (value: bool) = Interop.mkAttr "autofocus" value
 
     /// The audio or video should play as soon as possible.
-    static member inline autoPlay (value: bool) = Interop.mkAttr "autoPlay" value
+    static member inline autoPlay (value: bool) = Interop.mkAttr "autoplay" value
 
     static member inline capture (value: bool) = Interop.mkAttr "capture" value
 
@@ -349,7 +349,7 @@ type prop =
     static member inline cols (value: int) = Interop.mkAttr "cols" value
 
     /// Defines the number of columns a cell should span.
-    static member inline colSpan (value: int) = Interop.mkAttr "colSpan" value
+    static member inline colSpan (value: int) = Interop.mkAttr "colspan" value
 
     /// A value associated with http-equiv or name depending on the context.
     static member inline content (value: string) = Interop.mkAttr "content" value
@@ -972,7 +972,7 @@ type prop =
     static member inline rows (value: int) = Interop.mkAttr "rows" value
 
     /// Defines the number of rows a table cell should span over.
-    static member inline rowSpan (value: int) = Interop.mkAttr "rowSpan" value
+    static member inline rowSpan (value: int) = Interop.mkAttr "rowspan" value
 
     /// The SVG rx attribute defines a radius on the x-axis.
     ///
@@ -1084,18 +1084,18 @@ type prop =
     static member inline strokeWidth (value: int) = Interop.mkAttr "strokeWidth" value
 
     static member inline style (properties: #IStyleAttribute list) =
-        let properties' =
-            properties
-            |> List.map (fun p -> p.ToString ())
-        Interop.mkAttr "style" (String.Join(";", properties'))
+        properties
+        |> List.map (fun p -> p.ToString ())
+        |> String.concat ";"
+        |> Interop.mkAttr "style"
 
-    // static member style (properties: (bool * IStyleAttribute list) list) =
-    //     properties
-    //     |> List.filter fst
-    //     |> List.collect snd
-    //     |> unbox
-    //     |> createObj
-    //     |> Interop.mkAttr "style"
+    static member style (properties: (bool * IStyleAttribute list) list) =
+        properties
+        |> List.filter fst
+        |> List.collect snd
+        |> List.map (fun p -> p.ToString ())
+        |> String.concat ";"
+        |> Interop.mkAttr "style"
 
     /// The `tabindex` global attribute indicates that its element can be focused,
     /// and where it participates in sequential keyboard navigation (usually with the Tab key, hence the name).
@@ -1442,13 +1442,13 @@ module prop =
     [<Erase>]
     type autoCapitalize =
         /// All letters should default to uppercase
-        static member inline characters = Interop.mkAttr "autoCapitalize" "characters"
+        static member inline characters = Interop.mkAttr "autocapitalize" "characters"
         /// No autocapitalization is applied (all letters default to lowercase)
-        static member inline off = Interop.mkAttr "autoCapitalize" "off"
+        static member inline off = Interop.mkAttr "autocapitalize" "off"
         /// The first letter of each sentence defaults to a capital letter; all other letters default to lowercase
-        static member inline on' = Interop.mkAttr "autoCapitalize" "on"
+        static member inline on' = Interop.mkAttr "autocapitalize" "on"
         /// The first letter of each word defaults to a capital letter; all other letters default to lowercase
-        static member inline words = Interop.mkAttr "autoCapitalize" "words"
+        static member inline words = Interop.mkAttr "autocapitalize" "words"
 
     /// A set of values specifying the coordinates of the hot-spot region.
     ///

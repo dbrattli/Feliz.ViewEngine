@@ -1,6 +1,5 @@
 namespace Feliz.Giraffe
 
-open System
 open Giraffe.GiraffeViewEngine
 
 type Html =
@@ -111,13 +110,6 @@ type Html =
 
     static member inline colgroup xs = Interop.createElement "colgroup" xs
     static member inline colgroup (children: #seq<XmlNode>) = Interop.reactElementWithChildren "colgroup" children
-
-    [<Obsolete("This deprecated API should no longer be used, but will probably still work.")>]
-    static member inline content (value: float) : XmlNode = unbox value
-    [<Obsolete("This deprecated API should no longer be used, but will probably still work.")>]
-    static member inline content (value: int) : XmlNode = unbox value
-    [<Obsolete("This deprecated API should no longer be used, but will probably still work.")>]
-    static member inline content (value: string) : XmlNode = unbox value
 
     static member inline data xs = Interop.createElement "data" xs
     static member inline data (value: float) = Interop.reactElementWithChild "data" value
