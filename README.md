@@ -1,4 +1,4 @@
-# Feliz View Engine
+# Feliz.ViewEngine
 
 Work in progress (WIP) for using [Feliz](https://github.com/Zaid-Ajaj/Feliz) DSL with Server Side Rendering (SSR). Can be used for Giraffe or other servers. Both for HTML and XML.
 
