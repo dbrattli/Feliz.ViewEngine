@@ -1,7 +1,5 @@
 namespace Feliz.Giraffe
 
-open System
-open Giraffe.GiraffeViewEngine
 open Feliz.Styles
 
 type Event () =
