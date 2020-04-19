@@ -1,0 +1,10 @@
+group Test
+
+Microsoft.NET.Test.Sdk
+coverlet.msbuild
+
+FSharp.Core
+
+xunit
+xunit.runner.visualstudio
+Unquote

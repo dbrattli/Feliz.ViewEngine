@@ -11,4 +11,5 @@
     <Compile Include="Html.fs" />
     <Compile Include="ViewEngine.fs" />
   </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
