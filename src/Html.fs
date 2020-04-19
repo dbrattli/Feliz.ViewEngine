@@ -1,4 +1,4 @@
-namespace Feliz.Giraffe
+namespace Feliz.ViewEngine
 
 type Html =
     static member inline a xs = Interop.createElement "a" xs

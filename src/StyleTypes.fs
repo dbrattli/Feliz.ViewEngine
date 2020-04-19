@@ -1,4 +1,4 @@
-namespace Feliz.Styles
+namespace Feliz.ViewEngine.Styles
 
 type IBorderStyle = interface end
 

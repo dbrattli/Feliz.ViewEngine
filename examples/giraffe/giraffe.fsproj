@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Feliz.Giraffe.fsproj" />
+    <ProjectReference Include="..\..\src\Feliz.ViewEngine.fsproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
-namespace Feliz.Giraffe
+namespace Feliz.ViewEngine
 
 open System
-open Feliz.Styles
+open Feliz.ViewEngine.Styles
 
 /// Specifies a number of specialized CSS units
 type length =

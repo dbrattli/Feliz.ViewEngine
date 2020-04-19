@@ -14,7 +14,7 @@
 // - https://github.com/SuaveIO/suave/blob/master/src/Suave.Experimental/ViewEngine.fs
 //
 
-namespace Feliz.Giraffe
+namespace Feliz.ViewEngine
 
 open System
 open System.Text
@@ -85,23 +85,23 @@ module ViewBuilder =
 // ---------------------------
 // Render HTML/XML views
 // ---------------------------
-module View =
-    let renderXmlNode (node : ReactElement) : string =
+module Render =
+    let xmlNode (node: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNode sb node
         sb.ToString()
 
-    let renderXmlNodes (nodes : ReactElement list) : string =
+    let xmlNodes (nodes: ReactElement list) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNodes sb nodes
         sb.ToString()
 
-    let renderHtmlNode (node : ReactElement) : string =
+    let htmlNode (node: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildHtmlNode sb node
         sb.ToString()
 
-    let renderHtmlNodes (nodes : ReactElement list) : string =
+    let htmlNodes (nodes: ReactElement list) : string =
         let sb = new StringBuilder() in ViewBuilder.buildHtmlNodes sb nodes
         sb.ToString()
 
-    let renderHtmlDocument (document : ReactElement) : string =
+    let htmlDocument (document: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildHtmlDocument sb document
         sb.ToString()

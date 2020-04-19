@@ -9,16 +9,15 @@ open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Logging
 open Microsoft.AspNetCore
 
-open Feliz.Giraffe
+open Feliz.ViewEngine
 
 // ---------------------------------
 // Models
 // ---------------------------------
 
-type Message =
-    {
-        Text : string
-    }
+type Message = {
+    Text : string
+}
 
 // ---------------------------------
 // Views
@@ -62,7 +61,7 @@ let indexHandler (name : string) =
     let model     = { Text = greetings }
     let view      = Views.index model
 
-    htmlString (Feliz.Giraffe.View.renderHtmlDocument view)
+    htmlString (Render.htmlDocument view)
 
 let webApp : HttpHandler =
     choose [

@@ -1,4 +1,4 @@
-namespace Feliz.Giraffe
+namespace Feliz.ViewEngine
 
 open System
 
