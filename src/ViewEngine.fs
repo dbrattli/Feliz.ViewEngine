@@ -1,3 +1,19 @@
+// ---------------------------
+// Attribution to original authors of this code
+// ---------------------------
+// This code has been originally ported from Giraffe which was originally ported from Suave with small modifications
+// afterwards.
+//
+// The original code was authored by
+// * Dustin Moris Gorski (https://github.com/dustinmoris)
+// * Henrik Feldt (https://github.com/haf)
+// * Ademar Gonzalez (https://github.com/ademar)
+//
+// You can find the original implementations here:
+// - https://github.com/giraffe-fsharp/Giraffe/blob/master/src/Giraffe/GiraffeViewEngine.fs
+// - https://github.com/SuaveIO/suave/blob/master/src/Suave.Experimental/ViewEngine.fs
+//
+
 namespace Feliz.Giraffe
 
 open System

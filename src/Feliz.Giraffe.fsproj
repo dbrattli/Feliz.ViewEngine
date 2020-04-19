@@ -9,6 +9,6 @@
     <Compile Include="Styles.fs" />
     <Compile Include="Properties.fs" />
     <Compile Include="Html.fs" />
-    <Compile Include="View.fs" />
+    <Compile Include="ViewEngine.fs" />
   </ItemGroup>
 </Project>
