@@ -2,6 +2,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>Feliz.ViewEngine</PackageId>
+    <Author>Dag Brattli</Author>
+    <Company>Brattli Labs</Company>
+    <Copyright>Brattli Labs</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Interop.fs" />
@@ -10,6 +15,14 @@
     <Compile Include="Properties.fs" />
     <Compile Include="Html.fs" />
     <Compile Include="ViewEngine.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../LICENSE" Pack="true" Visible="false" PackagePath="" />
+    <None Include="../LICENSE.Apache-2.0" Pack="true" Visible="false" PackagePath="" />
+    <None Include="../LICENSE.MIT" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="*.fsproj; *.fs; *.js;" PackagePath="fable\" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
