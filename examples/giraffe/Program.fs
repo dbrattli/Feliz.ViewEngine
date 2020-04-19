@@ -25,7 +25,7 @@ type Message =
 // ---------------------------------
 
 module Views =
-    let layout (content: XmlNode list) =
+    let layout (content: ReactElement list) =
         Html.html [
             Html.head [
                 Html.title [ prop.text "examples" ]
@@ -61,7 +61,8 @@ let indexHandler (name : string) =
     let greetings = sprintf "Hello %s, from Giraffe!" name
     let model     = { Text = greetings }
     let view      = Views.index model
-    htmlView view
+
+    htmlString (Feliz.Giraffe.View.renderHtmlDocument view)
 
 let webApp : HttpHandler =
     choose [

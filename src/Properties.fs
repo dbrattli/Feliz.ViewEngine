@@ -304,7 +304,7 @@ type prop =
     static member inline capture (value: bool) = Interop.mkAttr "capture" value
 
     /// Children of this React element.
-    static member inline children (value: XmlNode list) = Children value
+    static member inline children (value: ReactElement list) = Children value
 
     //static member inline children (value: Fable.React.ReactElement) = Interop.mkAttr "children" value
     /// Children of this React element.

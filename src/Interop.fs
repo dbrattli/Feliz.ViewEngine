@@ -1,7 +1,6 @@
 namespace Feliz.Giraffe
 
 open System
-open Giraffe.GiraffeViewEngine
 
 [<AttributeUsage(AttributeTargets.Class)>]
 type EraseAttribute () =
@@ -18,59 +17,45 @@ type StyleAttribute =
         let (Style (key, value)) = x
         String.Join(":", key, value)
 
-type XmlAttribute =
-    | KeyValue of string * string
-    | Children of XmlNode list
+type ReactProperty =
+    | KeyValue of string * obj
+    | Children of ReactElement list
     | Text of string
 
-type XmlNode = Giraffe.GiraffeViewEngine.XmlNode
+and ReactElement =
+    | Element of string * ReactProperty list // An element which contains properties
+    | TextElement of string
 
 // Interop between Feliz React DSL and Giraffe XmlNode.
 [<RequireQualifiedAccess>]
 module Interop =
     let private getAttr = function
-        | KeyValue (key, value) -> Some (attr key value)
+        | KeyValue (key, value) -> Some (KeyValue (key, value))
         | _ -> None
 
     let private getText = function
         | Text string -> Some string
         | _ -> None
 
-    // let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) =
-    let inline reactElementWithChildren (name: string) (children: #seq<XmlNode>) =
-        List.ofSeq children |> tag name []
+    let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) =
+        Element (name, [ List.ofSeq children |> Children])
 
     // let inline reactElementWithChild (name: string) (child: 'a) =
     let inline reactElementWithChild (name: string) (child: 'a) =
-        tag name [] [ child.ToString () |> str ]
+        Element (name, [ child.ToString () |> Text ])
 
-    // let inline createElement name (properties: IReactProperty list) : ReactElement =
-    let createElement name (props: XmlAttribute list) : XmlNode =
-        let children =
-            match List.tryLast props with
-            | Some (Children xs) -> xs
-            | _ -> []
-        let attributes = props |> List.choose getAttr
-        let textAttr = props |> List.tryPick getText
-        match textAttr with
-        | Some text -> tag name attributes [ str text ]
-        | None -> tag name attributes children
+    // let inline createElement name (properties: ReactProperty list) : ReactElement =
+    let createElement name (props: ReactProperty list) : ReactElement =
+         Element (name, props)
 
-    let createClosedElement name (props: XmlAttribute list) : XmlNode =
-        let attributes = props |> List.choose getAttr
-        let textAttr = props |> List.tryPick getText
-        match textAttr with
-        | Some text -> tag name attributes [ str text ]
-        | None -> voidTag name attributes
-
-    // let mkAttr (key: string) (value: obj) : IReactProperty = unbox (key, value)
-    let mkAttr (key: string) (value: 'a) : XmlAttribute = KeyValue (key, value.ToString ())
+    // let mkAttr (key: string) (value: obj) : ReactProperty = unbox (key, value)
+    let mkAttr (key: string) (value: 'a) : ReactProperty = KeyValue (key, value.ToString ())
 
     // let mkStyle (key: string) (value: obj) : IStyleAttribute = unbox (key, value)
     let mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
 
-type FunctionComponent<'Props> = 'Props -> XmlNode
+type FunctionComponent<'Props> = 'Props -> ReactElement
 
 type React =
-    static member functionComponent(name: string, render: 'props -> XmlNode) : FunctionComponent<'props> =
+    static member functionComponent(name: string, render: 'props -> ReactElement) : FunctionComponent<'props> =
         render

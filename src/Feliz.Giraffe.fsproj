@@ -9,6 +9,7 @@
     <Compile Include="Styles.fs" />
     <Compile Include="Properties.fs" />
     <Compile Include="Html.fs" />
+    <Compile Include="View.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
