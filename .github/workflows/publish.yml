@@ -18,6 +18,10 @@ jobs:
       with:
         dotnet-version: 3.1.101
 
+    - name: Setup dotnet manifest
+      run: dotnet new tool-manifest
+    - name: Setup paket
+      run: dotnet tool install Paket
     - name: Dotnet Pack
       run: dotnet pack src/Feliz.ViewEngine.fsproj --output nuget-packages --configuration Release -p:PackageVersion=${GITHUB_REF##*/v}
 

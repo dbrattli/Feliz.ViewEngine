@@ -1,6 +1,6 @@
 # Feliz.ViewEngine
 
-![.NET Core](https://github.com/dbrattli/Feliz.ViewEngine/workflows/.NET%20Core/badge.svg)
+![Build and Test](https://github.com/dbrattli/Feliz.ViewEngine/workflows/Build%20and%20Test/badge.svg)
 
 Work in progress (WIP) for using [Feliz](https://github.com/Zaid-Ajaj/Feliz) DSL with Server Side Rendering (SSR). Can be used for Giraffe or other servers. Both for HTML and XML.
 
