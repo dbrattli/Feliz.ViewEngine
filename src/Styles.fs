@@ -338,38 +338,38 @@ type style () =
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDuration(timespan: TimeSpan) =
-        Interop.mkStyle "transition-duration" (unbox<string> timespan.TotalMilliseconds + "ms")
+        Interop.mkStyle "transition-duration" (timespan.TotalMilliseconds.ToString() + "ms")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationSeconds(n: float) =
-        Interop.mkStyle "transition-duration" ((unbox<string> n) + "s")
+        Interop.mkStyle "transition-duration" (n.ToString() + "s")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationMilliseconds(n: float) =
-        Interop.mkStyle "transition-duration" ((unbox<string> n) + "ms")
+        Interop.mkStyle "transition-duration" (n.ToString() + "ms")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationSeconds(n: int) =
-        Interop.mkStyle "transition-duration" ((unbox<string> n) + "s")
+        Interop.mkStyle "transition-duration" (n.ToString() + "s")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationMilliseconds(n: int) =
-        Interop.mkStyle "transition-duration" ((unbox<string> n) + "ms")
+        Interop.mkStyle "transition-duration" (n.ToString() + "ms")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelay(timespan: TimeSpan) =
-        Interop.mkStyle "transition-delay" (unbox<string> timespan.TotalMilliseconds + "ms")
+        Interop.mkStyle "transition-delay" (timespan.TotalMilliseconds.ToString("0") + "ms")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelaySeconds(n: float) =
-        Interop.mkStyle "transition-delay" ((unbox<string> n) + "s")
+        Interop.mkStyle "transition-delay" (n.ToString("0") + "s")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelayMilliseconds(n: float) =
-        Interop.mkStyle "transition-delay" ((unbox<string> n) + "ms")
+        Interop.mkStyle "transition-delay" (n.ToString("0") + "ms")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelaySeconds(n: int) =
-        Interop.mkStyle "transition-delay" ((unbox<string> n) + "s")
+        Interop.mkStyle "transition-delay" (n.ToString() + "s")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelayMilliseconds(n: int) =
-        Interop.mkStyle "transition-delay" ((unbox<string> n) + "ms")
+        Interop.mkStyle "transition-delay" (n.ToString() + "ms")
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty ([<ParamArray>] properties: ITransitionProperty[]) =
         Interop.mkStyle "transition-property" (String.concat "," (unbox<string[]> properties))
@@ -406,13 +406,13 @@ type style () =
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
     ///
     /// Note: Negative values are not allowed.
-    static member inline lineHeight(size: int) = Interop.mkStyle "line-height" (unbox<string> size + "px")
+    static member inline lineHeight(size: int) = Interop.mkStyle "line-height" (size.ToString() + "px")
     /// Specifies the height of a text lines.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
     ///
     /// Note: Negative values are not allowed.
-    static member inline lineHeight(size: float) = Interop.mkStyle "line-height" (unbox<string> size + "px")
+    static member inline lineHeight(size: float) = Interop.mkStyle "line-height" (size.ToString() + "px")
     /// Specifies the height of a text lines.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
@@ -464,7 +464,7 @@ type style () =
     /// It is displayed around the margin of the element. However, it is different from the border property.
     /// The outline is not a part of the element's dimensions, therefore the element's width and height properties do not contain the width of the outline.
     static member inline outlineWidth(width: int) =
-        Interop.mkStyle "outline-width" ((unbox<string> width) + "px")
+        Interop.mkStyle "outline-width" (width.ToString() + "px")
 
     /// An outline is a line around an element.
     /// It is displayed around the margin of the element. However, it is different from the border property.
@@ -483,7 +483,7 @@ type style () =
     ///  - An outline may be non-rectangular
     ///
     static member inline outlineOffset (offset:int) =
-        Interop.mkStyle "outline-width" ((unbox<string> offset) + "px")
+        Interop.mkStyle "outline-width" (offset.ToString() + "px")
 
     /// The outline-offset property adds space between an outline and the edge or border of an element.
     ///
@@ -548,41 +548,41 @@ type style () =
             color
         )
     /// Sets the line style of an element's bottom border.
-    static member inline borderBottomStyle(style: IBorderStyle) = Interop.mkStyle "border-bottom-style" (unbox<string> style)
+    static member inline borderBottomStyle(style: IBorderStyle) = Interop.mkStyle "border-bottom-style" (style.ToString())
     /// Sets the width of the bottom border of an element.
-    static member inline borderBottomWidth (width: int) = Interop.mkStyle "border-bottom-width" (unbox<string> width + "px")
+    static member inline borderBottomWidth (width: int) = Interop.mkStyle "border-bottom-width" (width.ToString() + "px")
     /// Sets the width of the bottom border of an element.
-    static member inline borderBottomWidth (width: ICssUnit) = Interop.mkStyle "border-bottom-width" (unbox<string> width)
+    static member inline borderBottomWidth (width: ICssUnit) = Interop.mkStyle "border-bottom-width" (width.ToString())
     /// Sets the color of an element's bottom border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
     static member inline borderBottomColor (color: string) = Interop.mkStyle "border-bottom-color" color
     /// Sets the line style of an element's top border.
-    static member inline borderTopStyle(style: IBorderStyle) = Interop.mkStyle "border-top-style" (unbox<string> style)
+    static member inline borderTopStyle(style: IBorderStyle) = Interop.mkStyle "border-top-style" (style.ToString())
     /// Sets the width of the top border of an element.
-    static member inline borderTopWidth (width: int) = Interop.mkStyle "border-top-width" (unbox<string> width + "px")
+    static member inline borderTopWidth (width: int) = Interop.mkStyle "border-top-width" (width.ToString() + "px")
     /// Sets the width of the top border of an element.
-    static member inline borderTopWidth (width: ICssUnit) = Interop.mkStyle "border-top-width" (unbox<string> width)
+    static member inline borderTopWidth (width: ICssUnit) = Interop.mkStyle "border-top-width" (width.ToString())
     /// Sets the color of an element's top border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
     static member inline borderTopColor (color: string) = Interop.mkStyle "border-top-color" color
     /// /// Sets the line style of an element's right border.
-    static member inline borderRightStyle(style: IBorderStyle) = Interop.mkStyle "border-right-style" (unbox<string> style)
+    static member inline borderRightStyle(style: IBorderStyle) = Interop.mkStyle "border-right-style" (style.ToString())
     /// Sets the width of the right border of an element.
-    static member inline borderRightWidth (width: int) = Interop.mkStyle "border-right-width" (unbox<string> width + "px")
+    static member inline borderRightWidth (width: int) = Interop.mkStyle "border-right-width" (width.ToString() + "px")
     /// Sets the width of the right border of an element.
-    static member inline borderRightWidth (width: ICssUnit) = Interop.mkStyle "border-right-width" (unbox<string> width)
+    static member inline borderRightWidth (width: ICssUnit) = Interop.mkStyle "border-right-width" (width.ToString())
     /// Sets the color of an element's right border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
     static member inline borderRightColor (color: string) = Interop.mkStyle "border-right-color" color
     /// Sets the line style of an element's left border.
-    static member inline borderLeftStyle(style: IBorderStyle) = Interop.mkStyle "border-left-style" (unbox<string> style)
+    static member inline borderLeftStyle(style: IBorderStyle) = Interop.mkStyle "border-left-style" (style.ToString())
     /// Sets the width of the left border of an element.
-    static member inline borderLeftWidth (width: int) = Interop.mkStyle "border-left-width" (unbox<string> width + "px")
+    static member inline borderLeftWidth (width: int) = Interop.mkStyle "border-left-width" (width.ToString() + "px")
     /// Sets the width of the left border of an element.
-    static member inline borderLeftWidth (width: ICssUnit) = Interop.mkStyle "border-left-width" (unbox<string> width)
+    static member inline borderLeftWidth (width: ICssUnit) = Interop.mkStyle "border-left-width" (width.ToString())
     /// Sets the color of an element's left border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
@@ -660,13 +660,13 @@ type style () =
     /// sets the property values for the animation sequence.
     static member inline animationName(keyframeName: string) = Interop.mkStyle "animation-name" keyframeName
     /// Sets the length of time that an animation takes to complete one cycle.
-    static member inline animationDuration(timespan: TimeSpan) = Interop.mkStyle "animation-duration" ((unbox<string> timespan.TotalMilliseconds) + "ms")
+    static member inline animationDuration(timespan: TimeSpan) = Interop.mkStyle "animation-duration" (timespan.TotalMilliseconds.ToString() + "ms")
     /// Sets the length of time that an animation takes to complete one cycle.
-    static member inline animationDuration(seconds: int) = Interop.mkStyle "animation-duration" ((unbox<string> seconds) + "s")
+    static member inline animationDuration(seconds: int) = Interop.mkStyle "animation-duration" (seconds.ToString() + "s")
     /// Sets when an animation starts.
     ///
     /// The animation can start later, immediately from its beginning, or immediately and partway through the animation.
-    static member inline animationDelay(timespan: TimeSpan) = Interop.mkStyle "animation-delay" ((unbox<string> timespan.TotalMilliseconds) + "ms")
+    static member inline animationDelay(timespan: TimeSpan) = Interop.mkStyle "animation-delay" (timespan.TotalMilliseconds.ToString("0") + "ms")
     /// Sets when an animation starts.
     ///
     /// The animation can start later, immediately from its beginning, or immediately and partway through the animation.
@@ -1389,21 +1389,21 @@ module style =
         /// Applies a blur effect to the elemeen. A larger value will create more blur.
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
-        static member inline blur(value: int) = Interop.mkStyle "filter" ("blur(" + (unbox<string> value) + "%)")
+        static member inline blur(value: int) = Interop.mkStyle "filter" ("blur(" + value.ToString() + "%)")
         /// Applies a blur effect to the elemeen. A larger value will create more blur.
         ///
         /// This overload takes a floating number that goes from 0 to 1,
-        static member inline blur(value: double) = Interop.mkStyle "filter" ("blur(" + (unbox<string> value) + ")")
+        static member inline blur(value: double) = Interop.mkStyle "filter" ("blur(" + value.ToString() + ")")
         /// Adjusts the brightness of the elemeen
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
         ///
         /// Values over 100% will provide brighter results.
-        static member inline brightness(value: int) = Interop.mkStyle "filter" ("brightness(" + (unbox<string> value) + "%)")
+        static member inline brightness(value: int) = Interop.mkStyle "filter" ("brightness(" + value.ToString() + "%)")
         /// Adjusts the brightness of the elemeen. A larger value will create more blur.
         ///
         /// This overload takes a floating number that goes from 0 to 1,
-        static member inline brightness(value: double) = Interop.mkStyle "filter" ("brightness(" + (unbox<string> value) + ")")
+        static member inline brightness(value: double) = Interop.mkStyle "filter" ("brightness(" + value.ToString() + ")")
         /// Adjusts the contrast of the element.
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
@@ -1651,10 +1651,10 @@ module style =
         /// Define your own values in the cubic-bezier function. Possible values are numeric values from 0 to 1
         static member inline cubicBezier(n1: float, n2: float, n3: float, n4: float) =
             Interop.mkStyle "animation-timing-function" (
-                "cubic-bezier(" + (unbox<string> n1) + "," +
-                (unbox<string> n2) + "," +
-                (unbox<string> n3) + "," +
-                (unbox<string> n4) + ")"
+                "cubic-bezier(" + n1.ToString() + "," +
+                n2.ToString() + "," +
+                n3.ToString() + "," +
+                n4.ToString() + ")"
             )
         /// Sets this property to its default value
         static member inline initial = Interop.mkStyle "animation-timing-function" "initial"
@@ -1678,16 +1678,16 @@ module style =
         /// Equivalent to steps(1, end)
         static member inline stepEnd = Interop.mkStyle "transition-timing-function" "step-end"
         static member inline stepsToEnd(steps: int) =
-            Interop.mkStyle "transition-timing-function" ("steps(" + (unbox<string> steps) + ", end)")
+            Interop.mkStyle "transition-timing-function" ("steps(" + steps.ToString() + ", end)")
         static member inline stepsToStart(steps: int) =
-            Interop.mkStyle "transition-timing-function" ("steps(" + (unbox<string> steps) + ", start)")
+            Interop.mkStyle "transition-timing-function" ("steps(" + steps.ToString() + ", start)")
         /// Define your own values in the cubic-bezier function. Possible values are numeric values from 0 to 1
         static member inline cubicBezier(n1: float, n2: float, n3: float, n4: float) =
             Interop.mkStyle "transition-timing-function" (
-                "cubic-bezier(" + (unbox<string> n1) + "," +
-                (unbox<string> n2) + "," +
-                (unbox<string> n3) + "," +
-                (unbox<string> n4) + ")"
+                "cubic-bezier(" + n1.ToString() + "," +
+                n2.ToString() + "," +
+                n3.ToString() + "," +
+                n4.ToString() + ")"
             )
         /// Sets this property to its default value
         static member inline initial = Interop.mkStyle "transition-timing-function" "initial"
@@ -2010,7 +2010,7 @@ module style =
         /// Defines a 2D translation.
         static member inline translate(x: int, y: int) =
             Interop.mkStyle "transform" (
-                "translate(" + (unbox<string> x) + "," + y.ToString() + ")"
+                "translate(" + x.ToString() + "," + y.ToString() + ")"
             )
 
 
@@ -2044,7 +2044,7 @@ module style =
         /// Defines a scale transformation.
         static member inline scale(n: float) =
             Interop.mkStyle "transform" (
-                "scale(" + (unbox<string> n) + ")"
+                "scale(" + n.ToString() + ")"
             )
 
         /// Defines a 3D scale transformation
