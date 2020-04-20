@@ -11,19 +11,11 @@ type EraseAttribute () =
 // Interop between Feliz React DSL and Giraffe XmlNode.
 [<RequireQualifiedAccess>]
 module Interop =
-    let private getAttr = function
-        | KeyValue (key, value) -> Some (KeyValue (key, value))
-        | _ -> None
-
-    let private getText = function
-        | Text string -> Some string
-        | _ -> None
-
-    let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) =
+    let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) : ReactElement =
         Element (name, [ List.ofSeq children |> Children])
 
     // let inline reactElementWithChild (name: string) (child: 'a) =
-    let inline reactElementWithChild (name: string) (child: 'a) =
+    let inline reactElementWithChild (name: string) (child: 'a) : ReactElement =
         Element (name, [ child.ToString () |> Text ])
 
     // let inline createElement name (properties: ReactProperty list) : ReactElement =
