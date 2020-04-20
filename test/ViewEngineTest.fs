@@ -15,6 +15,16 @@ let ``Simple text element is Ok``() =
     test <@ result = "test" @>
 
 [<Fact>]
+let ``Simple text element is escaped Ok``() =
+    // Arrange / Act
+    let result =
+        Html.text "te<st"
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "te&lt;st" @>
+
+[<Fact>]
 let ``p element with text is Ok``() =
     // Arrange / Act
     let result =
@@ -23,6 +33,16 @@ let ``p element with text is Ok``() =
 
     // Assert
     test <@ result = "<p>test</p>" @>
+
+[<Fact>]
+let ``p element with text is escaped Ok``() =
+    // Arrange / Act
+    let result =
+        Html.p "te>st"
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "<p>te&gt;st</p>" @>
 
 [<Fact>]
 let ``p element with text property is Ok``() =
@@ -37,6 +57,18 @@ let ``p element with text property is Ok``() =
     test <@ result = "<p>test</p>" @>
 
 [<Fact>]
+let ``p element with text property is escaped Ok``() =
+    // Arrange / Act
+    let result =
+        Html.p [
+            prop.text "tes&t"
+        ]
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "<p>tes&amp;t</p>" @>
+
+[<Fact>]
 let ``p element with text element is Ok``() =
     // Arrange / Act
     let result =
@@ -48,6 +80,17 @@ let ``p element with text element is Ok``() =
     // Assert
     test <@ result = "<p>test</p>" @>
 
+[<Fact>]
+let ``p element with text element is escaped Ok``() =
+    // Arrange / Act
+    let result =
+        Html.p [
+            Html.text "t\"est"
+        ]
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "<p>t&quot;est</p>" @>
 
 [<Fact>]
 let ``Closed element Ok``() =
@@ -106,20 +149,7 @@ let ``h1 element with text and style property is Ok``() =
     test <@ result = "<h1 style=\"font-size:100px;color:#137373\">examples</h1>" @>
 
 [<Fact>]
-let ``Simple h1 element with text and style property is Ok``() =
-    // Arrange / Act
-    let result =
-        Html.h1 [
-            prop.style [ style.fontSize(100); style.color("#137373") ]
-            prop.text "examples"
-        ]
-        |> Render.htmlNode
-
-    // Assert
-    test <@ result = "<h1 style=\"font-size:100px;color:#137373\">examples</h1>" @>
-
-[<Fact>]
-let ``Simple h1 element with text and style property with css unit is Ok``() =
+let ``h1 element with text and style property with css unit is Ok``() =
     // Arrange / Act
     let result =
         Html.h1 [
