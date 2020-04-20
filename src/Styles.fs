@@ -615,42 +615,42 @@ type style () =
             color
         )
     /// Sets the line style for all four sides of an element's border.
-    static member inline borderStyle (style: IBorderStyle) = Interop.mkStyle "borderStyle" style
+    static member inline borderStyle (style: IBorderStyle) = Interop.mkStyle "border-style" style
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle)  =
-        Interop.mkStyle "borderStyle" ((top.ToString ()) + " " + (right.ToString ()))
+        Interop.mkStyle "border-style" ((top.ToString ()) + " " + (right.ToString ()))
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle, bottom: IBorderStyle) =
-        Interop.mkStyle "borderStyle" ((top.ToString ()) + " " + (right.ToString ()) + " " +  (bottom.ToString ()))
+        Interop.mkStyle "border-style" ((top.ToString ()) + " " + (right.ToString ()) + " " +  (bottom.ToString ()))
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle, bottom: IBorderStyle, left: IBorderStyle) =
-        Interop.mkStyle "borderStyle" ((top.ToString ()) + " " + (right.ToString ()) + " " + (bottom.ToString ()) + " " +  (left.ToString ()))
+        Interop.mkStyle "border-style" ((top.ToString ()) + " " + (right.ToString ()) + " " + (bottom.ToString ()) + " " +  (left.ToString ()))
     /// Sets the color of an element's border.
     static member inline borderColor (color: string) = Interop.mkStyle "borderColor" color
     /// Rounds the corners of an element's outer border edge. You can set a single radius to make
     /// circular corners, or two radii to make elliptical corners.
-    static member inline borderRadius (radius: int) = Interop.mkStyle "borderRadius" radius
+    static member inline borderRadius (radius: int) = Interop.mkStyle "border-radius" radius
     /// Rounds the corners of an element's outer border edge. You can set a single radius to make
     /// circular corners, or two radii to make elliptical corners.
-    static member inline borderRadius (radius: ICssUnit) = Interop.mkStyle "borderRadius" radius
+    static member inline borderRadius (radius: ICssUnit) = Interop.mkStyle "border-radius" radius
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int) =
-        Interop.mkStyle "borderWidth" (
+        Interop.mkStyle "border-width" (
             (top.ToString ()) + "px " +
             (right.ToString ()) + "px"
         )
     /// Sets the width of an element's border.
-    static member inline borderWidth (width: int) = Interop.mkStyle "borderWidth" width
+    static member inline borderWidth (width: int) = Interop.mkStyle "border-width" width
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int, bottom: int) =
-        Interop.mkStyle "borderWidth" (
+        Interop.mkStyle "border-width" (
             (top.ToString ()) + "px " +
             (right.ToString ()) + "px " +
             (bottom.ToString ()) + "px"
         )
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int, bottom: int, left: int) =
-        Interop.mkStyle "borderWidth" (
+        Interop.mkStyle "border-width" (
             (top.ToString ()) + "px " +
             (right.ToString ()) + "px " +
             (bottom.ToString ()) + "px " +
@@ -686,29 +686,29 @@ type style () =
     ///
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
-    static member inline textDecoration(line: ITextDecorationLine) = Interop.mkStyle "textDecoration" line
+    static member inline textDecoration(line: ITextDecorationLine) = Interop.mkStyle "text-decoration" line
     /// Sets the appearance of decorative lines on text.
     ///
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine) =
-        Interop.mkStyle "textDecoration" ((bottom.ToString ()) + " " + (top.ToString ()))
+        Interop.mkStyle "text-decoration" ((bottom.ToString ()) + " " + (top.ToString ()))
     /// Sets the appearance of decorative lines on text.
     ///
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine, style: ITextDecoration) =
-        Interop.mkStyle "textDecoration" ((bottom.ToString ()) + " " + (top.ToString ()) + " " + (unbox<string> style))
+        Interop.mkStyle "text-decoration" ((bottom.ToString ()) + " " + (top.ToString ()) + " " + (unbox<string> style))
     /// Sets the appearance of decorative lines on text.
     ///
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine, style: ITextDecoration, color: string) =
-        Interop.mkStyle "textDecoration" ((bottom.ToString ()) + " " + (top.ToString ()) + " " + (unbox<string> style) + " " + color)
+        Interop.mkStyle "text-decoration" ((bottom.ToString ()) + " " + (top.ToString ()) + " " + (unbox<string> style) + " " + color)
     /// Sets the length of empty space (indentation) that is put before lines of text in a block.
-    static member inline textIndent(value: int) = Interop.mkStyle "textIndent" value
+    static member inline textIndent(value: int) = Interop.mkStyle "text-indent" value
     /// Sets the length of empty space (indentation) that is put before lines of text in a block.
-    static member inline textIndent(value: string) = Interop.mkStyle "textIndent" value
+    static member inline textIndent(value: string) = Interop.mkStyle "text-indent" value
     /// Sets the opacity of an element.
     ///
     /// Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
@@ -716,15 +716,15 @@ type style () =
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: int) = Interop.mkStyle "minWidth" value
+    static member inline minWidth (value: int) = Interop.mkStyle "min-width" value
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: ICssUnit) = Interop.mkStyle "minWidth" value
+    static member inline minWidth (value: ICssUnit) = Interop.mkStyle "min-width" value
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: string) = Interop.mkStyle "minWidth" value
+    static member inline minWidth (value: string) = Interop.mkStyle "min-width" value
     /// Sets the initial position for each background image.
     ///
     /// The position is relative to the position layer set by background-origin.
@@ -734,27 +734,27 @@ type style () =
     /// Sets the minimum height of an element.
     ///
     /// It prevents the used value of the height property from becoming smaller than the value specified for min-height.
-    static member inline minHeight (value: int) = Interop.mkStyle "minHeight" value
+    static member inline minHeight (value: int) = Interop.mkStyle "min-height" value
     /// Sets the minimum height of an element.
     ///
     /// It prevents the used value of the height property from becoming smaller than the value specified for min-height.
-    static member inline minHeight (value: ICssUnit) = Interop.mkStyle "minHeight" value
+    static member inline minHeight (value: ICssUnit) = Interop.mkStyle "min-height" value
     /// Sets the maximum width of an element.
     ///
     /// It prevents the used value of the width property from becoming larger than the value specified by max-width.
-    static member inline maxWidth (value: int) = Interop.mkStyle "maxWidth" value
+    static member inline maxWidth (value: int) = Interop.mkStyle "max-width" value
     /// Sets the maximum width of an element.
     ///
     /// It prevents the used value of the width property from becoming larger than the value specified by max-width.
-    static member inline maxWidth (value: ICssUnit) = Interop.mkStyle "maxWidth" value
+    static member inline maxWidth (value: ICssUnit) = Interop.mkStyle "max-width" value
     /// Sets the maximum height of an element.
     ///
     /// It prevents the used value of the height property from becoming larger than the value specified for max-height.
-    static member inline maxHeight (value: int) = Interop.mkStyle "maxHeight" value
+    static member inline maxHeight (value: int) = Interop.mkStyle "max-height" value
     /// Sets the maximum height of an element.
     ///
     /// It prevents the used value of the height property from becoming larger than the value specified for max-height.
-    static member inline maxHeight (value: ICssUnit) = Interop.mkStyle "maxHeight" value
+    static member inline maxHeight (value: ICssUnit) = Interop.mkStyle "max-height" value
     /// Set the height of an element.
     ///
     /// By default, the property defines the height of the content area.
@@ -774,16 +774,16 @@ type style () =
     /// Sets the size of the element's background image.
     ///
     /// The image can be left to its natural size, stretched, or constrained to fit the available space.
-    static member inline backgroundSize (value: string) = Interop.mkStyle "backgroundSize" value
+    static member inline backgroundSize (value: string) = Interop.mkStyle "background-size" value
     /// Sets the size of the element's background image.
     ///
     /// The image can be left to its natural size, stretched, or constrained to fit the available space.
-    static member inline backgroundSize (value: ICssUnit) = Interop.mkStyle "backgroundSize" value
+    static member inline backgroundSize (value: ICssUnit) = Interop.mkStyle "background-size" value
     /// Sets the size of the element's background image.
     ///
     /// The image can be left to its natural size, stretched, or constrained to fit the available space.
     static member inline backgroundSize (width: ICssUnit, height: ICssUnit) =
-        Interop.mkStyle "backgroundSize" (
+        Interop.mkStyle "background-size" (
             unbox<string> width
             + " " +
             unbox<string> height
@@ -801,7 +801,7 @@ type style () =
     ///
     /// A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, color: string) =
-        Interop.mkStyle "boxShadow" (
+        Interop.mkStyle "box-shadow" (
             (unbox<string> horizontalOffset) + "px " +
             (unbox<string> verticalOffset) + "px " +
             color
@@ -810,7 +810,7 @@ type style () =
     ///
     /// A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, blur: int, color: string) =
-        Interop.mkStyle "boxShadow" (
+        Interop.mkStyle "box-shadow" (
             (unbox<string> horizontalOffset) + "px " +
             (unbox<string> verticalOffset) + "px " +
             (unbox<string> blur) + "px " +
@@ -820,7 +820,7 @@ type style () =
     ///
     /// A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, blur: int, spread: int, color: string) =
-        Interop.mkStyle "boxShadow" (
+        Interop.mkStyle "box-shadow" (
             (unbox<string> horizontalOffset) + "px " +
             (unbox<string> verticalOffset) + "px " +
             (unbox<string> blur) + "px " +
@@ -833,9 +833,9 @@ module style =
 
     [<Erase>]
     type boxShadow =
-        static member inline none = Interop.mkStyle "boxShadow" "none"
+        static member inline none = Interop.mkStyle "box-shadow" "none"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "boxShadow" "inheritFromParent"
+        static member inline inheritFromParent = Interop.mkStyle "box-shadow" "inheritFromParent"
 
     [<Erase>]
     type height =
@@ -903,59 +903,59 @@ module style =
     [<Erase>]
     type textJustify =
         /// The browser determines the justification algorithm
-        static member inline auto = Interop.mkStyle "textJustify" "auto"
+        static member inline auto = Interop.mkStyle "text-justify" "auto"
         /// Increases/Decreases the space between words
-        static member inline interWord = Interop.mkStyle "textJustify" "inter-word"
+        static member inline interWord = Interop.mkStyle "text-justify" "inter-word"
         /// Increases/Decreases the space between characters
-        static member inline interCharacter = Interop.mkStyle "textJustify" "inter-character"
+        static member inline interCharacter = Interop.mkStyle "text-justify" "inter-character"
         /// Disables justification methods
-        static member inline none = Interop.mkStyle "textJustify" "none"
-        static member inline initial = Interop.mkStyle "textJustify" "initial"
+        static member inline none = Interop.mkStyle "text-justify" "none"
+        static member inline initial = Interop.mkStyle "text-justify" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "textJustify" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "text-justify" "inherit"
 
     [<Erase>]
     type whitespace =
         /// Sequences of whitespace will collapse into a single whitespace. Text will wrap when necessary. This is default.
-        static member inline normal = Interop.mkStyle "whiteSpace" "normal"
+        static member inline normal = Interop.mkStyle "white-space" "normal"
         /// Sequences of whitespace will collapse into a single whitespace. Text will never wrap to the next line. The text continues on the same line until a `<br>` tag is encountered.
-        static member inline nowrap = Interop.mkStyle "whiteSpace" "nowrap"
+        static member inline nowrap = Interop.mkStyle "white-space" "nowrap"
         /// Whitespace is preserved by the browser. Text will only wrap on line breaks. Acts like the <pre> tag in HTML.
-        static member inline pre = Interop.mkStyle "whiteSpace" "pre"
+        static member inline pre = Interop.mkStyle "white-space" "pre"
         /// Sequences of whitespace will collapse into a single whitespace. Text will wrap when necessary, and on line breaks
-        static member inline preline = Interop.mkStyle "whiteSpace" "pre-line"
+        static member inline preline = Interop.mkStyle "white-space" "pre-line"
         /// Whitespace is preserved by the browser. Text will wrap when necessary, and on line breaks
-        static member inline prewrap = Interop.mkStyle "whiteSpace" "pre-wrap"
+        static member inline prewrap = Interop.mkStyle "white-space" "pre-wrap"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "whiteSpace" "initial"
+        static member inline initial = Interop.mkStyle "white-space" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "whiteSpace" "inheritFromParent"
+        static member inline inheritFromParent = Interop.mkStyle "white-space" "inheritFromParent"
 
     [<Erase>]
     type wordBreak =
         /// Default value. Uses default line break rules.
-        static member inline normal = Interop.mkStyle "wordBreak" "normal"
+        static member inline normal = Interop.mkStyle "word-break" "normal"
         /// To prevent overflow, word may be broken at any character
-        static member inline breakAll = Interop.mkStyle "wordBreak" "break-all"
+        static member inline breakAll = Interop.mkStyle "word-break" "break-all"
         /// Word breaks should not be used for Chinese/Japanese/Korean (CJK) text. Non-CJK text behavior is the same as value "normal"
-        static member inline keepAll = Interop.mkStyle "wordBreak" "keep-all"
+        static member inline keepAll = Interop.mkStyle "word-break" "keep-all"
         /// To prevent overflow, word may be broken at arbitrary points.
-        static member inline breakWord = Interop.mkStyle "wordBreak" "break-word"
+        static member inline breakWord = Interop.mkStyle "word-break" "break-word"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "wordBreak" "initial"
+        static member inline initial = Interop.mkStyle "word-break" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "wordBreak" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "word-break" "inherit"
 
     [<Erase>]
     type scrollBehavior =
         /// Allows a straight jump "scroll effect" between elements within the scrolling box. This is default
-        static member inline auto = Interop.mkStyle "scrollBehavior" "auto"
+        static member inline auto = Interop.mkStyle "scroll-behavior" "auto"
         /// Allows a smooth animated "scroll effect" between elements within the scrolling box.
-        static member inline smooth = Interop.mkStyle "scrollBehavior" "smooth"
+        static member inline smooth = Interop.mkStyle "scroll-behavior" "smooth"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "scrollBehavior" "initial"
+        static member inline initial = Interop.mkStyle "scroll-behavior" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "scrollBehavior" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "scroll-behavior" "inherit"
 
     [<Erase>]
     type overflow =
@@ -975,17 +975,17 @@ module style =
     [<Erase>]
     type overflowX =
         /// The content is not clipped, and it may be rendered outside the left and right edges. This is default.
-        static member inline visible = Interop.mkStyle "overflowX" "visibile"
+        static member inline visible = Interop.mkStyle "overflow-x" "visibile"
         /// The content is clipped - and no scrolling mechanism is provided.
-        static member inline hidden = Interop.mkStyle "overflowX" "hidden"
+        static member inline hidden = Interop.mkStyle "overflow-x" "hidden"
         /// The content is clipped and a scrolling mechanism is provided.
-        static member inline scroll = Interop.mkStyle "overflowX" "scroll"
+        static member inline scroll = Interop.mkStyle "overflow-x" "scroll"
         /// Should cause a scrolling mechanism to be provided for overflowing boxes
-        static member inline auto = Interop.mkStyle "overflowX" "auto"
+        static member inline auto = Interop.mkStyle "overflow-x" "auto"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "overflowX" "initial"
+        static member inline initial = Interop.mkStyle "overflow-x" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "overflowX" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "overflow-x" "inherit"
 
     [<Erase>]
     type visibility =
@@ -1005,151 +1005,151 @@ module style =
     [<Erase>]
     type flexBasis =
         /// Default value. The length is equal to the length of the flexible item. If the item has no length specified, the length will be according to its content.
-        static member inline auto = Interop.mkStyle "flexBasis" "auto"
+        static member inline auto = Interop.mkStyle "flex-basis" "auto"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "flexBasis" "initial"
+        static member inline initial = Interop.mkStyle "flex-basis" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "flexBasis" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "flex-basis" "inherit"
 
     [<Erase>]
     type flexDirection =
         /// Default value. The flexible items are displayed horizontally, as a row
-        static member inline row = Interop.mkStyle "flexDirection" "row"
+        static member inline row = Interop.mkStyle "flex-direction" "row"
         /// Same as row, but in reverse order.
-        static member inline rowReverse = Interop.mkStyle "flexDirection" "row-reverse"
+        static member inline rowReverse = Interop.mkStyle "flex-direction" "row-reverse"
         /// The flexible items are displayed vertically, as a column
-        static member inline column = Interop.mkStyle "flexDirection" "column"
+        static member inline column = Interop.mkStyle "flex-direction" "column"
         /// Same as column, but in reverse order
-        static member inline columnReverse = Interop.mkStyle "flexDirection" "column-reverse"
+        static member inline columnReverse = Interop.mkStyle "flex-direction" "column-reverse"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "flexBasis" "initial"
+        static member inline initial = Interop.mkStyle "flex-basis" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "flexBasis" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "flex-basis" "inherit"
 
     [<Erase>]
     type flexWrap =
         /// Default value. Specifies that the flexible items will not wrap.
-        static member inline nowrap = Interop.mkStyle "flexWrap" "nowrap"
+        static member inline nowrap = Interop.mkStyle "flex-wrap" "nowrap"
         /// Specifies that the flexible items will wrap if necessary
-        static member inline wrap = Interop.mkStyle "flexWrap" "wrap"
+        static member inline wrap = Interop.mkStyle "flex-wrap" "wrap"
         /// Specifies that the flexible items will wrap, if necessary, in reverse order
-        static member inline wrapReverse = Interop.mkStyle "flexWrap" "wrap-reverse"
+        static member inline wrapReverse = Interop.mkStyle "flex-wrap" "wrap-reverse"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "flexWrap" "initial"
+        static member inline initial = Interop.mkStyle "flex-wrap" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "flexWrap" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "flex-wrap" "inherit"
 
     [<Erase>]
     type fontKerning =
         /// Default. The browser determines whether font kerning should be applied or not
-        static member inline auto = Interop.mkStyle "fontKerning" "auto"
+        static member inline auto = Interop.mkStyle "font-kerning" "auto"
         /// Specifies that font kerning is applied
-        static member inline normal = Interop.mkStyle "fontKerning" "normal"
+        static member inline normal = Interop.mkStyle "font-kerning" "normal"
         /// Specifies that font kerning is not applied
-        static member inline none = Interop.mkStyle "fontKerning" "none"
+        static member inline none = Interop.mkStyle "font-kerning" "none"
 
     [<Erase>]
     /// The font-weight property sets how thick or thin characters in text should be displayed.
     type fontWeight =
         /// Defines normal characters. This is default.
-        static member inline normal = Interop.mkStyle "fontWeight" "normal"
+        static member inline normal = Interop.mkStyle "font-weight" "normal"
         /// Defines thick characters.
-        static member inline bold = Interop.mkStyle "fontWeight" "bold"
+        static member inline bold = Interop.mkStyle "font-weight" "bold"
         /// Defines thicker characters
-        static member inline bolder = Interop.mkStyle "fontWeight" "bolder"
+        static member inline bolder = Interop.mkStyle "font-weight" "bolder"
         /// Defines lighter characters.
-        static member inline lighter = Interop.mkStyle "fontWeight" "lighter"
+        static member inline lighter = Interop.mkStyle "font-weight" "lighter"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "fontWeight" "initial"
+        static member inline initial = Interop.mkStyle "font-weight" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "fontWeight" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "font-weight" "inherit"
 
     [<Erase>]
     type fontStyle =
         /// The browser displays a normal font style. This is defaut.
-        static member inline normal = Interop.mkStyle "fontStyle" "normal"
+        static member inline normal = Interop.mkStyle "font-style" "normal"
         /// The browser displays an italic font style.
-        static member inline italic = Interop.mkStyle "fontStyle" "italic"
+        static member inline italic = Interop.mkStyle "font-style" "italic"
         /// The browser displays an oblique font style.
-        static member inline oblique = Interop.mkStyle "fontStyle" "oblique"
+        static member inline oblique = Interop.mkStyle "font-style" "oblique"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "fontStyle" "initial"
+        static member inline initial = Interop.mkStyle "font-style" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "fontStyle" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "font-style" "inherit"
 
     [<Erase>]
     type fontVariant =
         /// The browser displays a normal font. This is default
-        static member inline normal = Interop.mkStyle "fontVariant" "normal"
+        static member inline normal = Interop.mkStyle "font-variant" "normal"
         /// The browser displays a small-caps font
-        static member inline smallCaps = Interop.mkStyle "fontVariant" "small-caps"
+        static member inline smallCaps = Interop.mkStyle "font-variant" "small-caps"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "fontVariant" "initial"
+        static member inline initial = Interop.mkStyle "font-variant" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "fontVariant" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "font-variant" "inherit"
 
     [<Erase>]
     type overflowY =
         /// The content is not clipped, and it may be rendered outside the left and right edges. This is default.
-        static member inline visible = Interop.mkStyle "overflowY" "visibile"
+        static member inline visible = Interop.mkStyle "overflow-y" "visibile"
         /// The content is clipped - and no scrolling mechanism is provided.
-        static member inline hidden = Interop.mkStyle "overflowY" "hidden"
+        static member inline hidden = Interop.mkStyle "overflow-y" "hidden"
         /// The content is clipped and a scrolling mechanism is provided.
-        static member inline scroll = Interop.mkStyle "overflowY" "scroll"
+        static member inline scroll = Interop.mkStyle "overflow-y" "scroll"
         /// Should cause a scrolling mechanism to be provided for overflowing boxes
-        static member inline auto = Interop.mkStyle "overflowY" "auto"
+        static member inline auto = Interop.mkStyle "overflow-y" "auto"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "overflowY" "initial"
+        static member inline initial = Interop.mkStyle "overflow-y" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "overflowY" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "overflow-y" "inherit"
 
     [<Erase>]
     type wordWrap =
         /// Break words only at allowed break points
-        static member inline normal = Interop.mkStyle "wordWrap" "normal"
+        static member inline normal = Interop.mkStyle "word-wrap" "normal"
         /// Allows unbreakable words to be broken
-        static member inline breakWord = Interop.mkStyle "wordWrap" "break-word"
+        static member inline breakWord = Interop.mkStyle "word-wrap" "break-word"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "wordWrap" "initial"
+        static member inline initial = Interop.mkStyle "word-wrap" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "wordWrap" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "word-wrap" "inherit"
 
     [<Erase>]
     type alignSelf =
         /// Default. The element inherits its parent container's align-items property, or "stretch" if it has no parent container.
-        static member inline auto = Interop.mkStyle "alignSelf" "auto"
+        static member inline auto = Interop.mkStyle "align-self" "auto"
         /// The element is positioned to fit the container
-        static member inline stretch = Interop.mkStyle "alignSelf" "stretch"
+        static member inline stretch = Interop.mkStyle "align-self" "stretch"
         /// The element is positioned at the center of the container
-        static member inline center = Interop.mkStyle "alignSelf" "center"
+        static member inline center = Interop.mkStyle "align-self" "center"
         /// The element is positioned at the beginning of the container
-        static member inline flexStart = Interop.mkStyle "alignSelf" "flex-start"
+        static member inline flexStart = Interop.mkStyle "align-self" "flex-start"
         /// The element is positioned at the end of the container
-        static member inline flexEnd = Interop.mkStyle "alignSelf" "flex-end"
+        static member inline flexEnd = Interop.mkStyle "align-self" "flex-end"
         /// The element is positioned at the baseline of the container
-        static member inline baseline = Interop.mkStyle "alignSelf" "baseline"
+        static member inline baseline = Interop.mkStyle "align-self" "baseline"
         /// Sets this property to its default value
-        static member inline initial = Interop.mkStyle "alignSelf" "initial"
+        static member inline initial = Interop.mkStyle "align-self" "initial"
         /// Inherits this property from its parent element
-        static member inline inheritFromParent = Interop.mkStyle "alignSelf" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "align-self" "inherit"
 
 
     [<Erase>]
     type alignItems =
         /// Default. Items are stretched to fit the container
-        static member inline stretch = Interop.mkStyle "alignItems" "stretch"
+        static member inline stretch = Interop.mkStyle "align-items" "stretch"
         /// Items are positioned at the center of the container
-        static member inline center = Interop.mkStyle "alignItems"  "center"
+        static member inline center = Interop.mkStyle "align-items"  "center"
         /// Items are positioned at the beginning of the container
-        static member inline flexStart = Interop.mkStyle "alignItems" "flex-start"
+        static member inline flexStart = Interop.mkStyle "align-items" "flex-start"
         /// Items are positioned at the end of the container
-        static member inline flexEnd = Interop.mkStyle "alignItems" "flex-end"
+        static member inline flexEnd = Interop.mkStyle "align-items" "flex-end"
         /// Items are positioned at the baseline of the container
-        static member inline baseline = Interop.mkStyle "alignItems" "baseline"
+        static member inline baseline = Interop.mkStyle "align-items" "baseline"
         /// Sets this property to its default value
-        static member inline initial = Interop.mkStyle "alignItems"  "initial"
+        static member inline initial = Interop.mkStyle "align-items"  "initial"
         /// Inherits this property from its parent element
-        static member inline inheritFromParent = Interop.mkStyle "alignItems"  "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "align-items"  "inherit"
 
     /// The `align-content` property modifies the behavior of the `flex-wrap` property.
     /// It is similar to align-items, but instead of aligning flex items, it aligns flex lines.
@@ -1160,19 +1160,19 @@ module style =
     [<Erase>]
     type alignContent =
         /// Default value. Lines stretch to take up the remaining space.
-        static member inline stretch = Interop.mkStyle "alignContent" "stretch"
+        static member inline stretch = Interop.mkStyle "align-content" "stretch"
         /// Lines are packed toward the center of the flex container.
-        static member inline center = Interop.mkStyle "alignContent" "center"
+        static member inline center = Interop.mkStyle "align-content" "center"
         /// Lines are packed toward the start of the flex container.
-        static member inline flexStart = Interop.mkStyle "alignContent" "flex-start"
+        static member inline flexStart = Interop.mkStyle "align-content" "flex-start"
         /// Lines are packed toward the end of the flex container.
-        static member inline flexEnd = Interop.mkStyle "alignContent" "flex-end"
+        static member inline flexEnd = Interop.mkStyle "align-content" "flex-end"
         /// Lines are evenly distributed in the flex container.
-        static member inline spaceBetween = Interop.mkStyle "alignContent" "space-between"
+        static member inline spaceBetween = Interop.mkStyle "align-content" "space-between"
         /// Lines are evenly distributed in the flex container, with half-size spaces on either end.
-        static member inline spaceAround = Interop.mkStyle "alignContent" "space-around"
-        static member inline initial = Interop.mkStyle "alignContent" "initial"
-        static member inline inheritFromParent = Interop.mkStyle "alignContent" "inherit"
+        static member inline spaceAround = Interop.mkStyle "align-content" "space-around"
+        static member inline initial = Interop.mkStyle "align-content" "initial"
+        static member inline inheritFromParent = Interop.mkStyle "align-content" "inherit"
 
     /// The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
     ///
@@ -1182,19 +1182,19 @@ module style =
     [<Erase>]
     type justifyContent =
         /// Default value. Items are positioned at the beginning of the container.
-        static member inline flexStart = Interop.mkStyle "justifyContent" "flex-start"
+        static member inline flexStart = Interop.mkStyle "justify-content" "flex-start"
         /// Items are positioned at the end of the container.
-        static member inline flexEnd = Interop.mkStyle "justifyContent" "flex-end"
+        static member inline flexEnd = Interop.mkStyle "justify-content" "flex-end"
         /// Items are positioned at the center of the container
-        static member inline center = Interop.mkStyle "justifyContent" "center"
+        static member inline center = Interop.mkStyle "justify-content" "center"
         /// Items are positioned with space between the lines
-        static member inline spaceBetween = Interop.mkStyle "justifyContent" "space-between"
+        static member inline spaceBetween = Interop.mkStyle "justify-content" "space-between"
         /// Items are positioned with space before, between, and after the lines.
-        static member inline spaceAround = Interop.mkStyle "justifyContent" "space-around"
+        static member inline spaceAround = Interop.mkStyle "justify-content" "space-around"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "justifyContent" "initial"
+        static member inline initial = Interop.mkStyle "justify-content" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "justifyContent" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "justify-content" "inherit"
 
     /// An outline is a line around an element.
     /// It is displayed around the margin of the element. However, it is different from the border property.
@@ -1202,184 +1202,184 @@ module style =
     [<Erase>]
     type outlineWidth =
         /// Specifies a medium outline. This is default.
-        static member inline medium = Interop.mkStyle "outlineWidth" "medium"
+        static member inline medium = Interop.mkStyle "outline-width" "medium"
         /// Specifies a thin outline.
-        static member inline thin = Interop.mkStyle "outlineWidth" "thin"
+        static member inline thin = Interop.mkStyle "outline-width" "thin"
         /// Specifies a thick outline.
-        static member inline thick = Interop.mkStyle "outlineWidth" "thick"
+        static member inline thick = Interop.mkStyle "outline-width" "thick"
         /// Sets this property to its default value
-        static member inline initial = Interop.mkStyle "outlineWidth" "initial"
+        static member inline initial = Interop.mkStyle "outline-width" "initial"
         /// Inherits this property from its parent element
-        static member inline inheritFromParent = Interop.mkStyle "outlineWidth" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "outline-width" "inherit"
 
     [<Erase>]
     type listStyleType =
         /// Default value. The marker is a filled circle
-        static member inline disc = Interop.mkStyle "listStyleType" "disc"
+        static member inline disc = Interop.mkStyle "list-style-type" "disc"
         /// The marker is traditional Armenian numbering
-        static member inline armenian = Interop.mkStyle "listStyleType" "armenian"
+        static member inline armenian = Interop.mkStyle "list-style-type" "armenian"
         /// The marker is a circle
-        static member inline circle = Interop.mkStyle "listStyleType" "circle"
+        static member inline circle = Interop.mkStyle "list-style-type" "circle"
         /// The marker is plain ideographic numbers
-        static member inline cjkIdeographic = Interop.mkStyle "listStyleType" "cjk-ideographic"
+        static member inline cjkIdeographic = Interop.mkStyle "list-style-type" "cjk-ideographic"
         /// The marker is a number
-        static member inline decimal = Interop.mkStyle "listStyleType" "decimal"
+        static member inline decimal = Interop.mkStyle "list-style-type" "decimal"
         /// The marker is a number with leading zeros (01, 02, 03, etc.)
-        static member inline decimalLeadingZero = Interop.mkStyle "listStyleType" "decimal-leading-zero"
+        static member inline decimalLeadingZero = Interop.mkStyle "list-style-type" "decimal-leading-zero"
         /// The marker is traditional Georgian numbering
-        static member inline georgian = Interop.mkStyle "listStyleType" "georgian"
+        static member inline georgian = Interop.mkStyle "list-style-type" "georgian"
         /// The marker is traditional Hebrew numbering
-        static member inline hebrew = Interop.mkStyle "listStyleType" "hebrew"
+        static member inline hebrew = Interop.mkStyle "list-style-type" "hebrew"
         /// The marker is traditional Hiragana numbering
-        static member inline hiragana = Interop.mkStyle "listStyleType" "hiragana"
+        static member inline hiragana = Interop.mkStyle "list-style-type" "hiragana"
         /// The marker is traditional Hiragana iroha numbering
-        static member inline hiraganaIroha = Interop.mkStyle "listStyleType" "hiragana-iroha"
+        static member inline hiraganaIroha = Interop.mkStyle "list-style-type" "hiragana-iroha"
         /// The marker is traditional Katakana numbering
-        static member inline katakana = Interop.mkStyle "listStyleType" "katakana"
+        static member inline katakana = Interop.mkStyle "list-style-type" "katakana"
         /// The marker is traditional Katakana iroha numbering
-        static member inline katakanaIroha = Interop.mkStyle "listStyleType" "katakana-iroha"
+        static member inline katakanaIroha = Interop.mkStyle "list-style-type" "katakana-iroha"
         /// The marker is lower-alpha (a, b, c, d, e, etc.)
-        static member inline lowerAlpha = Interop.mkStyle "listStyleType" "lower-alpha"
+        static member inline lowerAlpha = Interop.mkStyle "list-style-type" "lower-alpha"
         /// The marker is lower-greek
-        static member inline lowerGreek = Interop.mkStyle "listStyleType" "lower-greek"
+        static member inline lowerGreek = Interop.mkStyle "list-style-type" "lower-greek"
         /// The marker is lower-latin (a, b, c, d, e, etc.)
-        static member inline lowerLatin = Interop.mkStyle "listStyleType" "lower-latin"
+        static member inline lowerLatin = Interop.mkStyle "list-style-type" "lower-latin"
         /// The marker is lower-roman (i, ii, iii, iv, v, etc.)
-        static member inline lowerRoman = Interop.mkStyle "listStyleType" "lower-roman"
+        static member inline lowerRoman = Interop.mkStyle "list-style-type" "lower-roman"
         /// No marker is shown
-        static member inline none = Interop.mkStyle "listStyleType" "none"
+        static member inline none = Interop.mkStyle "list-style-type" "none"
         /// The marker is a square
-        static member inline square = Interop.mkStyle "listStyleType" "square"
+        static member inline square = Interop.mkStyle "list-style-type" "square"
         /// The marker is upper-alpha (A, B, C, D, E, etc.)
-        static member inline upperAlpha = Interop.mkStyle "listStyleType" "upper-alpha"
+        static member inline upperAlpha = Interop.mkStyle "list-style-type" "upper-alpha"
         /// The marker is upper-greek
-        static member inline upperGreek = Interop.mkStyle "listStyleType" "upper-greek"
+        static member inline upperGreek = Interop.mkStyle "list-style-type" "upper-greek"
         /// The marker is upper-latin (A, B, C, D, E, etc.)
-        static member inline upperLatin = Interop.mkStyle "listStyleType" "upper-latin"
+        static member inline upperLatin = Interop.mkStyle "list-style-type" "upper-latin"
         /// The marker is upper-roman (I, II, III, IV, V, etc.)
-        static member inline upperRoman = Interop.mkStyle "listStyleType" "upper-roman"
+        static member inline upperRoman = Interop.mkStyle "list-style-type" "upper-roman"
         /// Sets this property to its default value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-        static member inline initial = Interop.mkStyle "listStyleType" "initial"
+        static member inline initial = Interop.mkStyle "list-style-type" "initial"
         /// Inherits this property from its parent element.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-        static member inline inheritFromParent = Interop.mkStyle "listStyleType" "inheritFromParent"
+        static member inline inheritFromParent = Interop.mkStyle "list-style-type" "inheritFromParent"
 
     type listStyleImage =
         /// No image will be displayed. Instead, the list-style-type property will define what type of list marker will be rendered. This is default
-        static member inline none = Interop.mkStyle "listStyleImage" "none"
+        static member inline none = Interop.mkStyle "list-style-image" "none"
         /// The path to the image to be used as a list-item marker
-        static member inline url (path: string) = Interop.mkStyle "listStyleImage" (sprintf "url('%s')" path)
+        static member inline url (path: string) = Interop.mkStyle "list-style-image" (sprintf "url('%s')" path)
         /// Sets this property to its default value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-        static member inline initial = Interop.mkStyle "listStyleImage" "initial"
+        static member inline initial = Interop.mkStyle "list-style-image" "initial"
         /// Inherits this property from its parent element.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-        static member inline inheritFromParent = Interop.mkStyle "listStyleImage" "inheritFromParent"
+        static member inline inheritFromParent = Interop.mkStyle "list-style-image" "inheritFromParent"
 
     [<Erase>]
     type listStylePosition =
         /// The bullet points will be inside the list item
-        static member inline inside = Interop.mkStyle "listStylePosition" "inside"
+        static member inline inside = Interop.mkStyle "list-style-position" "inside"
         /// The bullet points will be outside the list item. This is default
-        static member inline outside = Interop.mkStyle "listStylePosition" "outside"
+        static member inline outside = Interop.mkStyle "list-style-position" "outside"
         /// Sets this property to its default value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-        static member inline initial = Interop.mkStyle "listStylePosition" "initial"
+        static member inline initial = Interop.mkStyle "list-style-position" "initial"
         /// Inherits this property from its parent element.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-        static member inline inheritFromParent = Interop.mkStyle "listStylePosition" "inheritFromParent"
+        static member inline inheritFromParent = Interop.mkStyle "list-style-position" "inheritFromParent"
 
     [<Erase>]
     type textAlign =
         /// Aligns the text to the left.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align
-        static member inline left = Interop.mkStyle "textAlign" "left"
+        static member inline left = Interop.mkStyle "text-align" "left"
         /// Aligns the text to the right.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=right
-        static member inline right = Interop.mkStyle "textAlign" "right"
+        static member inline right = Interop.mkStyle "text-align" "right"
         /// Centers the text.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=center
-        static member inline center = Interop.mkStyle "textAlign" "center"
+        static member inline center = Interop.mkStyle "text-align" "center"
         /// Stretches the lines so that each line has equal width (like in newspapers and magazines).
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=justify
-        static member inline justify = Interop.mkStyle "textAlign" "justify"
+        static member inline justify = Interop.mkStyle "text-align" "justify"
         /// Sets this property to its default value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-        static member inline initial = Interop.mkStyle "textAlign" "initial"
+        static member inline initial = Interop.mkStyle "text-align" "initial"
         /// Inherits this property from its parent element.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-        static member inline inheritFromParent = Interop.mkStyle "textAlign" "inheritFromParent"
+        static member inline inheritFromParent = Interop.mkStyle "text-align" "inheritFromParent"
 
 
     [<Erase>]
     type textDecorationLine =
-        static member inline none = Interop.mkStyle "textDecorationLine" "none"
-        static member inline underline = Interop.mkStyle "textDecorationLine" "underline"
-        static member inline overline = Interop.mkStyle "textDecorationLine" "overline"
-        static member inline lineThrough = Interop.mkStyle "textDecorationLine" "line-through"
-        static member inline initial = Interop.mkStyle "textDecorationLine" "initial"
+        static member inline none = Interop.mkStyle "text-decoration-line" "none"
+        static member inline underline = Interop.mkStyle "text-decoration-line" "underline"
+        static member inline overline = Interop.mkStyle "text-decoration-line" "overline"
+        static member inline lineThrough = Interop.mkStyle "text-decoration-line" "line-through"
+        static member inline initial = Interop.mkStyle "text-decoration-line" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "textDecorationLine" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "text-decoration-line" "inherit"
 
     [<Erase>]
     type textDecoration =
-        static member inline none = Interop.mkStyle "textDecoration" "none"
-        static member inline underline = Interop.mkStyle "textDecoration" "underline"
-        static member inline overline = Interop.mkStyle "textDecoration" "overline"
-        static member inline lineThrough = Interop.mkStyle "textDecoration" "line-through"
-        static member inline initial = Interop.mkStyle "textDecoration" "initial"
+        static member inline none = Interop.mkStyle "text-decoration" "none"
+        static member inline underline = Interop.mkStyle "text-decoration" "underline"
+        static member inline overline = Interop.mkStyle "text-decoration" "overline"
+        static member inline lineThrough = Interop.mkStyle "text-decoration" "line-through"
+        static member inline initial = Interop.mkStyle "text-decoration" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "textDecoration" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "text-decoration" "inherit"
 
     [<Erase>]
     /// The `transform-style` property specifies how nested elements are rendered in 3D space.
     type transformStyle =
         /// Specifies that child elements will NOT preserve its 3D position. This is default.
-        static member inline flat = Interop.mkStyle "transformStyle" "flat"
+        static member inline flat = Interop.mkStyle "transform-style" "flat"
         /// Specifies that child elements will preserve its 3D position
-        static member inline preserve3D = Interop.mkStyle "transformStyle" "preserve-3d"
-        static member inline initial = Interop.mkStyle "transformStyle" "initial"
+        static member inline preserve3D = Interop.mkStyle "transform-style" "preserve-3d"
+        static member inline initial = Interop.mkStyle "transform-style" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "transformStyle" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "transform-style" "inherit"
 
     [<Erase>]
     type textTransform =
         /// No capitalization. The text renders as it is. This is default.
-        static member inline none = Interop.mkStyle "textTransform" "none"
+        static member inline none = Interop.mkStyle "text-transform" "none"
         /// Transforms the first character of each word to uppercase.
-        static member inline capitalize = Interop.mkStyle "textTransform" "capitalize"
+        static member inline capitalize = Interop.mkStyle "text-transform" "capitalize"
         /// Transforms all characters to uppercase.
-        static member inline uppercase = Interop.mkStyle "textTransform" "uppercase"
+        static member inline uppercase = Interop.mkStyle "text-transform" "uppercase"
         /// Transforms all characters to lowercase.
-        static member inline lowercase = Interop.mkStyle "textTransform" "lowercase"
-        static member inline initial = Interop.mkStyle "textTransform" "initial"
+        static member inline lowercase = Interop.mkStyle "text-transform" "lowercase"
+        static member inline initial = Interop.mkStyle "text-transform" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "textTransform" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "text-transform" "inherit"
 
     [<Erase>]
     type textOverflow =
         /// Default value. The text is clipped and not accessible.
-        static member inline clip = Interop.mkStyle "textOverflow" "clip"
+        static member inline clip = Interop.mkStyle "text-overflow" "clip"
         /// Render an ellipsis ("...") to represent the clipped text.
-        static member inline ellipsis = Interop.mkStyle "textOverflow" "ellipsis"
+        static member inline ellipsis = Interop.mkStyle "text-overflow" "ellipsis"
         /// Render the given string to represent the clipped text.
-        static member inline custom(value: string) = Interop.mkStyle "textOverflow" value
-        static member inline initial = Interop.mkStyle "textOverflow" "initial"
+        static member inline custom(value: string) = Interop.mkStyle "text-overflow" value
+        static member inline initial = Interop.mkStyle "text-overflow" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "textOverflow" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "text-overflow" "inherit"
 
     [<Erase>]
     /// Defines visual effects like blur and saturation to an element.
@@ -1416,10 +1416,10 @@ module style =
         static member inline dropShadow(horizontalOffset: int, verticalOffset: int, blur: int, spread: int,  color: string) =
             Interop.mkStyle "filter" (
                 "drop-shadow(" +
-                (unbox<string> horizontalOffset) + "px " +
-                (unbox<string> verticalOffset) + "px " +
-                (unbox<string> blur) + "px " +
-                (unbox<string> spread) + "px " +
+                (horizontalOffset.ToString ()) + "px " +
+                (verticalOffset.ToString ()) + "px " +
+                (blur.ToString ()) + "px " +
+                (spread.ToString ()) + "px " +
                 color +
                 ")"
             )
@@ -1428,9 +1428,9 @@ module style =
         static member inline dropShadow(horizontalOffset: int, verticalOffset: int, blur: int, color: string) =
             Interop.mkStyle "filter" (
                 "drop-shadow(" +
-                (unbox<string> horizontalOffset) + "px " +
-                (unbox<string> verticalOffset) + "px " +
-                (unbox<string> blur) + "px " +
+                (horizontalOffset.ToString ()) + "px " +
+                (verticalOffset.ToString ()) + "px " +
+                (blur.ToString ()) + "px " +
                 color +
                 ")"
             )
@@ -1439,8 +1439,8 @@ module style =
         static member inline dropShadow(horizontalOffset: int, verticalOffset: int, color: string) =
             Interop.mkStyle "filter" (
                 "drop-shadow(" +
-                (unbox<string> horizontalOffset) + "px " +
-                (unbox<string> verticalOffset) + "px " +
+                (horizontalOffset.ToString ()) + "px " +
+                (verticalOffset.ToString ()) + "px " +
                 color +
                 ")"
             )
@@ -1502,13 +1502,13 @@ module style =
     /// Sets whether table borders should collapse into a single border or be separated as in standard HTML.
     type borderCollapse =
         /// Borders are separated; each cell will display its own borders. This is default.
-        static member inline separate = Interop.mkStyle "borderCollapse" "separate"
+        static member inline separate = Interop.mkStyle "border-collapse" "separate"
         /// Borders are collapsed into a single border when possible (border-spacing and empty-cells properties have no effect)
-        static member inline collapse = Interop.mkStyle "borderCollapse" "collapse"
+        static member inline collapse = Interop.mkStyle "border-collapse" "collapse"
         /// Sets this property to its default value
-        static member inline initial = Interop.mkStyle "borderCollapse" "initial"
+        static member inline initial = Interop.mkStyle "border-collapse" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "borderCollapse" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "border-collapse" "inherit"
 
     [<Erase>]
     /// Specifies the size of the background images
@@ -1516,19 +1516,19 @@ module style =
         /// Default value. The background image is displayed in its original size
         ///
         /// See [example here](https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&preval=auto)
-        static member inline auto = Interop.mkStyle "backgroundSize" "auto"
+        static member inline auto = Interop.mkStyle "background-size" "auto"
         /// Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges.
         ///
         /// See [example here](https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&preval=cover)
-        static member inline cover = Interop.mkStyle "backgroundSize" "cover"
+        static member inline cover = Interop.mkStyle "background-size" "cover"
         /// Resize the background image to make sure the image is fully visible
         ///
         /// See [example here](https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&preval=contain)
-        static member inline contain = Interop.mkStyle "backgroundSize" "contain"
+        static member inline contain = Interop.mkStyle "background-size" "contain"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "backgroundSize" "initial"
+        static member inline initial = Interop.mkStyle "background-size" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "backgroundSize" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "background-size" "inherit"
 
     [<Erase>]
     type textDecorationStyle =
@@ -1714,55 +1714,55 @@ module style =
         /// Specifies a dotted border.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline dotted = Interop.mkStyle "borderStyle" "dotted"
+        static member inline dotted = Interop.mkStyle "border-style" "dotted"
         /// Specifies a dashed border.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline dashed = Interop.mkStyle "borderStyle" "dashed"
+        static member inline dashed = Interop.mkStyle "border-style" "dashed"
         /// Specifies a solid border.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline solid = Interop.mkStyle "borderStyle" "solid"
+        static member inline solid = Interop.mkStyle "border-style" "solid"
         /// Specifies a double border.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline double = Interop.mkStyle "borderStyle" "double"
+        static member inline double = Interop.mkStyle "border-style" "double"
         /// Specifies a 3D grooved border. The effect depends on the border-color value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline groove = Interop.mkStyle "borderStyle" "groove"
+        static member inline groove = Interop.mkStyle "border-style" "groove"
         /// Specifies a 3D ridged border. The effect depends on the border-color value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline ridge = Interop.mkStyle "borderStyle" "ridge"
+        static member inline ridge = Interop.mkStyle "border-style" "ridge"
         /// Specifies a 3D inset border. The effect depends on the border-color value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline inset = Interop.mkStyle "borderStyle" "inset"
+        static member inline inset = Interop.mkStyle "border-style" "inset"
         /// Specifies a 3D outset border. The effect depends on the border-color value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline outset = Interop.mkStyle "borderStyle" "outset"
+        static member inline outset = Interop.mkStyle "border-style" "outset"
         /// Default value. Specifies no border.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-        static member inline none = Interop.mkStyle "borderStyle" "none"
+        static member inline none = Interop.mkStyle "border-style" "none"
         /// The same as "none", except in border conflict resolution for table elements.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=hidden
-        static member inline hidden = Interop.mkStyle "borderStyle" "hidden"
+        static member inline hidden = Interop.mkStyle "border-style" "hidden"
         /// Sets this property to its default value.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=hidden
         ///
         /// Read about initial value https://www.w3schools.com/cssref/css_initial.asp
-        static member inline initial = Interop.mkStyle "borderStyle" "initial"
+        static member inline initial = Interop.mkStyle "border-style" "initial"
         /// Inherits this property from its parent element.
         ///
         /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=hidden
         ///
         /// Read about inherit https://www.w3schools.com/cssref/css_inherit.asp
-        static member inline inheritFromParent = Interop.mkStyle "borderStyle" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "border-style" "inherit"
 
     [<Erase>]
     /// Defines the algorithm used to lay out table cells, rows, and columns.
@@ -1776,7 +1776,7 @@ module style =
         /// Sets this property to its default value.
         static member inline initial = Interop.mkStyle "tableLayout" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "tableLayout" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "table-layout" "inherit"
 
     [<Erase>]
     type display =
@@ -1945,51 +1945,51 @@ module style =
     [<Erase>]
     type backgroundPosition =
         /// The background image will scroll with the page. This is default.
-        static member inline scroll = Interop.mkStyle "backgroundPosition" "scroll"
+        static member inline scroll = Interop.mkStyle "background-position" "scroll"
         /// The background image will not scroll with the page.
-        static member inline fixedNoScroll = Interop.mkStyle "backgroundPosition" "fixed"
+        static member inline fixedNoScroll = Interop.mkStyle "background-position" "fixed"
         /// The background image will scroll with the element's contents.
-        static member inline local = Interop.mkStyle "backgroundPosition" "local"
+        static member inline local = Interop.mkStyle "background-position" "local"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "backgroundPosition" "initial"
+        static member inline initial = Interop.mkStyle "background-position" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "backgroundPosition" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "background-position" "inherit"
 
     [<Erase>]
     /// This property defines the blending mode of each background layer (color and/or image).
     type backgroundBlendMode =
         /// This is default. Sets the blending mode to normal.
-        static member inline normal = Interop.mkStyle "backgroundBlendMode" "normal"
+        static member inline normal = Interop.mkStyle "background-blend-mode" "normal"
         /// Sets the blending mode to screen
-        static member inline screen = Interop.mkStyle "backgroundBlendMode" "screen"
+        static member inline screen = Interop.mkStyle "background-blend-mode" "screen"
         /// Sets the blending mode to overlay
-        static member inline overlay = Interop.mkStyle "backgroundBlendMode" "overlay"
+        static member inline overlay = Interop.mkStyle "background-blend-mode" "overlay"
         /// Sets the blending mode to darken
-        static member inline darken = Interop.mkStyle "backgroundBlendMode" "darken"
+        static member inline darken = Interop.mkStyle "background-blend-mode" "darken"
         /// Sets the blending mode to multiply
-        static member inline lighten = Interop.mkStyle "backgroundBlendMode" "lighten"
+        static member inline lighten = Interop.mkStyle "background-blend-mode" "lighten"
         /// Sets the blending mode to color-dodge
-        static member inline collorDodge = Interop.mkStyle "backgroundBlendMode" "color-dodge"
+        static member inline collorDodge = Interop.mkStyle "background-blend-mode" "color-dodge"
         /// Sets the blending mode to saturation
-        static member inline saturation = Interop.mkStyle "backgroundBlendMode" "saturation"
+        static member inline saturation = Interop.mkStyle "background-blend-mode" "saturation"
         /// Sets the blending mode to color
-        static member inline color = Interop.mkStyle "backgroundBlendMode" "color"
+        static member inline color = Interop.mkStyle "background-blend-mode" "color"
         /// Sets the blending mode to luminosity
-        static member inline luminosity = Interop.mkStyle "backgroundBlendMode" "luminosity"
+        static member inline luminosity = Interop.mkStyle "background-blend-mode" "luminosity"
 
     [<Erase>]
     /// Defines how far the background (color or image) should extend within an element.
     type backgroundClip =
         /// Default value. The background extends behind the border.
-        static member inline borderBox = Interop.mkStyle "backgroundClip" "border-box"
+        static member inline borderBox = Interop.mkStyle "background-clip" "border-box"
         /// The background extends to the inside edge of the border.
-        static member inline paddingBox = Interop.mkStyle "backgroundClip" "padding-box"
+        static member inline paddingBox = Interop.mkStyle "background-clip" "padding-box"
         /// The background extends to the edge of the content box.
-        static member inline contentBox = Interop.mkStyle "backgroundClip" "content-box"
+        static member inline contentBox = Interop.mkStyle "background-clip" "content-box"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "backgroundClip" "initial"
+        static member inline initial = Interop.mkStyle "background-clip" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "backgroundClip" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "background-clip" "inherit"
 
     [<Erase>]
     type transform =
@@ -2172,42 +2172,42 @@ module style =
     [<Erase>]
     type animationIterationCount =
         /// Specifies that the animation should be played infinite times (forever)
-        static member inline infinite = Interop.mkStyle "animationIterationCount" "infinite"
+        static member inline infinite = Interop.mkStyle "animation-iteration-count" "infinite"
         /// Sets this property to its default value
-        static member inline initial = Interop.mkStyle "animationIterationCount" "initial"
+        static member inline initial = Interop.mkStyle "animation-iteration-count" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "animationIterationCount" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "animation-iteration-count" "inherit"
 
     [<Erase>]
     /// Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both).
     type animationFillMode =
         /// Default value. Animation will not apply any styles to the element before or after it is executing
-        static member inline none = Interop.mkStyle "animationFillMode" "none"
+        static member inline none = Interop.mkStyle "animation-fill-mode" "none"
         /// The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count).
-        static member inline forwards = Interop.mkStyle "animationFillMode" "forwards"
+        static member inline forwards = Interop.mkStyle "animation-fill-mode" "forwards"
         /// The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period
-        static member inline backwards = Interop.mkStyle "animationFillMode" "backwards"
+        static member inline backwards = Interop.mkStyle "animation-fill-mode" "backwards"
         /// The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
-        static member inline both = Interop.mkStyle "animationFillMode" "both"
+        static member inline both = Interop.mkStyle "animation-fill-mode" "both"
         /// Sets this property to its default value
-        static member inline initial = Interop.mkStyle "animationFillMode" "initial"
+        static member inline initial = Interop.mkStyle "animation-fill-mode" "initial"
         /// Inherits this property from its parent element
-        static member inline inheritFromParent = Interop.mkStyle "animationFillMode" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "animation-fill-mode" "inherit"
 
     [<Erase>]
     type backgroundRepeat =
         /// The background image is repeated both vertically and horizontally. This is default.
-        static member inline repeat = Interop.mkStyle "backgroundRepeat" "repeat"
+        static member inline repeat = Interop.mkStyle "background-repeat" "repeat"
         /// The background image is only repeated horizontally.
-        static member inline repeatX = Interop.mkStyle "backgroundRepeat" "repeat-x"
+        static member inline repeatX = Interop.mkStyle "background-repeat" "repeat-x"
         /// The background image is only repeated vertically.
-        static member inline repeatY = Interop.mkStyle "backgroundRepeat" "repeat-y"
+        static member inline repeatY = Interop.mkStyle "background-repeat" "repeat-y"
         /// The background-image is not repeated.
-        static member inline noRepeat = Interop.mkStyle "backgroundRepeat" "no-repeat"
+        static member inline noRepeat = Interop.mkStyle "background-repeat" "no-repeat"
         /// Sets this property to its default value.
-        static member inline initial = Interop.mkStyle "backgroundRepeat" "initial"
+        static member inline initial = Interop.mkStyle "background-repeat" "initial"
         /// Inherits this property from its parent element.
-        static member inline inheritFromParent = Interop.mkStyle "backgroundRepeat" "inherit"
+        static member inline inheritFromParent = Interop.mkStyle "background-repeat" "inherit"
 
     [<Erase>]
     type position =
@@ -2231,294 +2231,294 @@ module style =
 
     [<Erase; RequireQualifiedAccess>]
     type backgroundColor =
-        static member inline  indianRed = Interop.mkStyle "backgroundColor" "#CD5C5C"
-        static member inline  lightCoral = Interop.mkStyle "backgroundColor" "#F08080"
-        static member inline  salmon = Interop.mkStyle "backgroundColor" "#FA8072"
-        static member inline  darkSalmon = Interop.mkStyle "backgroundColor" "#E9967A"
-        static member inline  lightSalmon = Interop.mkStyle "backgroundColor" "#FFA07A"
-        static member inline  crimson = Interop.mkStyle "backgroundColor" "#DC143C"
-        static member inline  red = Interop.mkStyle "backgroundColor" "#FF0000"
-        static member inline  fireBrick = Interop.mkStyle "backgroundColor" "#B22222"
-        static member inline  darkred = Interop.mkStyle "backgroundColor" "#8B0000"
-        static member inline  pink = Interop.mkStyle "backgroundColor" "#FFC0CB"
-        static member inline  lightPink = Interop.mkStyle "backgroundColor" "#FFB6C1"
-        static member inline  hotPink = Interop.mkStyle "backgroundColor" "#FF69B4"
-        static member inline  deepPink = Interop.mkStyle "backgroundColor" "#FF1493"
-        static member inline  mediumVioletRed = Interop.mkStyle "backgroundColor" "#C71585"
-        static member inline  paleVioletRed = Interop.mkStyle "backgroundColor" "#DB7093"
-        static member inline  coral = Interop.mkStyle "backgroundColor" "#FF7F50"
-        static member inline  tomato = Interop.mkStyle "backgroundColor" "#FF6347"
-        static member inline  orangeRed = Interop.mkStyle "backgroundColor" "#FF4500"
-        static member inline  darkOrange = Interop.mkStyle "backgroundColor" "#FF8C00"
-        static member inline  orange = Interop.mkStyle "backgroundColor" "#FFA500"
-        static member inline  gold = Interop.mkStyle "backgroundColor" "#FFD700"
-        static member inline  yellow = Interop.mkStyle "backgroundColor" "#FFFF00"
-        static member inline  lightYellow = Interop.mkStyle "backgroundColor" "#FFFFE0"
-        static member inline  limonChiffon = Interop.mkStyle "backgroundColor" "#FFFACD"
-        static member inline  lightGoldenRodYellow = Interop.mkStyle "backgroundColor" "#FAFAD2"
-        static member inline  papayaWhip = Interop.mkStyle "backgroundColor" "#FFEFD5"
-        static member inline  moccasin = Interop.mkStyle "backgroundColor" "#FFE4B5"
-        static member inline  peachPuff = Interop.mkStyle "backgroundColor" "#FFDAB9"
-        static member inline  paleGoldenRod = Interop.mkStyle "backgroundColor" "#EEE8AA"
-        static member inline  khaki = Interop.mkStyle "backgroundColor" "#F0E68C"
-        static member inline  darkKhaki = Interop.mkStyle "backgroundColor" "#BDB76B"
-        static member inline  lavender = Interop.mkStyle "backgroundColor" "#E6E6FA"
-        static member inline  thistle = Interop.mkStyle "backgroundColor" "#D8BFD8"
-        static member inline  plum = Interop.mkStyle "backgroundColor" "#DDA0DD"
-        static member inline  violet = Interop.mkStyle "backgroundColor" "#EE82EE"
-        static member inline  orchid = Interop.mkStyle "backgroundColor" "#DA70D6"
-        static member inline  fuchsia = Interop.mkStyle "backgroundColor" "#FF00FF"
-        static member inline  magenta = Interop.mkStyle "backgroundColor" "#FF00FF"
-        static member inline  mediumOrchid = Interop.mkStyle "backgroundColor" "#BA55D3"
-        static member inline  mediumPurple = Interop.mkStyle "backgroundColor" "#9370DB"
-        static member inline  rebeccaPurple = Interop.mkStyle "backgroundColor" "#663399"
-        static member inline  blueViolet = Interop.mkStyle "backgroundColor" "#8A2BE2"
-        static member inline  darkViolet = Interop.mkStyle "backgroundColor" "#9400D3"
-        static member inline  darkOrchid = Interop.mkStyle "backgroundColor" "#9932CC"
-        static member inline  darkMagenta = Interop.mkStyle "backgroundColor" "#8B008B"
-        static member inline  purple = Interop.mkStyle "backgroundColor" "#800080"
-        static member inline  indigo = Interop.mkStyle "backgroundColor" "#4B0082"
-        static member inline  slateBlue = Interop.mkStyle "backgroundColor" "#6A5ACD"
-        static member inline  darkSlateBlue = Interop.mkStyle "backgroundColor" "#483D8B"
-        static member inline  mediumSlateBlue = Interop.mkStyle "backgroundColor" "#7B68EE"
-        static member inline  greenYellow = Interop.mkStyle "backgroundColor" "#ADFF2F"
-        static member inline  chartreuse = Interop.mkStyle "backgroundColor" "#7FFF00"
-        static member inline  lawnGreen = Interop.mkStyle "backgroundColor" "#7CFC00"
-        static member inline  lime = Interop.mkStyle "backgroundColor" "#00FF00"
-        static member inline  limeGreen = Interop.mkStyle "backgroundColor" "#32CD32"
-        static member inline  paleGreen = Interop.mkStyle "backgroundColor" "#98FB98"
-        static member inline  lightGreen = Interop.mkStyle "backgroundColor" "#90EE90"
-        static member inline  mediumSpringGreen = Interop.mkStyle "backgroundColor" "#00FA9A"
-        static member inline  springGreen = Interop.mkStyle "backgroundColor" "#00FF7F"
-        static member inline  mediumSeaGreen = Interop.mkStyle "backgroundColor" "#3CB371"
-        static member inline  seaGreen = Interop.mkStyle "backgroundColor" "#2E8B57"
-        static member inline  forestGreen = Interop.mkStyle "backgroundColor" "#228B22"
-        static member inline  green = Interop.mkStyle "backgroundColor" "#008000"
-        static member inline  darkGreen = Interop.mkStyle "backgroundColor" "#006400"
-        static member inline  yellowGreen = Interop.mkStyle "backgroundColor" "#9ACD32"
-        static member inline  oliveDrab = Interop.mkStyle "backgroundColor" "#6B8E23"
-        static member inline  olive = Interop.mkStyle "backgroundColor" "#808000"
-        static member inline  darkOliveGreen = Interop.mkStyle "backgroundColor" "#556B2F"
-        static member inline  mediumAquamarine = Interop.mkStyle "backgroundColor" "#66CDAA"
-        static member inline  darkSeaGreen = Interop.mkStyle "backgroundColor" "#8FBC8B"
-        static member inline  lightSeaGreen = Interop.mkStyle "backgroundColor" "#20B2AA"
-        static member inline  darkCyan = Interop.mkStyle "backgroundColor" "#008B8B"
-        static member inline  teal = Interop.mkStyle "backgroundColor" "#008080"
-        static member inline  aqua = Interop.mkStyle "backgroundColor" "#00FFFF"
-        static member inline  cyan = Interop.mkStyle "backgroundColor" "#00FFFF"
-        static member inline  lightCyan = Interop.mkStyle "backgroundColor" "#E0FFFF"
-        static member inline  paleTurqouise = Interop.mkStyle "backgroundColor" "#AFEEEE"
-        static member inline  aquaMarine = Interop.mkStyle "backgroundColor" "#7FFFD4"
-        static member inline  turqouise = Interop.mkStyle "backgroundColor" "#AFEEEE"
-        static member inline  mediumTurqouise = Interop.mkStyle "backgroundColor" "#48D1CC"
-        static member inline  darkTurqouise = Interop.mkStyle "backgroundColor" "#00CED1"
-        static member inline  cadetBlue = Interop.mkStyle "backgroundColor" "#5F9EA0"
-        static member inline  steelBlue = Interop.mkStyle "backgroundColor" "#4682B4"
-        static member inline  lightSteelBlue = Interop.mkStyle "backgroundColor" "#B0C4DE"
-        static member inline  powederBlue = Interop.mkStyle "backgroundColor" "#B0E0E6"
-        static member inline  lightBlue = Interop.mkStyle "backgroundColor" "#ADD8E6"
-        static member inline  skyBlue = Interop.mkStyle "backgroundColor" "#87CEEB"
-        static member inline  lightSkyBlue = Interop.mkStyle "backgroundColor" "#87CEFA"
-        static member inline  deepSkyBlue = Interop.mkStyle "backgroundColor" "#00BFFF"
-        static member inline  dodgerBlue = Interop.mkStyle "backgroundColor" "#1E90FF"
-        static member inline  cornFlowerBlue = Interop.mkStyle "backgroundColor" "#6495ED"
-        static member inline  royalBlue = Interop.mkStyle "backgroundColor" "#4169E1"
-        static member inline  blue = Interop.mkStyle "backgroundColor" "#0000FF"
-        static member inline  mediumBlue = Interop.mkStyle "backgroundColor" "#0000CD"
-        static member inline  darkBlue = Interop.mkStyle "backgroundColor" "#00008B"
-        static member inline  navy = Interop.mkStyle "backgroundColor" "#000080"
-        static member inline  midnightBlue = Interop.mkStyle "backgroundColor" "#191970"
-        static member inline  cornSilk = Interop.mkStyle "backgroundColor" "#FFF8DC"
-        static member inline  blanchedAlmond = Interop.mkStyle "backgroundColor" "#FFEBCD"
-        static member inline  bisque = Interop.mkStyle "backgroundColor" "#FFE4C4"
-        static member inline  navajoWhite = Interop.mkStyle "backgroundColor" "#FFDEAD"
-        static member inline  wheat = Interop.mkStyle "backgroundColor" "#F5DEB3"
-        static member inline  burlyWood = Interop.mkStyle "backgroundColor" "#DEB887"
-        static member inline  tan = Interop.mkStyle "backgroundColor" "#D2B48C"
-        static member inline  rosyBrown = Interop.mkStyle "backgroundColor" "#BC8F8F"
-        static member inline  sandyBrown = Interop.mkStyle "backgroundColor" "#F4A460"
-        static member inline  goldenRod = Interop.mkStyle "backgroundColor" "#DAA520"
-        static member inline  darkGoldenRod = Interop.mkStyle "backgroundColor" "#B8860B"
-        static member inline  peru = Interop.mkStyle "backgroundColor" "#CD853F"
-        static member inline  chocolate = Interop.mkStyle "backgroundColor" "#D2691E"
-        static member inline  saddleBrown = Interop.mkStyle "backgroundColor" "#8B4513"
-        static member inline  sienna = Interop.mkStyle "backgroundColor" "#A0522D"
-        static member inline  brown = Interop.mkStyle "backgroundColor" "#A52A2A"
-        static member inline  maroon = Interop.mkStyle "backgroundColor" "#A52A2A"
-        static member inline  white = Interop.mkStyle "backgroundColor" "#FFFFFF"
-        static member inline  snow = Interop.mkStyle "backgroundColor" "#FFFAFA"
-        static member inline  honeyDew = Interop.mkStyle "backgroundColor" "#F0FFF0"
-        static member inline  mintCream = Interop.mkStyle "backgroundColor" "#F5FFFA"
-        static member inline  azure = Interop.mkStyle "backgroundColor" "#F0FFFF"
-        static member inline  aliceBlue = Interop.mkStyle "backgroundColor" "#F0F8FF"
-        static member inline  ghostWhite = Interop.mkStyle "backgroundColor" "#F8F8FF"
-        static member inline  whiteSmoke = Interop.mkStyle "backgroundColor" "#F5F5F5"
-        static member inline  seaShell = Interop.mkStyle "backgroundColor" "#FFF5EE"
-        static member inline  beige = Interop.mkStyle "backgroundColor" "#F5F5DC"
-        static member inline  oldLace = Interop.mkStyle "backgroundColor" "#FDF5E6"
-        static member inline  floralWhite = Interop.mkStyle "backgroundColor" "#FFFAF0"
-        static member inline  ivory = Interop.mkStyle "backgroundColor" "#FFFFF0"
-        static member inline  antiqueWhite = Interop.mkStyle "backgroundColor" "#FAEBD7"
-        static member inline  linen = Interop.mkStyle "backgroundColor" "#FAF0E6"
-        static member inline  lavenderBlush = Interop.mkStyle "backgroundColor" "#FFF0F5"
-        static member inline  mistyRose = Interop.mkStyle "backgroundColor" "#FFE4E1"
-        static member inline  gainsBoro = Interop.mkStyle "backgroundColor" "#DCDCDC"
-        static member inline  lightGray = Interop.mkStyle "backgroundColor" "#D3D3D3"
-        static member inline  silver = Interop.mkStyle "backgroundColor" "#C0C0C0"
-        static member inline  darkGray = Interop.mkStyle "backgroundColor" "#A9A9A9"
-        static member inline  gray = Interop.mkStyle "backgroundColor" "#808080"
-        static member inline  dimGray = Interop.mkStyle "backgroundColor" "#696969"
-        static member inline  lightSlateGray = Interop.mkStyle "backgroundColor" "#778899"
-        static member inline  slateGray = Interop.mkStyle "backgroundColor" "#708090"
-        static member inline  darkSlateGray = Interop.mkStyle "backgroundColor" "#2F4F4F"
-        static member inline  black = Interop.mkStyle "backgroundColor" "#000000"
-        static member inline  transparent = Interop.mkStyle "backgroundColor" "transparent"
+        static member inline  indianRed = Interop.mkStyle "background-color" "#CD5C5C"
+        static member inline  lightCoral = Interop.mkStyle "background-color" "#F08080"
+        static member inline  salmon = Interop.mkStyle "background-color" "#FA8072"
+        static member inline  darkSalmon = Interop.mkStyle "background-color" "#E9967A"
+        static member inline  lightSalmon = Interop.mkStyle "background-color" "#FFA07A"
+        static member inline  crimson = Interop.mkStyle "background-color" "#DC143C"
+        static member inline  red = Interop.mkStyle "background-color" "#FF0000"
+        static member inline  fireBrick = Interop.mkStyle "background-color" "#B22222"
+        static member inline  darkred = Interop.mkStyle "background-color" "#8B0000"
+        static member inline  pink = Interop.mkStyle "background-color" "#FFC0CB"
+        static member inline  lightPink = Interop.mkStyle "background-color" "#FFB6C1"
+        static member inline  hotPink = Interop.mkStyle "background-color" "#FF69B4"
+        static member inline  deepPink = Interop.mkStyle "background-color" "#FF1493"
+        static member inline  mediumVioletRed = Interop.mkStyle "background-color" "#C71585"
+        static member inline  paleVioletRed = Interop.mkStyle "background-color" "#DB7093"
+        static member inline  coral = Interop.mkStyle "background-color" "#FF7F50"
+        static member inline  tomato = Interop.mkStyle "background-color" "#FF6347"
+        static member inline  orangeRed = Interop.mkStyle "background-color" "#FF4500"
+        static member inline  darkOrange = Interop.mkStyle "background-color" "#FF8C00"
+        static member inline  orange = Interop.mkStyle "background-color" "#FFA500"
+        static member inline  gold = Interop.mkStyle "background-color" "#FFD700"
+        static member inline  yellow = Interop.mkStyle "background-color" "#FFFF00"
+        static member inline  lightYellow = Interop.mkStyle "background-color" "#FFFFE0"
+        static member inline  limonChiffon = Interop.mkStyle "background-color" "#FFFACD"
+        static member inline  lightGoldenRodYellow = Interop.mkStyle "background-color" "#FAFAD2"
+        static member inline  papayaWhip = Interop.mkStyle "background-color" "#FFEFD5"
+        static member inline  moccasin = Interop.mkStyle "background-color" "#FFE4B5"
+        static member inline  peachPuff = Interop.mkStyle "background-color" "#FFDAB9"
+        static member inline  paleGoldenRod = Interop.mkStyle "background-color" "#EEE8AA"
+        static member inline  khaki = Interop.mkStyle "background-color" "#F0E68C"
+        static member inline  darkKhaki = Interop.mkStyle "background-color" "#BDB76B"
+        static member inline  lavender = Interop.mkStyle "background-color" "#E6E6FA"
+        static member inline  thistle = Interop.mkStyle "background-color" "#D8BFD8"
+        static member inline  plum = Interop.mkStyle "background-color" "#DDA0DD"
+        static member inline  violet = Interop.mkStyle "background-color" "#EE82EE"
+        static member inline  orchid = Interop.mkStyle "background-color" "#DA70D6"
+        static member inline  fuchsia = Interop.mkStyle "background-color" "#FF00FF"
+        static member inline  magenta = Interop.mkStyle "background-color" "#FF00FF"
+        static member inline  mediumOrchid = Interop.mkStyle "background-color" "#BA55D3"
+        static member inline  mediumPurple = Interop.mkStyle "background-color" "#9370DB"
+        static member inline  rebeccaPurple = Interop.mkStyle "background-color" "#663399"
+        static member inline  blueViolet = Interop.mkStyle "background-color" "#8A2BE2"
+        static member inline  darkViolet = Interop.mkStyle "background-color" "#9400D3"
+        static member inline  darkOrchid = Interop.mkStyle "background-color" "#9932CC"
+        static member inline  darkMagenta = Interop.mkStyle "background-color" "#8B008B"
+        static member inline  purple = Interop.mkStyle "background-color" "#800080"
+        static member inline  indigo = Interop.mkStyle "background-color" "#4B0082"
+        static member inline  slateBlue = Interop.mkStyle "background-color" "#6A5ACD"
+        static member inline  darkSlateBlue = Interop.mkStyle "background-color" "#483D8B"
+        static member inline  mediumSlateBlue = Interop.mkStyle "background-color" "#7B68EE"
+        static member inline  greenYellow = Interop.mkStyle "background-color" "#ADFF2F"
+        static member inline  chartreuse = Interop.mkStyle "background-color" "#7FFF00"
+        static member inline  lawnGreen = Interop.mkStyle "background-color" "#7CFC00"
+        static member inline  lime = Interop.mkStyle "background-color" "#00FF00"
+        static member inline  limeGreen = Interop.mkStyle "background-color" "#32CD32"
+        static member inline  paleGreen = Interop.mkStyle "background-color" "#98FB98"
+        static member inline  lightGreen = Interop.mkStyle "background-color" "#90EE90"
+        static member inline  mediumSpringGreen = Interop.mkStyle "background-color" "#00FA9A"
+        static member inline  springGreen = Interop.mkStyle "background-color" "#00FF7F"
+        static member inline  mediumSeaGreen = Interop.mkStyle "background-color" "#3CB371"
+        static member inline  seaGreen = Interop.mkStyle "background-color" "#2E8B57"
+        static member inline  forestGreen = Interop.mkStyle "background-color" "#228B22"
+        static member inline  green = Interop.mkStyle "background-color" "#008000"
+        static member inline  darkGreen = Interop.mkStyle "background-color" "#006400"
+        static member inline  yellowGreen = Interop.mkStyle "background-color" "#9ACD32"
+        static member inline  oliveDrab = Interop.mkStyle "background-color" "#6B8E23"
+        static member inline  olive = Interop.mkStyle "background-color" "#808000"
+        static member inline  darkOliveGreen = Interop.mkStyle "background-color" "#556B2F"
+        static member inline  mediumAquamarine = Interop.mkStyle "background-color" "#66CDAA"
+        static member inline  darkSeaGreen = Interop.mkStyle "background-color" "#8FBC8B"
+        static member inline  lightSeaGreen = Interop.mkStyle "background-color" "#20B2AA"
+        static member inline  darkCyan = Interop.mkStyle "background-color" "#008B8B"
+        static member inline  teal = Interop.mkStyle "background-color" "#008080"
+        static member inline  aqua = Interop.mkStyle "background-color" "#00FFFF"
+        static member inline  cyan = Interop.mkStyle "background-color" "#00FFFF"
+        static member inline  lightCyan = Interop.mkStyle "background-color" "#E0FFFF"
+        static member inline  paleTurqouise = Interop.mkStyle "background-color" "#AFEEEE"
+        static member inline  aquaMarine = Interop.mkStyle "background-color" "#7FFFD4"
+        static member inline  turqouise = Interop.mkStyle "background-color" "#AFEEEE"
+        static member inline  mediumTurqouise = Interop.mkStyle "background-color" "#48D1CC"
+        static member inline  darkTurqouise = Interop.mkStyle "background-color" "#00CED1"
+        static member inline  cadetBlue = Interop.mkStyle "background-color" "#5F9EA0"
+        static member inline  steelBlue = Interop.mkStyle "background-color" "#4682B4"
+        static member inline  lightSteelBlue = Interop.mkStyle "background-color" "#B0C4DE"
+        static member inline  powederBlue = Interop.mkStyle "background-color" "#B0E0E6"
+        static member inline  lightBlue = Interop.mkStyle "background-color" "#ADD8E6"
+        static member inline  skyBlue = Interop.mkStyle "background-color" "#87CEEB"
+        static member inline  lightSkyBlue = Interop.mkStyle "background-color" "#87CEFA"
+        static member inline  deepSkyBlue = Interop.mkStyle "background-color" "#00BFFF"
+        static member inline  dodgerBlue = Interop.mkStyle "background-color" "#1E90FF"
+        static member inline  cornFlowerBlue = Interop.mkStyle "background-color" "#6495ED"
+        static member inline  royalBlue = Interop.mkStyle "background-color" "#4169E1"
+        static member inline  blue = Interop.mkStyle "background-color" "#0000FF"
+        static member inline  mediumBlue = Interop.mkStyle "background-color" "#0000CD"
+        static member inline  darkBlue = Interop.mkStyle "background-color" "#00008B"
+        static member inline  navy = Interop.mkStyle "background-color" "#000080"
+        static member inline  midnightBlue = Interop.mkStyle "background-color" "#191970"
+        static member inline  cornSilk = Interop.mkStyle "background-color" "#FFF8DC"
+        static member inline  blanchedAlmond = Interop.mkStyle "background-color" "#FFEBCD"
+        static member inline  bisque = Interop.mkStyle "background-color" "#FFE4C4"
+        static member inline  navajoWhite = Interop.mkStyle "background-color" "#FFDEAD"
+        static member inline  wheat = Interop.mkStyle "background-color" "#F5DEB3"
+        static member inline  burlyWood = Interop.mkStyle "background-color" "#DEB887"
+        static member inline  tan = Interop.mkStyle "background-color" "#D2B48C"
+        static member inline  rosyBrown = Interop.mkStyle "background-color" "#BC8F8F"
+        static member inline  sandyBrown = Interop.mkStyle "background-color" "#F4A460"
+        static member inline  goldenRod = Interop.mkStyle "background-color" "#DAA520"
+        static member inline  darkGoldenRod = Interop.mkStyle "background-color" "#B8860B"
+        static member inline  peru = Interop.mkStyle "background-color" "#CD853F"
+        static member inline  chocolate = Interop.mkStyle "background-color" "#D2691E"
+        static member inline  saddleBrown = Interop.mkStyle "background-color" "#8B4513"
+        static member inline  sienna = Interop.mkStyle "background-color" "#A0522D"
+        static member inline  brown = Interop.mkStyle "background-color" "#A52A2A"
+        static member inline  maroon = Interop.mkStyle "background-color" "#A52A2A"
+        static member inline  white = Interop.mkStyle "background-color" "#FFFFFF"
+        static member inline  snow = Interop.mkStyle "background-color" "#FFFAFA"
+        static member inline  honeyDew = Interop.mkStyle "background-color" "#F0FFF0"
+        static member inline  mintCream = Interop.mkStyle "background-color" "#F5FFFA"
+        static member inline  azure = Interop.mkStyle "background-color" "#F0FFFF"
+        static member inline  aliceBlue = Interop.mkStyle "background-color" "#F0F8FF"
+        static member inline  ghostWhite = Interop.mkStyle "background-color" "#F8F8FF"
+        static member inline  whiteSmoke = Interop.mkStyle "background-color" "#F5F5F5"
+        static member inline  seaShell = Interop.mkStyle "background-color" "#FFF5EE"
+        static member inline  beige = Interop.mkStyle "background-color" "#F5F5DC"
+        static member inline  oldLace = Interop.mkStyle "background-color" "#FDF5E6"
+        static member inline  floralWhite = Interop.mkStyle "background-color" "#FFFAF0"
+        static member inline  ivory = Interop.mkStyle "background-color" "#FFFFF0"
+        static member inline  antiqueWhite = Interop.mkStyle "background-color" "#FAEBD7"
+        static member inline  linen = Interop.mkStyle "background-color" "#FAF0E6"
+        static member inline  lavenderBlush = Interop.mkStyle "background-color" "#FFF0F5"
+        static member inline  mistyRose = Interop.mkStyle "background-color" "#FFE4E1"
+        static member inline  gainsBoro = Interop.mkStyle "background-color" "#DCDCDC"
+        static member inline  lightGray = Interop.mkStyle "background-color" "#D3D3D3"
+        static member inline  silver = Interop.mkStyle "background-color" "#C0C0C0"
+        static member inline  darkGray = Interop.mkStyle "background-color" "#A9A9A9"
+        static member inline  gray = Interop.mkStyle "background-color" "#808080"
+        static member inline  dimGray = Interop.mkStyle "background-color" "#696969"
+        static member inline  lightSlateGray = Interop.mkStyle "background-color" "#778899"
+        static member inline  slateGray = Interop.mkStyle "background-color" "#708090"
+        static member inline  darkSlateGray = Interop.mkStyle "background-color" "#2F4F4F"
+        static member inline  black = Interop.mkStyle "background-color" "#000000"
+        static member inline  transparent = Interop.mkStyle "background-color" "transparent"
 
 
     [<Erase; RequireQualifiedAccess>]
     type borderColor =
-        static member inline  indianRed = Interop.mkStyle "borderColor" "#CD5C5C"
-        static member inline  lightCoral = Interop.mkStyle "borderColor" "#F08080"
-        static member inline  salmon = Interop.mkStyle "borderColor" "#FA8072"
-        static member inline  darkSalmon = Interop.mkStyle "borderColor" "#E9967A"
-        static member inline  lightSalmon = Interop.mkStyle "borderColor" "#FFA07A"
-        static member inline  crimson = Interop.mkStyle "borderColor" "#DC143C"
-        static member inline  red = Interop.mkStyle "borderColor" "#FF0000"
-        static member inline  fireBrick = Interop.mkStyle "borderColor" "#B22222"
-        static member inline  darkred = Interop.mkStyle "borderColor" "#8B0000"
-        static member inline  pink = Interop.mkStyle "borderColor" "#FFC0CB"
-        static member inline  lightPink = Interop.mkStyle "borderColor" "#FFB6C1"
-        static member inline  hotPink = Interop.mkStyle "borderColor" "#FF69B4"
-        static member inline  deepPink = Interop.mkStyle "borderColor" "#FF1493"
-        static member inline  mediumVioletRed = Interop.mkStyle "borderColor" "#C71585"
-        static member inline  paleVioletRed = Interop.mkStyle "borderColor" "#DB7093"
-        static member inline  coral = Interop.mkStyle "borderColor" "#FF7F50"
-        static member inline  tomato = Interop.mkStyle "borderColor" "#FF6347"
-        static member inline  orangeRed = Interop.mkStyle "borderColor" "#FF4500"
-        static member inline  darkOrange = Interop.mkStyle "borderColor" "#FF8C00"
-        static member inline  orange = Interop.mkStyle "borderColor" "#FFA500"
-        static member inline  gold = Interop.mkStyle "borderColor" "#FFD700"
-        static member inline  yellow = Interop.mkStyle "borderColor" "#FFFF00"
-        static member inline  lightYellow = Interop.mkStyle "borderColor" "#FFFFE0"
-        static member inline  limonChiffon = Interop.mkStyle "borderColor" "#FFFACD"
-        static member inline  lightGoldenRodYellow = Interop.mkStyle "borderColor" "#FAFAD2"
-        static member inline  papayaWhip = Interop.mkStyle "borderColor" "#FFEFD5"
-        static member inline  moccasin = Interop.mkStyle "borderColor" "#FFE4B5"
-        static member inline  peachPuff = Interop.mkStyle "borderColor" "#FFDAB9"
-        static member inline  paleGoldenRod = Interop.mkStyle "borderColor" "#EEE8AA"
-        static member inline  khaki = Interop.mkStyle "borderColor" "#F0E68C"
-        static member inline  darkKhaki = Interop.mkStyle "borderColor" "#BDB76B"
-        static member inline  lavender = Interop.mkStyle "borderColor" "#E6E6FA"
-        static member inline  thistle = Interop.mkStyle "borderColor" "#D8BFD8"
-        static member inline  plum = Interop.mkStyle "borderColor" "#DDA0DD"
-        static member inline  violet = Interop.mkStyle "borderColor" "#EE82EE"
-        static member inline  orchid = Interop.mkStyle "borderColor" "#DA70D6"
-        static member inline  fuchsia = Interop.mkStyle "borderColor" "#FF00FF"
-        static member inline  magenta = Interop.mkStyle "borderColor" "#FF00FF"
-        static member inline  mediumOrchid = Interop.mkStyle "borderColor" "#BA55D3"
-        static member inline  mediumPurple = Interop.mkStyle "borderColor" "#9370DB"
-        static member inline  rebeccaPurple = Interop.mkStyle "borderColor" "#663399"
-        static member inline  blueViolet = Interop.mkStyle "borderColor" "#8A2BE2"
-        static member inline  darkViolet = Interop.mkStyle "borderColor" "#9400D3"
-        static member inline  darkOrchid = Interop.mkStyle "borderColor" "#9932CC"
-        static member inline  darkMagenta = Interop.mkStyle "borderColor" "#8B008B"
-        static member inline  purple = Interop.mkStyle "borderColor" "#800080"
-        static member inline  indigo = Interop.mkStyle "borderColor" "#4B0082"
-        static member inline  slateBlue = Interop.mkStyle "borderColor" "#6A5ACD"
-        static member inline  darkSlateBlue = Interop.mkStyle "borderColor" "#483D8B"
-        static member inline  mediumSlateBlue = Interop.mkStyle "borderColor" "#7B68EE"
-        static member inline  greenYellow = Interop.mkStyle "borderColor" "#ADFF2F"
-        static member inline  chartreuse = Interop.mkStyle "borderColor" "#7FFF00"
-        static member inline  lawnGreen = Interop.mkStyle "borderColor" "#7CFC00"
-        static member inline  lime = Interop.mkStyle "borderColor" "#00FF00"
-        static member inline  limeGreen = Interop.mkStyle "borderColor" "#32CD32"
-        static member inline  paleGreen = Interop.mkStyle "borderColor" "#98FB98"
-        static member inline  lightGreen = Interop.mkStyle "borderColor" "#90EE90"
-        static member inline  mediumSpringGreen = Interop.mkStyle "borderColor" "#00FA9A"
-        static member inline  springGreen = Interop.mkStyle "borderColor" "#00FF7F"
-        static member inline  mediumSeaGreen = Interop.mkStyle "borderColor" "#3CB371"
-        static member inline  seaGreen = Interop.mkStyle "borderColor" "#2E8B57"
-        static member inline  forestGreen = Interop.mkStyle "borderColor" "#228B22"
-        static member inline  green = Interop.mkStyle "borderColor" "#008000"
-        static member inline  darkGreen = Interop.mkStyle "borderColor" "#006400"
-        static member inline  yellowGreen = Interop.mkStyle "borderColor" "#9ACD32"
-        static member inline  oliveDrab = Interop.mkStyle "borderColor" "#6B8E23"
-        static member inline  olive = Interop.mkStyle "borderColor" "#808000"
-        static member inline  darkOliveGreen = Interop.mkStyle "borderColor" "#556B2F"
-        static member inline  mediumAquamarine = Interop.mkStyle "borderColor" "#66CDAA"
-        static member inline  darkSeaGreen = Interop.mkStyle "borderColor" "#8FBC8B"
-        static member inline  lightSeaGreen = Interop.mkStyle "borderColor" "#20B2AA"
-        static member inline  darkCyan = Interop.mkStyle "borderColor" "#008B8B"
-        static member inline  teal = Interop.mkStyle "borderColor" "#008080"
-        static member inline  aqua = Interop.mkStyle "borderColor" "#00FFFF"
-        static member inline  cyan = Interop.mkStyle "borderColor" "#00FFFF"
-        static member inline  lightCyan = Interop.mkStyle "borderColor" "#E0FFFF"
-        static member inline  paleTurqouise = Interop.mkStyle "borderColor" "#AFEEEE"
-        static member inline  aquaMarine = Interop.mkStyle "borderColor" "#7FFFD4"
-        static member inline  turqouise = Interop.mkStyle "borderColor" "#AFEEEE"
-        static member inline  mediumTurqouise = Interop.mkStyle "borderColor" "#48D1CC"
-        static member inline  darkTurqouise = Interop.mkStyle "borderColor" "#00CED1"
-        static member inline  cadetBlue = Interop.mkStyle "borderColor" "#5F9EA0"
-        static member inline  steelBlue = Interop.mkStyle "borderColor" "#4682B4"
-        static member inline  lightSteelBlue = Interop.mkStyle "borderColor" "#B0C4DE"
-        static member inline  powederBlue = Interop.mkStyle "borderColor" "#B0E0E6"
-        static member inline  lightBlue = Interop.mkStyle "borderColor" "#ADD8E6"
-        static member inline  skyBlue = Interop.mkStyle "borderColor" "#87CEEB"
-        static member inline  lightSkyBlue = Interop.mkStyle "borderColor" "#87CEFA"
-        static member inline  deepSkyBlue = Interop.mkStyle "borderColor" "#00BFFF"
-        static member inline  dodgerBlue = Interop.mkStyle "borderColor" "#1E90FF"
-        static member inline  cornFlowerBlue = Interop.mkStyle "borderColor" "#6495ED"
-        static member inline  royalBlue = Interop.mkStyle "borderColor" "#4169E1"
-        static member inline  blue = Interop.mkStyle "borderColor" "#0000FF"
-        static member inline  mediumBlue = Interop.mkStyle "borderColor" "#0000CD"
-        static member inline  darkBlue = Interop.mkStyle "borderColor" "#00008B"
-        static member inline  navy = Interop.mkStyle "borderColor" "#000080"
-        static member inline  midnightBlue = Interop.mkStyle "borderColor" "#191970"
-        static member inline  cornSilk = Interop.mkStyle "borderColor" "#FFF8DC"
-        static member inline  blanchedAlmond = Interop.mkStyle "borderColor" "#FFEBCD"
-        static member inline  bisque = Interop.mkStyle "borderColor" "#FFE4C4"
-        static member inline  navajoWhite = Interop.mkStyle "borderColor" "#FFDEAD"
-        static member inline  wheat = Interop.mkStyle "borderColor" "#F5DEB3"
-        static member inline  burlyWood = Interop.mkStyle "borderColor" "#DEB887"
-        static member inline  tan = Interop.mkStyle "borderColor" "#D2B48C"
-        static member inline  rosyBrown = Interop.mkStyle "borderColor" "#BC8F8F"
-        static member inline  sandyBrown = Interop.mkStyle "borderColor" "#F4A460"
-        static member inline  goldenRod = Interop.mkStyle "borderColor" "#DAA520"
-        static member inline  darkGoldenRod = Interop.mkStyle "borderColor" "#B8860B"
-        static member inline  peru = Interop.mkStyle "borderColor" "#CD853F"
-        static member inline  chocolate = Interop.mkStyle "borderColor" "#D2691E"
-        static member inline  saddleBrown = Interop.mkStyle "borderColor" "#8B4513"
-        static member inline  sienna = Interop.mkStyle "borderColor" "#A0522D"
-        static member inline  brown = Interop.mkStyle "borderColor" "#A52A2A"
-        static member inline  maroon = Interop.mkStyle "borderColor" "#A52A2A"
-        static member inline  white = Interop.mkStyle "borderColor" "#FFFFFF"
-        static member inline  snow = Interop.mkStyle "borderColor" "#FFFAFA"
-        static member inline  honeyDew = Interop.mkStyle "borderColor" "#F0FFF0"
-        static member inline  mintCream = Interop.mkStyle "borderColor" "#F5FFFA"
-        static member inline  azure = Interop.mkStyle "borderColor" "#F0FFFF"
-        static member inline  aliceBlue = Interop.mkStyle "borderColor" "#F0F8FF"
-        static member inline  ghostWhite = Interop.mkStyle "borderColor" "#F8F8FF"
-        static member inline  whiteSmoke = Interop.mkStyle "borderColor" "#F5F5F5"
-        static member inline  seaShell = Interop.mkStyle "borderColor" "#FFF5EE"
-        static member inline  beige = Interop.mkStyle "borderColor" "#F5F5DC"
-        static member inline  oldLace = Interop.mkStyle "borderColor" "#FDF5E6"
-        static member inline  floralWhite = Interop.mkStyle "borderColor" "#FFFAF0"
-        static member inline  ivory = Interop.mkStyle "borderColor" "#FFFFF0"
-        static member inline  antiqueWhite = Interop.mkStyle "borderColor" "#FAEBD7"
-        static member inline  linen = Interop.mkStyle "borderColor" "#FAF0E6"
-        static member inline  lavenderBlush = Interop.mkStyle "borderColor" "#FFF0F5"
-        static member inline  mistyRose = Interop.mkStyle "borderColor" "#FFE4E1"
-        static member inline  gainsBoro = Interop.mkStyle "borderColor" "#DCDCDC"
-        static member inline  lightGray = Interop.mkStyle "borderColor" "#D3D3D3"
-        static member inline  silver = Interop.mkStyle "borderColor" "#C0C0C0"
-        static member inline  darkGray = Interop.mkStyle "borderColor" "#A9A9A9"
-        static member inline  gray = Interop.mkStyle "borderColor" "#808080"
-        static member inline  dimGray = Interop.mkStyle "borderColor" "#696969"
-        static member inline  lightSlateGray = Interop.mkStyle "borderColor" "#778899"
-        static member inline  slateGray = Interop.mkStyle "borderColor" "#708090"
-        static member inline  darkSlateGray = Interop.mkStyle "borderColor" "#2F4F4F"
-        static member inline  black = Interop.mkStyle "borderColor" "#000000"
-        static member inline  transparent = Interop.mkStyle "borderColor" "transparent"
+        static member inline  indianRed = Interop.mkStyle "border-color" "#CD5C5C"
+        static member inline  lightCoral = Interop.mkStyle "border-color" "#F08080"
+        static member inline  salmon = Interop.mkStyle "border-color" "#FA8072"
+        static member inline  darkSalmon = Interop.mkStyle "border-color" "#E9967A"
+        static member inline  lightSalmon = Interop.mkStyle "border-color" "#FFA07A"
+        static member inline  crimson = Interop.mkStyle "border-color" "#DC143C"
+        static member inline  red = Interop.mkStyle "border-color" "#FF0000"
+        static member inline  fireBrick = Interop.mkStyle "border-color" "#B22222"
+        static member inline  darkred = Interop.mkStyle "border-color" "#8B0000"
+        static member inline  pink = Interop.mkStyle "border-color" "#FFC0CB"
+        static member inline  lightPink = Interop.mkStyle "border-color" "#FFB6C1"
+        static member inline  hotPink = Interop.mkStyle "border-color" "#FF69B4"
+        static member inline  deepPink = Interop.mkStyle "border-color" "#FF1493"
+        static member inline  mediumVioletRed = Interop.mkStyle "border-color" "#C71585"
+        static member inline  paleVioletRed = Interop.mkStyle "border-color" "#DB7093"
+        static member inline  coral = Interop.mkStyle "border-color" "#FF7F50"
+        static member inline  tomato = Interop.mkStyle "border-color" "#FF6347"
+        static member inline  orangeRed = Interop.mkStyle "border-color" "#FF4500"
+        static member inline  darkOrange = Interop.mkStyle "border-color" "#FF8C00"
+        static member inline  orange = Interop.mkStyle "border-color" "#FFA500"
+        static member inline  gold = Interop.mkStyle "border-color" "#FFD700"
+        static member inline  yellow = Interop.mkStyle "border-color" "#FFFF00"
+        static member inline  lightYellow = Interop.mkStyle "border-color" "#FFFFE0"
+        static member inline  limonChiffon = Interop.mkStyle "border-color" "#FFFACD"
+        static member inline  lightGoldenRodYellow = Interop.mkStyle "border-color" "#FAFAD2"
+        static member inline  papayaWhip = Interop.mkStyle "border-color" "#FFEFD5"
+        static member inline  moccasin = Interop.mkStyle "border-color" "#FFE4B5"
+        static member inline  peachPuff = Interop.mkStyle "border-color" "#FFDAB9"
+        static member inline  paleGoldenRod = Interop.mkStyle "border-color" "#EEE8AA"
+        static member inline  khaki = Interop.mkStyle "border-color" "#F0E68C"
+        static member inline  darkKhaki = Interop.mkStyle "border-color" "#BDB76B"
+        static member inline  lavender = Interop.mkStyle "border-color" "#E6E6FA"
+        static member inline  thistle = Interop.mkStyle "border-color" "#D8BFD8"
+        static member inline  plum = Interop.mkStyle "border-color" "#DDA0DD"
+        static member inline  violet = Interop.mkStyle "border-color" "#EE82EE"
+        static member inline  orchid = Interop.mkStyle "border-color" "#DA70D6"
+        static member inline  fuchsia = Interop.mkStyle "border-color" "#FF00FF"
+        static member inline  magenta = Interop.mkStyle "border-color" "#FF00FF"
+        static member inline  mediumOrchid = Interop.mkStyle "border-color" "#BA55D3"
+        static member inline  mediumPurple = Interop.mkStyle "border-color" "#9370DB"
+        static member inline  rebeccaPurple = Interop.mkStyle "border-color" "#663399"
+        static member inline  blueViolet = Interop.mkStyle "border-color" "#8A2BE2"
+        static member inline  darkViolet = Interop.mkStyle "border-color" "#9400D3"
+        static member inline  darkOrchid = Interop.mkStyle "border-color" "#9932CC"
+        static member inline  darkMagenta = Interop.mkStyle "border-color" "#8B008B"
+        static member inline  purple = Interop.mkStyle "border-color" "#800080"
+        static member inline  indigo = Interop.mkStyle "border-color" "#4B0082"
+        static member inline  slateBlue = Interop.mkStyle "border-color" "#6A5ACD"
+        static member inline  darkSlateBlue = Interop.mkStyle "border-color" "#483D8B"
+        static member inline  mediumSlateBlue = Interop.mkStyle "border-color" "#7B68EE"
+        static member inline  greenYellow = Interop.mkStyle "border-color" "#ADFF2F"
+        static member inline  chartreuse = Interop.mkStyle "border-color" "#7FFF00"
+        static member inline  lawnGreen = Interop.mkStyle "border-color" "#7CFC00"
+        static member inline  lime = Interop.mkStyle "border-color" "#00FF00"
+        static member inline  limeGreen = Interop.mkStyle "border-color" "#32CD32"
+        static member inline  paleGreen = Interop.mkStyle "border-color" "#98FB98"
+        static member inline  lightGreen = Interop.mkStyle "border-color" "#90EE90"
+        static member inline  mediumSpringGreen = Interop.mkStyle "border-color" "#00FA9A"
+        static member inline  springGreen = Interop.mkStyle "border-color" "#00FF7F"
+        static member inline  mediumSeaGreen = Interop.mkStyle "border-color" "#3CB371"
+        static member inline  seaGreen = Interop.mkStyle "border-color" "#2E8B57"
+        static member inline  forestGreen = Interop.mkStyle "border-color" "#228B22"
+        static member inline  green = Interop.mkStyle "border-color" "#008000"
+        static member inline  darkGreen = Interop.mkStyle "border-color" "#006400"
+        static member inline  yellowGreen = Interop.mkStyle "border-color" "#9ACD32"
+        static member inline  oliveDrab = Interop.mkStyle "border-color" "#6B8E23"
+        static member inline  olive = Interop.mkStyle "border-color" "#808000"
+        static member inline  darkOliveGreen = Interop.mkStyle "border-color" "#556B2F"
+        static member inline  mediumAquamarine = Interop.mkStyle "border-color" "#66CDAA"
+        static member inline  darkSeaGreen = Interop.mkStyle "border-color" "#8FBC8B"
+        static member inline  lightSeaGreen = Interop.mkStyle "border-color" "#20B2AA"
+        static member inline  darkCyan = Interop.mkStyle "border-color" "#008B8B"
+        static member inline  teal = Interop.mkStyle "border-color" "#008080"
+        static member inline  aqua = Interop.mkStyle "border-color" "#00FFFF"
+        static member inline  cyan = Interop.mkStyle "border-color" "#00FFFF"
+        static member inline  lightCyan = Interop.mkStyle "border-color" "#E0FFFF"
+        static member inline  paleTurqouise = Interop.mkStyle "border-color" "#AFEEEE"
+        static member inline  aquaMarine = Interop.mkStyle "border-color" "#7FFFD4"
+        static member inline  turqouise = Interop.mkStyle "border-color" "#AFEEEE"
+        static member inline  mediumTurqouise = Interop.mkStyle "border-color" "#48D1CC"
+        static member inline  darkTurqouise = Interop.mkStyle "border-color" "#00CED1"
+        static member inline  cadetBlue = Interop.mkStyle "border-color" "#5F9EA0"
+        static member inline  steelBlue = Interop.mkStyle "border-color" "#4682B4"
+        static member inline  lightSteelBlue = Interop.mkStyle "border-color" "#B0C4DE"
+        static member inline  powederBlue = Interop.mkStyle "border-color" "#B0E0E6"
+        static member inline  lightBlue = Interop.mkStyle "border-color" "#ADD8E6"
+        static member inline  skyBlue = Interop.mkStyle "border-color" "#87CEEB"
+        static member inline  lightSkyBlue = Interop.mkStyle "border-color" "#87CEFA"
+        static member inline  deepSkyBlue = Interop.mkStyle "border-color" "#00BFFF"
+        static member inline  dodgerBlue = Interop.mkStyle "border-color" "#1E90FF"
+        static member inline  cornFlowerBlue = Interop.mkStyle "border-color" "#6495ED"
+        static member inline  royalBlue = Interop.mkStyle "border-color" "#4169E1"
+        static member inline  blue = Interop.mkStyle "border-color" "#0000FF"
+        static member inline  mediumBlue = Interop.mkStyle "border-color" "#0000CD"
+        static member inline  darkBlue = Interop.mkStyle "border-color" "#00008B"
+        static member inline  navy = Interop.mkStyle "border-color" "#000080"
+        static member inline  midnightBlue = Interop.mkStyle "border-color" "#191970"
+        static member inline  cornSilk = Interop.mkStyle "border-color" "#FFF8DC"
+        static member inline  blanchedAlmond = Interop.mkStyle "border-color" "#FFEBCD"
+        static member inline  bisque = Interop.mkStyle "border-color" "#FFE4C4"
+        static member inline  navajoWhite = Interop.mkStyle "border-color" "#FFDEAD"
+        static member inline  wheat = Interop.mkStyle "border-color" "#F5DEB3"
+        static member inline  burlyWood = Interop.mkStyle "border-color" "#DEB887"
+        static member inline  tan = Interop.mkStyle "border-color" "#D2B48C"
+        static member inline  rosyBrown = Interop.mkStyle "border-color" "#BC8F8F"
+        static member inline  sandyBrown = Interop.mkStyle "border-color" "#F4A460"
+        static member inline  goldenRod = Interop.mkStyle "border-color" "#DAA520"
+        static member inline  darkGoldenRod = Interop.mkStyle "border-color" "#B8860B"
+        static member inline  peru = Interop.mkStyle "border-color" "#CD853F"
+        static member inline  chocolate = Interop.mkStyle "border-color" "#D2691E"
+        static member inline  saddleBrown = Interop.mkStyle "border-color" "#8B4513"
+        static member inline  sienna = Interop.mkStyle "border-color" "#A0522D"
+        static member inline  brown = Interop.mkStyle "border-color" "#A52A2A"
+        static member inline  maroon = Interop.mkStyle "border-color" "#A52A2A"
+        static member inline  white = Interop.mkStyle "border-color" "#FFFFFF"
+        static member inline  snow = Interop.mkStyle "border-color" "#FFFAFA"
+        static member inline  honeyDew = Interop.mkStyle "border-color" "#F0FFF0"
+        static member inline  mintCream = Interop.mkStyle "border-color" "#F5FFFA"
+        static member inline  azure = Interop.mkStyle "border-color" "#F0FFFF"
+        static member inline  aliceBlue = Interop.mkStyle "border-color" "#F0F8FF"
+        static member inline  ghostWhite = Interop.mkStyle "border-color" "#F8F8FF"
+        static member inline  whiteSmoke = Interop.mkStyle "border-color" "#F5F5F5"
+        static member inline  seaShell = Interop.mkStyle "border-color" "#FFF5EE"
+        static member inline  beige = Interop.mkStyle "border-color" "#F5F5DC"
+        static member inline  oldLace = Interop.mkStyle "border-color" "#FDF5E6"
+        static member inline  floralWhite = Interop.mkStyle "border-color" "#FFFAF0"
+        static member inline  ivory = Interop.mkStyle "border-color" "#FFFFF0"
+        static member inline  antiqueWhite = Interop.mkStyle "border-color" "#FAEBD7"
+        static member inline  linen = Interop.mkStyle "border-color" "#FAF0E6"
+        static member inline  lavenderBlush = Interop.mkStyle "border-color" "#FFF0F5"
+        static member inline  mistyRose = Interop.mkStyle "border-color" "#FFE4E1"
+        static member inline  gainsBoro = Interop.mkStyle "border-color" "#DCDCDC"
+        static member inline  lightGray = Interop.mkStyle "border-color" "#D3D3D3"
+        static member inline  silver = Interop.mkStyle "border-color" "#C0C0C0"
+        static member inline  darkGray = Interop.mkStyle "border-color" "#A9A9A9"
+        static member inline  gray = Interop.mkStyle "border-color" "#808080"
+        static member inline  dimGray = Interop.mkStyle "border-color" "#696969"
+        static member inline  lightSlateGray = Interop.mkStyle "border-color" "#778899"
+        static member inline  slateGray = Interop.mkStyle "border-color" "#708090"
+        static member inline  darkSlateGray = Interop.mkStyle "border-color" "#2F4F4F"
+        static member inline  black = Interop.mkStyle "border-color" "#000000"
+        static member inline  transparent = Interop.mkStyle "border-color" "transparent"
 
     [<Erase; RequireQualifiedAccess>]
     type color =
@@ -2667,145 +2667,145 @@ module style =
 
     [<Erase; RequireQualifiedAccess>]
     type textDecorationColor =
-        static member inline  indianRed = Interop.mkStyle "textDecorationColor" "#CD5C5C"
-        static member inline  lightCoral = Interop.mkStyle "textDecorationColor" "#F08080"
-        static member inline  salmon = Interop.mkStyle "textDecorationColor" "#FA8072"
-        static member inline  darkSalmon = Interop.mkStyle "textDecorationColor" "#E9967A"
-        static member inline  lightSalmon = Interop.mkStyle "textDecorationColor" "#FFA07A"
-        static member inline  crimson = Interop.mkStyle "textDecorationColor" "#DC143C"
-        static member inline  red = Interop.mkStyle "textDecorationColor" "#FF0000"
-        static member inline  fireBrick = Interop.mkStyle "textDecorationColor" "#B22222"
-        static member inline  darkred = Interop.mkStyle "textDecorationColor" "#8B0000"
-        static member inline  pink = Interop.mkStyle "textDecorationColor" "#FFC0CB"
-        static member inline  lightPink = Interop.mkStyle "textDecorationColor" "#FFB6C1"
-        static member inline  hotPink = Interop.mkStyle "textDecorationColor" "#FF69B4"
-        static member inline  deepPink = Interop.mkStyle "textDecorationColor" "#FF1493"
-        static member inline  mediumVioletRed = Interop.mkStyle "textDecorationColor" "#C71585"
-        static member inline  paleVioletRed = Interop.mkStyle "textDecorationColor" "#DB7093"
-        static member inline  coral = Interop.mkStyle "textDecorationColor" "#FF7F50"
-        static member inline  tomato = Interop.mkStyle "textDecorationColor" "#FF6347"
-        static member inline  orangeRed = Interop.mkStyle "textDecorationColor" "#FF4500"
-        static member inline  darkOrange = Interop.mkStyle "textDecorationColor" "#FF8C00"
-        static member inline  orange = Interop.mkStyle "textDecorationColor" "#FFA500"
-        static member inline  gold = Interop.mkStyle "textDecorationColor" "#FFD700"
-        static member inline  yellow = Interop.mkStyle "textDecorationColor" "#FFFF00"
-        static member inline  lightYellow = Interop.mkStyle "textDecorationColor" "#FFFFE0"
-        static member inline  limonChiffon = Interop.mkStyle "textDecorationColor" "#FFFACD"
-        static member inline  lightGoldenRodYellow = Interop.mkStyle "textDecorationColor" "#FAFAD2"
-        static member inline  papayaWhip = Interop.mkStyle "textDecorationColor" "#FFEFD5"
-        static member inline  moccasin = Interop.mkStyle "textDecorationColor" "#FFE4B5"
-        static member inline  peachPuff = Interop.mkStyle "textDecorationColor" "#FFDAB9"
-        static member inline  paleGoldenRod = Interop.mkStyle "textDecorationColor" "#EEE8AA"
-        static member inline  khaki = Interop.mkStyle "textDecorationColor" "#F0E68C"
-        static member inline  darkKhaki = Interop.mkStyle "textDecorationColor" "#BDB76B"
-        static member inline  lavender = Interop.mkStyle "textDecorationColor" "#E6E6FA"
-        static member inline  thistle = Interop.mkStyle "textDecorationColor" "#D8BFD8"
-        static member inline  plum = Interop.mkStyle "textDecorationColor" "#DDA0DD"
-        static member inline  violet = Interop.mkStyle "textDecorationColor" "#EE82EE"
-        static member inline  orchid = Interop.mkStyle "textDecorationColor" "#DA70D6"
-        static member inline  fuchsia = Interop.mkStyle "textDecorationColor" "#FF00FF"
-        static member inline  magenta = Interop.mkStyle "textDecorationColor" "#FF00FF"
-        static member inline  mediumOrchid = Interop.mkStyle "textDecorationColor" "#BA55D3"
-        static member inline  mediumPurple = Interop.mkStyle "textDecorationColor" "#9370DB"
-        static member inline  rebeccaPurple = Interop.mkStyle "textDecorationColor" "#663399"
-        static member inline  blueViolet = Interop.mkStyle "textDecorationColor" "#8A2BE2"
-        static member inline  darkViolet = Interop.mkStyle "textDecorationColor" "#9400D3"
-        static member inline  darkOrchid = Interop.mkStyle "textDecorationColor" "#9932CC"
-        static member inline  darkMagenta = Interop.mkStyle "textDecorationColor" "#8B008B"
-        static member inline  purple = Interop.mkStyle "textDecorationColor" "#800080"
-        static member inline  indigo = Interop.mkStyle "textDecorationColor" "#4B0082"
-        static member inline  slateBlue = Interop.mkStyle "textDecorationColor" "#6A5ACD"
-        static member inline  darkSlateBlue = Interop.mkStyle "textDecorationColor" "#483D8B"
-        static member inline  mediumSlateBlue = Interop.mkStyle "textDecorationColor" "#7B68EE"
-        static member inline  greenYellow = Interop.mkStyle "textDecorationColor" "#ADFF2F"
-        static member inline  chartreuse = Interop.mkStyle "textDecorationColor" "#7FFF00"
-        static member inline  lawnGreen = Interop.mkStyle "textDecorationColor" "#7CFC00"
-        static member inline  lime = Interop.mkStyle "textDecorationColor" "#00FF00"
-        static member inline  limeGreen = Interop.mkStyle "textDecorationColor" "#32CD32"
-        static member inline  paleGreen = Interop.mkStyle "textDecorationColor" "#98FB98"
-        static member inline  lightGreen = Interop.mkStyle "textDecorationColor" "#90EE90"
-        static member inline  mediumSpringGreen = Interop.mkStyle "textDecorationColor" "#00FA9A"
-        static member inline  springGreen = Interop.mkStyle "textDecorationColor" "#00FF7F"
-        static member inline  mediumSeaGreen = Interop.mkStyle "textDecorationColor" "#3CB371"
-        static member inline  seaGreen = Interop.mkStyle "textDecorationColor" "#2E8B57"
-        static member inline  forestGreen = Interop.mkStyle "textDecorationColor" "#228B22"
-        static member inline  green = Interop.mkStyle "textDecorationColor" "#008000"
-        static member inline  darkGreen = Interop.mkStyle "textDecorationColor" "#006400"
-        static member inline  yellowGreen = Interop.mkStyle "textDecorationColor" "#9ACD32"
-        static member inline  oliveDrab = Interop.mkStyle "textDecorationColor" "#6B8E23"
-        static member inline  olive = Interop.mkStyle "textDecorationColor" "#808000"
-        static member inline  darkOliveGreen = Interop.mkStyle "textDecorationColor" "#556B2F"
-        static member inline  mediumAquamarine = Interop.mkStyle "textDecorationColor" "#66CDAA"
-        static member inline  darkSeaGreen = Interop.mkStyle "textDecorationColor" "#8FBC8B"
-        static member inline  lightSeaGreen = Interop.mkStyle "textDecorationColor" "#20B2AA"
-        static member inline  darkCyan = Interop.mkStyle "textDecorationColor" "#008B8B"
-        static member inline  teal = Interop.mkStyle "textDecorationColor" "#008080"
-        static member inline  aqua = Interop.mkStyle "textDecorationColor" "#00FFFF"
-        static member inline  cyan = Interop.mkStyle "textDecorationColor" "#00FFFF"
-        static member inline  lightCyan = Interop.mkStyle "textDecorationColor" "#E0FFFF"
-        static member inline  paleTurqouise = Interop.mkStyle "textDecorationColor" "#AFEEEE"
-        static member inline  aquaMarine = Interop.mkStyle "textDecorationColor" "#7FFFD4"
-        static member inline  turqouise = Interop.mkStyle "textDecorationColor" "#AFEEEE"
-        static member inline  mediumTurqouise = Interop.mkStyle "textDecorationColor" "#48D1CC"
-        static member inline  darkTurqouise = Interop.mkStyle "textDecorationColor" "#00CED1"
-        static member inline  cadetBlue = Interop.mkStyle "textDecorationColor" "#5F9EA0"
-        static member inline  steelBlue = Interop.mkStyle "textDecorationColor" "#4682B4"
-        static member inline  lightSteelBlue = Interop.mkStyle "textDecorationColor" "#B0C4DE"
-        static member inline  powederBlue = Interop.mkStyle "textDecorationColor" "#B0E0E6"
-        static member inline  lightBlue = Interop.mkStyle "textDecorationColor" "#ADD8E6"
-        static member inline  skyBlue = Interop.mkStyle "textDecorationColor" "#87CEEB"
-        static member inline  lightSkyBlue = Interop.mkStyle "textDecorationColor" "#87CEFA"
-        static member inline  deepSkyBlue = Interop.mkStyle "textDecorationColor" "#00BFFF"
-        static member inline  dodgerBlue = Interop.mkStyle "textDecorationColor" "#1E90FF"
-        static member inline  cornFlowerBlue = Interop.mkStyle "textDecorationColor" "#6495ED"
-        static member inline  royalBlue = Interop.mkStyle "textDecorationColor" "#4169E1"
-        static member inline  blue = Interop.mkStyle "textDecorationColor" "#0000FF"
-        static member inline  mediumBlue = Interop.mkStyle "textDecorationColor" "#0000CD"
-        static member inline  darkBlue = Interop.mkStyle "textDecorationColor" "#00008B"
-        static member inline  navy = Interop.mkStyle "textDecorationColor" "#000080"
-        static member inline  midnightBlue = Interop.mkStyle "textDecorationColor" "#191970"
-        static member inline  cornSilk = Interop.mkStyle "textDecorationColor" "#FFF8DC"
-        static member inline  blanchedAlmond = Interop.mkStyle "textDecorationColor" "#FFEBCD"
-        static member inline  bisque = Interop.mkStyle "textDecorationColor" "#FFE4C4"
-        static member inline  navajoWhite = Interop.mkStyle "textDecorationColor" "#FFDEAD"
-        static member inline  wheat = Interop.mkStyle "textDecorationColor" "#F5DEB3"
-        static member inline  burlyWood = Interop.mkStyle "textDecorationColor" "#DEB887"
-        static member inline  tan = Interop.mkStyle "textDecorationColor" "#D2B48C"
-        static member inline  rosyBrown = Interop.mkStyle "textDecorationColor" "#BC8F8F"
-        static member inline  sandyBrown = Interop.mkStyle "textDecorationColor" "#F4A460"
-        static member inline  goldenRod = Interop.mkStyle "textDecorationColor" "#DAA520"
-        static member inline  darkGoldenRod = Interop.mkStyle "textDecorationColor" "#B8860B"
-        static member inline  peru = Interop.mkStyle "textDecorationColor" "#CD853F"
-        static member inline  chocolate = Interop.mkStyle "textDecorationColor" "#D2691E"
-        static member inline  saddleBrown = Interop.mkStyle "textDecorationColor" "#8B4513"
-        static member inline  sienna = Interop.mkStyle "textDecorationColor" "#A0522D"
-        static member inline  brown = Interop.mkStyle "textDecorationColor" "#A52A2A"
-        static member inline  maroon = Interop.mkStyle "textDecorationColor" "#A52A2A"
-        static member inline  white = Interop.mkStyle "textDecorationColor" "#FFFFFF"
-        static member inline  snow = Interop.mkStyle "textDecorationColor" "#FFFAFA"
-        static member inline  honeyDew = Interop.mkStyle "textDecorationColor" "#F0FFF0"
-        static member inline  mintCream = Interop.mkStyle "textDecorationColor" "#F5FFFA"
-        static member inline  azure = Interop.mkStyle "textDecorationColor" "#F0FFFF"
-        static member inline  aliceBlue = Interop.mkStyle "textDecorationColor" "#F0F8FF"
-        static member inline  ghostWhite = Interop.mkStyle "textDecorationColor" "#F8F8FF"
-        static member inline  whiteSmoke = Interop.mkStyle "textDecorationColor" "#F5F5F5"
-        static member inline  seaShell = Interop.mkStyle "textDecorationColor" "#FFF5EE"
-        static member inline  beige = Interop.mkStyle "textDecorationColor" "#F5F5DC"
-        static member inline  oldLace = Interop.mkStyle "textDecorationColor" "#FDF5E6"
-        static member inline  floralWhite = Interop.mkStyle "textDecorationColor" "#FFFAF0"
-        static member inline  ivory = Interop.mkStyle "textDecorationColor" "#FFFFF0"
-        static member inline  antiqueWhite = Interop.mkStyle "textDecorationColor" "#FAEBD7"
-        static member inline  linen = Interop.mkStyle "textDecorationColor" "#FAF0E6"
-        static member inline  lavenderBlush = Interop.mkStyle "textDecorationColor" "#FFF0F5"
-        static member inline  mistyRose = Interop.mkStyle "textDecorationColor" "#FFE4E1"
-        static member inline  gainsBoro = Interop.mkStyle "textDecorationColor" "#DCDCDC"
-        static member inline  lightGray = Interop.mkStyle "textDecorationColor" "#D3D3D3"
-        static member inline  silver = Interop.mkStyle "textDecorationColor" "#C0C0C0"
-        static member inline  darkGray = Interop.mkStyle "textDecorationColor" "#A9A9A9"
-        static member inline  gray = Interop.mkStyle "textDecorationColor" "#808080"
-        static member inline  dimGray = Interop.mkStyle "textDecorationColor" "#696969"
-        static member inline  lightSlateGray = Interop.mkStyle "textDecorationColor" "#778899"
-        static member inline  slateGray = Interop.mkStyle "textDecorationColor" "#708090"
-        static member inline  darkSlateGray = Interop.mkStyle "textDecorationColor" "#2F4F4F"
-        static member inline  black = Interop.mkStyle "textDecorationColor" "#000000"
-        static member inline  transparent = Interop.mkStyle "textDecorationColor" "transparent"
+        static member inline  indianRed = Interop.mkStyle "text-decoration-color" "#CD5C5C"
+        static member inline  lightCoral = Interop.mkStyle "text-decoration-color" "#F08080"
+        static member inline  salmon = Interop.mkStyle "text-decoration-color" "#FA8072"
+        static member inline  darkSalmon = Interop.mkStyle "text-decoration-color" "#E9967A"
+        static member inline  lightSalmon = Interop.mkStyle "text-decoration-color" "#FFA07A"
+        static member inline  crimson = Interop.mkStyle "text-decoration-color" "#DC143C"
+        static member inline  red = Interop.mkStyle "text-decoration-color" "#FF0000"
+        static member inline  fireBrick = Interop.mkStyle "text-decoration-color" "#B22222"
+        static member inline  darkred = Interop.mkStyle "text-decoration-color" "#8B0000"
+        static member inline  pink = Interop.mkStyle "text-decoration-color" "#FFC0CB"
+        static member inline  lightPink = Interop.mkStyle "text-decoration-color" "#FFB6C1"
+        static member inline  hotPink = Interop.mkStyle "text-decoration-color" "#FF69B4"
+        static member inline  deepPink = Interop.mkStyle "text-decoration-color" "#FF1493"
+        static member inline  mediumVioletRed = Interop.mkStyle "text-decoration-color" "#C71585"
+        static member inline  paleVioletRed = Interop.mkStyle "text-decoration-color" "#DB7093"
+        static member inline  coral = Interop.mkStyle "text-decoration-color" "#FF7F50"
+        static member inline  tomato = Interop.mkStyle "text-decoration-color" "#FF6347"
+        static member inline  orangeRed = Interop.mkStyle "text-decoration-color" "#FF4500"
+        static member inline  darkOrange = Interop.mkStyle "text-decoration-color" "#FF8C00"
+        static member inline  orange = Interop.mkStyle "text-decoration-color" "#FFA500"
+        static member inline  gold = Interop.mkStyle "text-decoration-color" "#FFD700"
+        static member inline  yellow = Interop.mkStyle "text-decoration-color" "#FFFF00"
+        static member inline  lightYellow = Interop.mkStyle "text-decoration-color" "#FFFFE0"
+        static member inline  limonChiffon = Interop.mkStyle "text-decoration-color" "#FFFACD"
+        static member inline  lightGoldenRodYellow = Interop.mkStyle "text-decoration-color" "#FAFAD2"
+        static member inline  papayaWhip = Interop.mkStyle "text-decoration-color" "#FFEFD5"
+        static member inline  moccasin = Interop.mkStyle "text-decoration-color" "#FFE4B5"
+        static member inline  peachPuff = Interop.mkStyle "text-decoration-color" "#FFDAB9"
+        static member inline  paleGoldenRod = Interop.mkStyle "text-decoration-color" "#EEE8AA"
+        static member inline  khaki = Interop.mkStyle "text-decoration-color" "#F0E68C"
+        static member inline  darkKhaki = Interop.mkStyle "text-decoration-color" "#BDB76B"
+        static member inline  lavender = Interop.mkStyle "text-decoration-color" "#E6E6FA"
+        static member inline  thistle = Interop.mkStyle "text-decoration-color" "#D8BFD8"
+        static member inline  plum = Interop.mkStyle "text-decoration-color" "#DDA0DD"
+        static member inline  violet = Interop.mkStyle "text-decoration-color" "#EE82EE"
+        static member inline  orchid = Interop.mkStyle "text-decoration-color" "#DA70D6"
+        static member inline  fuchsia = Interop.mkStyle "text-decoration-color" "#FF00FF"
+        static member inline  magenta = Interop.mkStyle "text-decoration-color" "#FF00FF"
+        static member inline  mediumOrchid = Interop.mkStyle "text-decoration-color" "#BA55D3"
+        static member inline  mediumPurple = Interop.mkStyle "text-decoration-color" "#9370DB"
+        static member inline  rebeccaPurple = Interop.mkStyle "text-decoration-color" "#663399"
+        static member inline  blueViolet = Interop.mkStyle "text-decoration-color" "#8A2BE2"
+        static member inline  darkViolet = Interop.mkStyle "text-decoration-color" "#9400D3"
+        static member inline  darkOrchid = Interop.mkStyle "text-decoration-color" "#9932CC"
+        static member inline  darkMagenta = Interop.mkStyle "text-decoration-color" "#8B008B"
+        static member inline  purple = Interop.mkStyle "text-decoration-color" "#800080"
+        static member inline  indigo = Interop.mkStyle "text-decoration-color" "#4B0082"
+        static member inline  slateBlue = Interop.mkStyle "text-decoration-color" "#6A5ACD"
+        static member inline  darkSlateBlue = Interop.mkStyle "text-decoration-color" "#483D8B"
+        static member inline  mediumSlateBlue = Interop.mkStyle "text-decoration-color" "#7B68EE"
+        static member inline  greenYellow = Interop.mkStyle "text-decoration-color" "#ADFF2F"
+        static member inline  chartreuse = Interop.mkStyle "text-decoration-color" "#7FFF00"
+        static member inline  lawnGreen = Interop.mkStyle "text-decoration-color" "#7CFC00"
+        static member inline  lime = Interop.mkStyle "text-decoration-color" "#00FF00"
+        static member inline  limeGreen = Interop.mkStyle "text-decoration-color" "#32CD32"
+        static member inline  paleGreen = Interop.mkStyle "text-decoration-color" "#98FB98"
+        static member inline  lightGreen = Interop.mkStyle "text-decoration-color" "#90EE90"
+        static member inline  mediumSpringGreen = Interop.mkStyle "text-decoration-color" "#00FA9A"
+        static member inline  springGreen = Interop.mkStyle "text-decoration-color" "#00FF7F"
+        static member inline  mediumSeaGreen = Interop.mkStyle "text-decoration-color" "#3CB371"
+        static member inline  seaGreen = Interop.mkStyle "text-decoration-color" "#2E8B57"
+        static member inline  forestGreen = Interop.mkStyle "text-decoration-color" "#228B22"
+        static member inline  green = Interop.mkStyle "text-decoration-color" "#008000"
+        static member inline  darkGreen = Interop.mkStyle "text-decoration-color" "#006400"
+        static member inline  yellowGreen = Interop.mkStyle "text-decoration-color" "#9ACD32"
+        static member inline  oliveDrab = Interop.mkStyle "text-decoration-color" "#6B8E23"
+        static member inline  olive = Interop.mkStyle "text-decoration-color" "#808000"
+        static member inline  darkOliveGreen = Interop.mkStyle "text-decoration-color" "#556B2F"
+        static member inline  mediumAquamarine = Interop.mkStyle "text-decoration-color" "#66CDAA"
+        static member inline  darkSeaGreen = Interop.mkStyle "text-decoration-color" "#8FBC8B"
+        static member inline  lightSeaGreen = Interop.mkStyle "text-decoration-color" "#20B2AA"
+        static member inline  darkCyan = Interop.mkStyle "text-decoration-color" "#008B8B"
+        static member inline  teal = Interop.mkStyle "text-decoration-color" "#008080"
+        static member inline  aqua = Interop.mkStyle "text-decoration-color" "#00FFFF"
+        static member inline  cyan = Interop.mkStyle "text-decoration-color" "#00FFFF"
+        static member inline  lightCyan = Interop.mkStyle "text-decoration-color" "#E0FFFF"
+        static member inline  paleTurqouise = Interop.mkStyle "text-decoration-color" "#AFEEEE"
+        static member inline  aquaMarine = Interop.mkStyle "text-decoration-color" "#7FFFD4"
+        static member inline  turqouise = Interop.mkStyle "text-decoration-color" "#AFEEEE"
+        static member inline  mediumTurqouise = Interop.mkStyle "text-decoration-color" "#48D1CC"
+        static member inline  darkTurqouise = Interop.mkStyle "text-decoration-color" "#00CED1"
+        static member inline  cadetBlue = Interop.mkStyle "text-decoration-color" "#5F9EA0"
+        static member inline  steelBlue = Interop.mkStyle "text-decoration-color" "#4682B4"
+        static member inline  lightSteelBlue = Interop.mkStyle "text-decoration-color" "#B0C4DE"
+        static member inline  powederBlue = Interop.mkStyle "text-decoration-color" "#B0E0E6"
+        static member inline  lightBlue = Interop.mkStyle "text-decoration-color" "#ADD8E6"
+        static member inline  skyBlue = Interop.mkStyle "text-decoration-color" "#87CEEB"
+        static member inline  lightSkyBlue = Interop.mkStyle "text-decoration-color" "#87CEFA"
+        static member inline  deepSkyBlue = Interop.mkStyle "text-decoration-color" "#00BFFF"
+        static member inline  dodgerBlue = Interop.mkStyle "text-decoration-color" "#1E90FF"
+        static member inline  cornFlowerBlue = Interop.mkStyle "text-decoration-color" "#6495ED"
+        static member inline  royalBlue = Interop.mkStyle "text-decoration-color" "#4169E1"
+        static member inline  blue = Interop.mkStyle "text-decoration-color" "#0000FF"
+        static member inline  mediumBlue = Interop.mkStyle "text-decoration-color" "#0000CD"
+        static member inline  darkBlue = Interop.mkStyle "text-decoration-color" "#00008B"
+        static member inline  navy = Interop.mkStyle "text-decoration-color" "#000080"
+        static member inline  midnightBlue = Interop.mkStyle "text-decoration-color" "#191970"
+        static member inline  cornSilk = Interop.mkStyle "text-decoration-color" "#FFF8DC"
+        static member inline  blanchedAlmond = Interop.mkStyle "text-decoration-color" "#FFEBCD"
+        static member inline  bisque = Interop.mkStyle "text-decoration-color" "#FFE4C4"
+        static member inline  navajoWhite = Interop.mkStyle "text-decoration-color" "#FFDEAD"
+        static member inline  wheat = Interop.mkStyle "text-decoration-color" "#F5DEB3"
+        static member inline  burlyWood = Interop.mkStyle "text-decoration-color" "#DEB887"
+        static member inline  tan = Interop.mkStyle "text-decoration-color" "#D2B48C"
+        static member inline  rosyBrown = Interop.mkStyle "text-decoration-color" "#BC8F8F"
+        static member inline  sandyBrown = Interop.mkStyle "text-decoration-color" "#F4A460"
+        static member inline  goldenRod = Interop.mkStyle "text-decoration-color" "#DAA520"
+        static member inline  darkGoldenRod = Interop.mkStyle "text-decoration-color" "#B8860B"
+        static member inline  peru = Interop.mkStyle "text-decoration-color" "#CD853F"
+        static member inline  chocolate = Interop.mkStyle "text-decoration-color" "#D2691E"
+        static member inline  saddleBrown = Interop.mkStyle "text-decoration-color" "#8B4513"
+        static member inline  sienna = Interop.mkStyle "text-decoration-color" "#A0522D"
+        static member inline  brown = Interop.mkStyle "text-decoration-color" "#A52A2A"
+        static member inline  maroon = Interop.mkStyle "text-decoration-color" "#A52A2A"
+        static member inline  white = Interop.mkStyle "text-decoration-color" "#FFFFFF"
+        static member inline  snow = Interop.mkStyle "text-decoration-color" "#FFFAFA"
+        static member inline  honeyDew = Interop.mkStyle "text-decoration-color" "#F0FFF0"
+        static member inline  mintCream = Interop.mkStyle "text-decoration-color" "#F5FFFA"
+        static member inline  azure = Interop.mkStyle "text-decoration-color" "#F0FFFF"
+        static member inline  aliceBlue = Interop.mkStyle "text-decoration-color" "#F0F8FF"
+        static member inline  ghostWhite = Interop.mkStyle "text-decoration-color" "#F8F8FF"
+        static member inline  whiteSmoke = Interop.mkStyle "text-decoration-color" "#F5F5F5"
+        static member inline  seaShell = Interop.mkStyle "text-decoration-color" "#FFF5EE"
+        static member inline  beige = Interop.mkStyle "text-decoration-color" "#F5F5DC"
+        static member inline  oldLace = Interop.mkStyle "text-decoration-color" "#FDF5E6"
+        static member inline  floralWhite = Interop.mkStyle "text-decoration-color" "#FFFAF0"
+        static member inline  ivory = Interop.mkStyle "text-decoration-color" "#FFFFF0"
+        static member inline  antiqueWhite = Interop.mkStyle "text-decoration-color" "#FAEBD7"
+        static member inline  linen = Interop.mkStyle "text-decoration-color" "#FAF0E6"
+        static member inline  lavenderBlush = Interop.mkStyle "text-decoration-color" "#FFF0F5"
+        static member inline  mistyRose = Interop.mkStyle "text-decoration-color" "#FFE4E1"
+        static member inline  gainsBoro = Interop.mkStyle "text-decoration-color" "#DCDCDC"
+        static member inline  lightGray = Interop.mkStyle "text-decoration-color" "#D3D3D3"
+        static member inline  silver = Interop.mkStyle "text-decoration-color" "#C0C0C0"
+        static member inline  darkGray = Interop.mkStyle "text-decoration-color" "#A9A9A9"
+        static member inline  gray = Interop.mkStyle "text-decoration-color" "#808080"
+        static member inline  dimGray = Interop.mkStyle "text-decoration-color" "#696969"
+        static member inline  lightSlateGray = Interop.mkStyle "text-decoration-color" "#778899"
+        static member inline  slateGray = Interop.mkStyle "text-decoration-color" "#708090"
+        static member inline  darkSlateGray = Interop.mkStyle "text-decoration-color" "#2F4F4F"
+        static member inline  black = Interop.mkStyle "text-decoration-color" "#000000"
+        static member inline  transparent = Interop.mkStyle "text-decoration-color" "transparent"
