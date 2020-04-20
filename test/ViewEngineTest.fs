@@ -15,7 +15,7 @@ let ``Simple text element is Ok``() =
     test <@ result = "test" @>
 
 [<Fact>]
-let ``Simple p element with text is Ok``() =
+let ``p element with text is Ok``() =
     // Arrange / Act
     let result =
         Html.p "test"
@@ -25,7 +25,7 @@ let ``Simple p element with text is Ok``() =
     test <@ result = "<p>test</p>" @>
 
 [<Fact>]
-let ``Simple p element with text property is Ok``() =
+let ``p element with text property is Ok``() =
     // Arrange / Act
     let result =
         Html.p [
@@ -37,7 +37,7 @@ let ``Simple p element with text property is Ok``() =
     test <@ result = "<p>test</p>" @>
 
 [<Fact>]
-let ``Simple p element with text element is Ok``() =
+let ``p element with text element is Ok``() =
     // Arrange / Act
     let result =
         Html.p [
@@ -50,7 +50,7 @@ let ``Simple p element with text element is Ok``() =
 
 
 [<Fact>]
-let ``Simple p element with text element and class property is Ok``() =
+let ``p element with text element and class property is Ok``() =
     // Arrange / Act
     let result =
         Html.p [
@@ -63,3 +63,57 @@ let ``Simple p element with text element and class property is Ok``() =
 
     // Assert
     test <@ result = "<p class=\"main\">test</p>" @>
+
+[<Fact>]
+let ``p element with text element and classes property is Ok``() =
+    // Arrange / Act
+    let result =
+        Html.p [
+            prop.classes ["c1"; "c2"]
+            prop.children [
+                Html.text "test"
+            ]
+        ]
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "<p class=\"c1 c2\">test</p>" @>
+
+
+[<Fact>]
+let ``h1 element with text and style property is Ok``() =
+    // Arrange / Act
+    let result =
+        Html.h1 [
+            prop.style [ style.fontSize(100); style.color("#137373") ]
+            prop.text "examples"
+        ]
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "<h1 style=\"font-size:100px;color:#137373\">examples</h1>" @>
+
+[<Fact>]
+let ``Simple h1 element with text and style property is Ok``() =
+    // Arrange / Act
+    let result =
+        Html.h1 [
+            prop.style [ style.fontSize(100); style.color("#137373") ]
+            prop.text "examples"
+        ]
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "<h1 style=\"font-size:100px;color:#137373\">examples</h1>" @>
+
+[<Fact>]
+let ``Closed element Ok``() =
+    // Arrange / Act
+    let result =
+        Html.div [
+            Html.br []
+        ]
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "<div><br></div>" @>
