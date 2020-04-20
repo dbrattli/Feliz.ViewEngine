@@ -19,6 +19,15 @@ namespace Feliz.ViewEngine
 open System
 open System.Text
 
+type ReactProperty =
+    | KeyValue of string * obj
+    | Children of ReactElement list
+    | Text of string
+
+and ReactElement =
+    | Element of string * ReactProperty list // An element which contains properties
+    | TextElement of string
+
 [<RequireQualifiedAccess>]
 module ViewBuilder =
     let getEscapeSequence c =

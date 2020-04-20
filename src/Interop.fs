@@ -1,31 +1,13 @@
 namespace Feliz.ViewEngine
 
 open System
+open Feliz.ViewEngine.Styles
 
 [<AttributeUsage(AttributeTargets.Class)>]
 type EraseAttribute () =
     inherit Attribute ()
 
 /// Describes a basic style attribute
-type IStyleAttribute = interface end
-
-type StyleAttribute =
-    | Style of string * obj
-    interface IStyleAttribute
-
-    override x.ToString () =
-        let (Style (key, value)) = x
-        String.Join(":", key, value)
-
-type ReactProperty =
-    | KeyValue of string * obj
-    | Children of ReactElement list
-    | Text of string
-
-and ReactElement =
-    | Element of string * ReactProperty list // An element which contains properties
-    | TextElement of string
-
 // Interop between Feliz React DSL and Giraffe XmlNode.
 [<RequireQualifiedAccess>]
 module Interop =

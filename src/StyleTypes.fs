@@ -1,5 +1,7 @@
 namespace Feliz.ViewEngine.Styles
 
+open System
+
 type IBorderStyle = interface end
 
 type ITextAlignment = interface end
@@ -43,6 +45,16 @@ type ICssUnit = interface end
 type ITransitionProperty = interface end
 
 type ITransformProperty = interface end
+
+type IStyleAttribute = interface end
+
+type StyleAttribute =
+    | Style of string * obj
+    interface IStyleAttribute
+
+    override x.ToString () =
+        let (Style (key, value)) = x
+        String.Join(":", key, value)
 
 type CssUnit =
     | Unit of string
