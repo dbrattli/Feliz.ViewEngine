@@ -22,6 +22,23 @@ dotnet add package Feliz.ViewEngine
 ## Getting started
 
 ```fs
+open Feliz.ViewEngine
+
+let html =
+    Html.h1 [
+        prop.style [ style.fontSize(100); style.color("#137373") ]
+        prop.text "Hello, world!"
+    ]
+    |> Render.htmlNode
+
+printfn "Output: %s" html
+```
+
+Giraffe example at https://github.com/dbrattli/Feliz.ViewEngine/blob/master/examples/giraffe/Program.fs
+
+## Sharing views between client and server
+
+```fs
 #if FABLE_COMPILER
 open Feliz
 #else
@@ -31,7 +48,9 @@ open Feliz.ViewEngine
 let view  = ...
 ```
 
-Giraffe example at https://github.com/dbrattli/Feliz.ViewEngine/blob/master/examples/giraffe/Program.fs
+## Documentation
+
+Feliz has extensive documentation at https://zaid-ajaj.github.io/Feliz with live examples along side code samples, check them out and if you have any question, let us know!
 
 ## License
 
