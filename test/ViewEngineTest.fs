@@ -50,6 +50,18 @@ let ``p element with text element is Ok``() =
 
 
 [<Fact>]
+let ``Closed element Ok``() =
+    // Arrange / Act
+    let result =
+        Html.div [
+            Html.br []
+        ]
+        |> Render.htmlNode
+
+    // Assert
+    test <@ result = "<div><br></div>" @>
+
+[<Fact>]
 let ``p element with text element and class property is Ok``() =
     // Arrange / Act
     let result =
@@ -107,13 +119,15 @@ let ``Simple h1 element with text and style property is Ok``() =
     test <@ result = "<h1 style=\"font-size:100px;color:#137373\">examples</h1>" @>
 
 [<Fact>]
-let ``Closed element Ok``() =
+let ``Simple h1 element with text and style property with css unit is Ok``() =
     // Arrange / Act
     let result =
-        Html.div [
-            Html.br []
+        Html.h1 [
+            prop.style [ style.fontSize(length.em(100)) ]
+            prop.text "examples"
         ]
         |> Render.htmlNode
 
     // Assert
-    test <@ result = "<div><br></div>" @>
+    test <@ result = "<h1 style=\"font-size:100em\">examples</h1>" @>
+

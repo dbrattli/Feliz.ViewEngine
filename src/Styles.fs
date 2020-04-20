@@ -8,79 +8,79 @@ type length =
     /// Pixels are (1px = 1/96th of 1in).
     ///
     /// **Note**: Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
-    static member inline px(value: int) : ICssUnit = unbox ((unbox<string>value) + "px")
+    static member inline px(value: int) : ICssUnit = value.ToString() + "px" |> Unit :> _
     /// Pixels are (1px = 1/96th of 1in).
     ///
     /// **Note**: Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
-    static member inline px(value: double) : ICssUnit = unbox ((unbox<string>value) + "px")
+    static member inline px(value: double) : ICssUnit = value.ToString() + "px" |> Unit :> _
     /// Centimeters
-    static member inline cm(value: int) : ICssUnit = unbox ((unbox<string>value) + "cm")
+    static member inline cm(value: int) : ICssUnit = value.ToString() + "cm" |> Unit :> _
     /// Centimeters
-    static member inline cm(value: double) : ICssUnit = unbox ((unbox<string>value) + "cm")
+    static member inline cm(value: double) : ICssUnit = value.ToString() + "cm" |> Unit :> _
     /// Millimeters
-    static member inline mm(value: int) : ICssUnit = unbox ((unbox<string>value) + "mm")
+    static member inline mm(value: int) : ICssUnit = value.ToString() + "mm" |> Unit :> _
     /// Millimeters
-    static member inline mm(value: double) : ICssUnit = unbox ((unbox<string>value) + "mm")
+    static member inline mm(value: double) : ICssUnit = value.ToString() + "mm" |> Unit :> _
     /// Inches (1in = 96px = 2.54cm)
-    static member inline inch(value: int) : ICssUnit = unbox ((unbox<string>value) + "in")
+    static member inline inch(value: int) : ICssUnit = value.ToString() + "in" |> Unit :> _
     /// Inches (1in = 96px = 2.54cm)
-    static member inline inch(value: double) : ICssUnit = unbox ((unbox<string>value) + "in")
+    static member inline inch(value: double) : ICssUnit = value.ToString() + "in" |> Unit :> _
     /// Points (1pt = 1/72 of 1in)
-    static member inline pt(value: int) : ICssUnit = unbox ((unbox<string>value) + "pt")
+    static member inline pt(value: int) : ICssUnit = value.ToString() + "pt" |> Unit :> _
     /// Points (1pt = 1/72 of 1in)
-    static member inline pt(value: double) : ICssUnit = unbox ((unbox<string>value) + "pt")
+    static member inline pt(value: double) : ICssUnit = value.ToString() + "pt" |> Unit :> _
     /// Picas (1pc = 12 pt)
-    static member inline pc(value: int) : ICssUnit = unbox ((unbox<string>value) + "pc")
+    static member inline pc(value: int) : ICssUnit = value.ToString() + "pc" |> Unit :> _
     /// Picas (1pc = 12 pt)
-    static member inline pc(value: double) : ICssUnit = unbox ((unbox<string>value) + "pc")
+    static member inline pc(value: double) : ICssUnit = value.ToString() + "pc" |> Unit :> _
     /// Relative to the font-size of the element (2em means 2 times the size of the current font
-    static member inline em(value: int) : ICssUnit = unbox ((unbox<string>value) + "em")
+    static member inline em(value: int) : ICssUnit = value.ToString() + "em" |> Unit :> _
     /// Relative to the font-size of the element (2em means 2 times the size of the current font
-    static member inline em(value: double) : ICssUnit = unbox ((unbox<string>value) + "em")
+    static member inline em(value: double) : ICssUnit = value.ToString() + "em" |> Unit :> _
     /// Relative to the x-height of the current font (rarely used)
-    static member inline ex(value: int) : ICssUnit = unbox ((unbox<string>value) + "ex")
+    static member inline ex(value: int) : ICssUnit = value.ToString() + "ex" |> Unit :> _
     /// Relative to the x-height of the current font (rarely used)
-    static member inline ex(value: double) : ICssUnit = unbox ((unbox<string>value) + "ex")
+    static member inline ex(value: double) : ICssUnit = value.ToString() + "ex" |> Unit :> _
     /// Relative to width of the "0" (zero)
-    static member inline ch(value: int) : ICssUnit = unbox ((unbox<string>value) + "ch")
+    static member inline ch(value: int) : ICssUnit = value.ToString() + "ch" |> Unit :> _
     /// Relative to font-size of the root element
-    static member inline rem(value: double) : ICssUnit = unbox ((unbox<string>value) + "rem")
+    static member inline rem(value: double) : ICssUnit = value.ToString() + "rem" |> Unit :> _
     /// Relative to font-size of the root element
-    static member inline rem(value: int) : ICssUnit = unbox ((unbox<string>value) + "rem")
+    static member inline rem(value: int) : ICssUnit = value.ToString() + "rem" |> Unit :> _
     /// Relative to 1% of the height of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vh(value: int) : ICssUnit = unbox ((unbox<string>value) + "vh")
+    static member inline vh(value: int) : ICssUnit = value.ToString() + "vh" |> Unit :> _
     /// Relative to 1% of the height of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vh(value: double) : ICssUnit = unbox ((unbox<string>value) + "vh")
+    static member inline vh(value: double) : ICssUnit = value.ToString() + "vh" |> Unit :> _
     /// Relative to 1% of the width of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vw(value: int) : ICssUnit = unbox ((unbox<string>value) + "vw")
+    static member inline vw(value: int) : ICssUnit = value.ToString() + "vw" |> Unit :> _
     /// Relative to 1% of the width of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vw(value: double) : ICssUnit = unbox ((unbox<string>value) + "vw")
+    static member inline vw(value: double) : ICssUnit = value.ToString() + "vw" |> Unit :> _
     /// Relative to 1% of viewport's smaller dimension
-    static member inline vmin(value: double) : ICssUnit = unbox ((unbox<string>value) + "vmin")
+    static member inline vmin(value: double) : ICssUnit = value.ToString() + "vmin" |> Unit :> _
     /// Relative to 1% of viewport's smaller dimension
-    static member inline vmin(value: int) : ICssUnit = unbox ((unbox<string>value) + "vmin")
+    static member inline vmin(value: int) : ICssUnit = value.ToString() + "vmin" |> Unit :> _
     /// Relative to 1% of viewport's larger dimension
-    static member inline vmax(value: double) : ICssUnit = unbox ((unbox<string>value) + "vmax")
+    static member inline vmax(value: double) : ICssUnit = value.ToString() + "vmax" |> Unit :> _
     /// Relative to 1% of viewport's* larger dimension
-    static member inline vmax(value: int) : ICssUnit = unbox ((unbox<string>value) + "vmax")
+    static member inline vmax(value: int) : ICssUnit = value.ToString() + "vmax" |> Unit :> _
     /// Relative to the parent element
-    static member inline perc(value: int) : ICssUnit = unbox ((unbox<string>value) + "%")
+    static member inline perc(value: int) : ICssUnit = value.ToString() + "%" |> Unit :> _
     /// Relative to the parent element
-    static member inline perc(value: double) : ICssUnit = unbox ((unbox<string>value) + "%")
+    static member inline perc(value: double) : ICssUnit = value.ToString() + "%" |> Unit :> _
     /// Relative to the parent element
-    static member inline percent(value: int) : ICssUnit = unbox ((unbox<string>value) + "%")
+    static member inline percent(value: int) : ICssUnit = value.ToString() + "%" |> Unit :> _
     /// Relative to the parent element
-    static member inline percent(value: double) : ICssUnit = unbox ((unbox<string>value) + "%")
+    static member inline percent(value: double) : ICssUnit = value.ToString() + "%" |> Unit :> _
     /// The browser calculates the length.
-    static member inline auto : ICssUnit = unbox "auto"
+    static member inline auto : ICssUnit = "auto" |> Unit :> _
 
 [<Erase>]
 type style () =
@@ -98,93 +98,93 @@ type style () =
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: int, right: int) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px"
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px"
         )
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: ICssUnit, right: int) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + " " +
-            (unbox<string>right) + "px"
+            (top.ToString ()) + " " +
+            (right.ToString ()) + "px"
         )
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: ICssUnit, right: ICssUnit) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + " " +
-            (unbox<string>right)
+            (top.ToString ()) + " " +
+            (right.ToString ())
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: ICssUnit, right: int, bottom: int) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + " " +
-            (unbox<string>right) + "px " +
-            (unbox<string>bottom) + "px"
+            (top.ToString()) + " " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px"
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: ICssUnit, right: ICssUnit, bottom: int) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + " " +
-            (unbox<string>bottom) + "px"
+            (top.ToString ()) + " " +
+            (right.ToString ()) + " " +
+            (bottom.ToString ()) + "px"
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: ICssUnit, right: ICssUnit, bottom: ICssUnit) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + " " +
-            (unbox<string> bottom)
+            (top.ToString ()) + " " +
+            (right.ToString ()) + " " +
+            (bottom.ToString ())
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: ICssUnit, right: int, bottom: ICssUnit) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom)
+            (top.ToString ()) + " " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ())
         )
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(top: ICssUnit, right: ICssUnit, bottom: ICssUnit, left: ICssUnit) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + " " +
-            (unbox<string> bottom) + " " +
-            (unbox<string> left)
+            (top.ToString ()) + " " +
+            (right.ToString ()) + " " +
+            (bottom.ToString ()) + " " +
+            (left.ToString ())
         )
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(top: ICssUnit, right: int, bottom: int, left: int) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + " " +
-            (unbox<string>right) + "px " +
-            (unbox<string>bottom) + "px " +
-            (unbox<string>left) + "px"
+            (top.ToString ()) + " " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px " +
+            (left.ToString ()) + "px"
         )
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: int, right: ICssUnit) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right)
+            (top.ToString ()) + "px " +
+            (right.ToString ())
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: int, right: int, bottom: int) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom) + "px"
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px"
         )
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(top: int, right: int, bottom: int, left: int) =
         Interop.mkStyle "margin" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom) + "px " +
-            (unbox<string> left) + "px")
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px " +
+            (left.ToString ()) + "px")
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(value: ICssUnit) = Interop.mkStyle "margin" value
@@ -216,64 +216,64 @@ type style () =
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(top: ICssUnit, right: int) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + " " +
-            (unbox<string>right) + "px"
+            (top.ToString ()) + " " +
+            (right.ToString ()) + "px"
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: ICssUnit, right: int, bottom: int) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom) + "px"
+            (top.ToString ()) + " " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px"
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: ICssUnit, right: ICssUnit, bottom: int) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + " " +
-            (unbox<string>bottom) + "px"
+            (top.ToString ()) + " " +
+            (right.ToString ()) + " " +
+            (bottom.ToString ()) + "px"
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: ICssUnit, right: ICssUnit, bottom: ICssUnit) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + " " +
-            (unbox<string> bottom)
+            (top.ToString ()) + " " +
+            (right.ToString ()) + " " +
+            (bottom.ToString ())
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: ICssUnit, right: int, bottom: ICssUnit) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom)
+            (top.ToString ()) + " " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ())
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(top: ICssUnit, right: ICssUnit, bottom: ICssUnit, left: ICssUnit) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + " " +
-            (unbox<string> right) + " " +
-            (unbox<string> bottom) + " " +
-            (unbox<string> left)
+            (top.ToString ()) + " " +
+            (right.ToString ()) + " " +
+            (bottom.ToString ()) + " " +
+            (left.ToString ())
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(top: ICssUnit, right: int, bottom: int, left: int) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + " " +
-            (unbox<string>right) + "px " +
-            (unbox<string>bottom) + "px " +
-            (unbox<string>left) + "px"
+            (top.ToString ()) + " " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px " +
+            (left.ToString ()) + "px"
         )
     /// Sets the padding area on two sides of an element. It is a shorthand for padding-top and padding-right.
     static member inline padding(top: int, right: ICssUnit) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right)
+            (top.ToString ()) + "px " +
+            (right.ToString ())
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
@@ -281,25 +281,25 @@ type style () =
     /// Sets the padding area on two sides of an element. It is a shorthand for padding-top and padding-right.
     static member inline padding(top: int, right: int) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px"
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px"
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: int, right: int, bottom: int) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom) + "px"
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px"
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(top: int, right: int, bottom: int, left: int) =
         Interop.mkStyle "padding" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom) + "px " +
-            (unbox<string> left) + "px"
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px " +
+            (left.ToString ()) + "px"
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
@@ -618,13 +618,13 @@ type style () =
     static member inline borderStyle (style: IBorderStyle) = Interop.mkStyle "borderStyle" style
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle)  =
-        Interop.mkStyle "borderStyle" ((unbox<string> top) + " " + (unbox<string> right))
+        Interop.mkStyle "borderStyle" ((top.ToString ()) + " " + (right.ToString ()))
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle, bottom: IBorderStyle) =
-        Interop.mkStyle "borderStyle" ((unbox<string> top) + " " + (unbox<string> right) + " " +  (unbox<string> bottom))
+        Interop.mkStyle "borderStyle" ((top.ToString ()) + " " + (right.ToString ()) + " " +  (bottom.ToString ()))
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle, bottom: IBorderStyle, left: IBorderStyle) =
-        Interop.mkStyle "borderStyle" ((unbox<string> top) + " " + (unbox<string> right) + " " + (unbox<string> bottom) + " " +  (unbox<string> left))
+        Interop.mkStyle "borderStyle" ((top.ToString ()) + " " + (right.ToString ()) + " " + (bottom.ToString ()) + " " +  (left.ToString ()))
     /// Sets the color of an element's border.
     static member inline borderColor (color: string) = Interop.mkStyle "borderColor" color
     /// Rounds the corners of an element's outer border edge. You can set a single radius to make
@@ -636,25 +636,25 @@ type style () =
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int) =
         Interop.mkStyle "borderWidth" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px"
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px"
         )
     /// Sets the width of an element's border.
     static member inline borderWidth (width: int) = Interop.mkStyle "borderWidth" width
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int, bottom: int) =
         Interop.mkStyle "borderWidth" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom) + "px"
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px"
         )
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int, bottom: int, left: int) =
         Interop.mkStyle "borderWidth" (
-            (unbox<string> top) + "px " +
-            (unbox<string> right) + "px " +
-            (unbox<string> bottom) + "px " +
-            (unbox<string> left) + "px"
+            (top.ToString ()) + "px " +
+            (right.ToString ()) + "px " +
+            (bottom.ToString ()) + "px " +
+            (left.ToString ()) + "px"
         )
     /// Sets one or more animations to apply to an element. Each name is an @keyframes at-rule that
     /// sets the property values for the animation sequence.
@@ -692,19 +692,19 @@ type style () =
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine) =
-        Interop.mkStyle "textDecoration" ((unbox<string> bottom) + " " + (unbox<string> top))
+        Interop.mkStyle "textDecoration" ((bottom.ToString ()) + " " + (top.ToString ()))
     /// Sets the appearance of decorative lines on text.
     ///
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine, style: ITextDecoration) =
-        Interop.mkStyle "textDecoration" ((unbox<string> bottom) + " " + (unbox<string> top) + " " + (unbox<string> style))
+        Interop.mkStyle "textDecoration" ((bottom.ToString ()) + " " + (top.ToString ()) + " " + (unbox<string> style))
     /// Sets the appearance of decorative lines on text.
     ///
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine, style: ITextDecoration, color: string) =
-        Interop.mkStyle "textDecoration" ((unbox<string> bottom) + " " + (unbox<string> top) + " " + (unbox<string> style) + " " + color)
+        Interop.mkStyle "textDecoration" ((bottom.ToString ()) + " " + (top.ToString ()) + " " + (unbox<string> style) + " " + color)
     /// Sets the length of empty space (indentation) that is put before lines of text in a block.
     static member inline textIndent(value: int) = Interop.mkStyle "textIndent" value
     /// Sets the length of empty space (indentation) that is put before lines of text in a block.

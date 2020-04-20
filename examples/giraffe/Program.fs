@@ -27,7 +27,7 @@ module Views =
     let layout (content: ReactElement list) =
         Html.html [
             Html.head [
-                Html.title [ prop.text "examples" ]
+                Html.title "examples"
                 Html.link [
                     prop.rel  "stylesheet"
                     prop.type' "text/css"

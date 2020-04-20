@@ -43,3 +43,11 @@ type ICssUnit = interface end
 type ITransitionProperty = interface end
 
 type ITransformProperty = interface end
+
+type CssUnit =
+    | Unit of string
+    interface ICssUnit
+
+    override x.ToString () =
+        let (Unit value) = x
+        value
