@@ -149,6 +149,20 @@ let ``h1 element with text and style property is Ok``() =
     test <@ result = "<h1 style=\"font-size:100px;color:#137373\">examples</h1>" @>
 
 [<Fact>]
+let ``The order of properties for an element is preserved``() =
+    // Arrange / Act
+    let result =
+        Html.link [
+            prop.rel  "stylesheet"
+            prop.type' "text/css"
+            prop.href "main.css"
+        ]
+        |> Render.htmlView
+
+    // Assert
+    test <@ result = "<link rel=\"stylesheet\" type=\"text/css\" href=\"main.css\">" @>
+
+[<Fact>]
 let ``h1 element with text and style property with css unit is Ok``() =
     // Arrange / Act
     let result =
@@ -162,17 +176,28 @@ let ``h1 element with text and style property with css unit is Ok``() =
     test <@ result = "<h1 style=\"font-size:100em\">examples</h1>" @>
 
 [<Fact>]
+let ``Void tag in XML should be self closing tag`` () =
+    let unary =  Html.br [] |> Render.xmlView
+    Assert.Equal("<br />", unary)
+
+[<Fact>]
+let ``Void tag in HTML should be unary tag`` () =
+    let unary =  Html.br [] |> Render.htmlView
+    Assert.Equal("<br>", unary)
+
+[<Fact>]
 let ``Nested content should render correctly`` () =
     let nested =
         Html.div [
             Html.comment "this is a test"
             Html.h1 [ Html.text "Header" ]
             Html.p [
-                Html.rawText "Lorem "
+                Html.rawText "<br/>"
                 Html.strong [ Html.text "Ipsum" ]
                 Html.text " dollar"
-        ] ]
+            ]
+        ]
     let html =
         nested
         |> Render.xmlView
-    Assert.Equal("<div><!-- this is a test --><h1>Header</h1><p>Lorem <strong>Ipsum</strong> dollar</p></div>", html)
+    Assert.Equal("<div><!-- this is a test --><h1>Header</h1><p><br/><strong>Ipsum</strong> dollar</p></div>", html)

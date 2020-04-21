@@ -28,7 +28,12 @@ module Interop =
     let inline createRawTextElement (content : string) = TextElement content
     let inline createTextElement (content : string) = ViewBuilder.escape content |> TextElement
 
-    let mkAttr (key: string) (value: 'a) : ReactProperty = KeyValue (key, value.ToString () |> ViewBuilder.escape)
+    let mkAttr (key: string) (value: obj) : ReactProperty =
+        let result =
+            match value with
+            | :? bool -> value.ToString().ToLower()
+            | _ -> value.ToString() |> ViewBuilder.escape
+        KeyValue (key, result)
 
     let mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
 

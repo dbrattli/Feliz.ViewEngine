@@ -7,6 +7,7 @@
     <Company>Brattli Labs</Company>
     <Copyright>Brattli Labs</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/dbrattli/Feliz.ViewEngine</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ViewEngine.fs" />

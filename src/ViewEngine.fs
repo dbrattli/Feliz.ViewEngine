@@ -48,12 +48,14 @@ module ViewBuilder =
         if isHtml then ">" else " />"
 
     let rec private buildNode (isHtml : bool) (sb : StringBuilder) (node : ReactElement) : unit =
-        let init = [], None, []
-        let splitProps ((children, text, attrs) : ReactElement list * string option * (string*obj) list) (prop: ReactProperty) =
-            match prop with
-            | KeyValue (k, v) -> children, text,  (k, v) :: attrs
-            | Children ch -> List.append children ch, text, attrs
-            | Text text -> children, Some text, attrs
+        let splitProps (props: ReactProperty list) =
+            let init = [], None, []
+            let folder (prop: ReactProperty) ((children, text, attrs) : ReactElement list * string option * (string*obj) list) =
+                match prop with
+                | KeyValue (k, v) -> children, text,  (k, v) :: attrs
+                | Children ch -> List.append children ch, text, attrs
+                | Text text -> children, Some text, attrs
+            List.foldBack folder props init
 
         let buildElement closingBracket (elemName, props : (string*obj) list) =
             match props with
@@ -69,13 +71,14 @@ module ViewBuilder =
 
         let inline buildParentNode (elemName, attributes : (string*obj) list, nodes : ReactElement list) =
             buildElement ">" (elemName, attributes)
-            for node in nodes do buildNode isHtml sb node
+            for node in nodes do
+                buildNode isHtml sb node
             sb += "</" += elemName +! ">"
 
         match node with
         | TextElement text -> sb +! text
         | Element (name, props) ->
-            let children, text, attrs = props |> List.fold splitProps init
+            let children, text, attrs = splitProps props
             match children, text, attrs with
             | [], None, _ -> buildElement (selfClosingBracket isHtml) (name, attrs)
             | _, Some text, _ -> buildParentNode (name, attrs, TextElement text :: children)
@@ -91,6 +94,10 @@ module ViewBuilder =
         sb += "<!DOCTYPE html>" +! Environment.NewLine
         buildHtmlNode sb document
 
+    let buildXmlDocument sb (document : ReactElement) =
+        sb += """<?xml version="1.0" encoding="utf-8"?>""" +! Environment.NewLine
+        buildXmlNode sb document
+
 /// Render HTML/XML views
 type Render =
     // Create XML view
@@ -101,6 +108,11 @@ type Render =
     // Create XML view
     static member xmlView (nodes: ReactElement list) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNodes sb nodes
+        sb.ToString()
+
+    // Create XML document view with <?xml version="1.0" encoding="utf-8"?>
+    static member xmlDocument (document: ReactElement) : string =
+        let sb = new StringBuilder() in ViewBuilder.buildXmlDocument sb document
         sb.ToString()
 
     // Create HTML view
