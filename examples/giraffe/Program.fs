@@ -29,7 +29,7 @@ module Views =
             Html.head [
                 Html.title "examples"
                 Html.link [
-                    prop.rel  "stylesheet"
+                    prop.rel "stylesheet"
                     prop.type' "text/css"
                     prop.href "/main.css"
                 ]

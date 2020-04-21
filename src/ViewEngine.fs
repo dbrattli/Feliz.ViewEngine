@@ -26,6 +26,7 @@ type ReactProperty =
 
 and ReactElement =
     | Element of string * ReactProperty list // An element which contains properties
+    | VoidElement of string * ReactProperty list // An empty self-closed element which contains properties
     | TextElement of string
 
 [<RequireQualifiedAccess>]
@@ -77,10 +78,12 @@ module ViewBuilder =
 
         match node with
         | TextElement text -> sb +! text
+        | VoidElement (name, props) ->
+            let _, _, attrs = splitProps props
+            buildElement (selfClosingBracket isHtml) (name, attrs)
         | Element (name, props) ->
             let children, text, attrs = splitProps props
             match children, text, attrs with
-            | [], None, _ -> buildElement (selfClosingBracket isHtml) (name, attrs)
             | _, Some text, _ -> buildParentNode (name, attrs, TextElement text :: children)
             | _ -> buildParentNode (name, attrs, children)
 

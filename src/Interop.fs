@@ -23,7 +23,10 @@ module Interop =
         Element (name, [ mkText child ])
 
     let createElement name (props: ReactProperty list) : ReactElement =
-         Element (name, props)
+        Element (name, props)
+
+    let createVoidElement name (props: ReactProperty list) : ReactElement =
+        VoidElement (name, props)
 
     let inline createRawTextElement (content : string) = TextElement content
     let inline createTextElement (content : string) = ViewBuilder.escape content |> TextElement

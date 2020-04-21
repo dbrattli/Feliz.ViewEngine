@@ -39,7 +39,7 @@ type Html =
     static member inline b (value: string) = Interop.reactElementWithChild "b" value
     static member inline b (children: #seq<ReactElement>) = Interop.reactElementWithChildren "b" children
 
-    static member inline base' xs = Interop.createElement "base" xs
+    static member inline base' xs = Interop.createVoidElement "base" xs
 
     static member inline bdi xs = Interop.createElement "bdi" xs
     static member inline bdi (value: float) = Interop.reactElementWithChild "bdi" value
@@ -69,7 +69,7 @@ type Html =
     static member inline body (value: string) = Interop.reactElementWithChild "body" value
     static member inline body (children: #seq<ReactElement>) = Interop.reactElementWithChildren "body" children
 
-    static member inline br xs = Interop.createElement "br" xs
+    static member inline br xs = Interop.createVoidElement "br" xs
 
     static member inline button xs = Interop.createElement "button" xs
     static member inline button (children: #seq<ReactElement>) = Interop.reactElementWithChildren "button" children
@@ -104,7 +104,7 @@ type Html =
     static member inline code (value: string) = Interop.reactElementWithChild "code" value
     static member inline code (children: #seq<ReactElement>) = Interop.reactElementWithChildren "code" children
 
-    static member inline col xs = Interop.createElement "col" xs
+    static member inline col xs = Interop.createVoidElement "col" xs
 
     static member inline colgroup xs = Interop.createElement "colgroup" xs
     static member inline colgroup (children: #seq<ReactElement>) = Interop.reactElementWithChildren "colgroup" children
@@ -254,7 +254,7 @@ type Html =
     static member inline header xs = Interop.createElement "header" xs
     static member inline header (children: #seq<ReactElement>) = Interop.reactElementWithChildren "header" children
 
-    static member inline hr xs = Interop.createElement "hr" xs
+    static member inline hr xs = Interop.createVoidElement "hr" xs
 
     static member inline html xs = Interop.createElement "html" xs
     static member inline html (children: #seq<ReactElement>) = Interop.reactElementWithChildren "html" children
@@ -268,9 +268,9 @@ type Html =
 
     static member inline iframe xs = Interop.createElement "iframe" xs
 
-    static member inline img xs = Interop.createElement "img" xs
+    static member inline img xs = Interop.createVoidElement "img" xs
 
-    static member inline input xs = Interop.createElement "input" xs
+    static member inline input xs = Interop.createVoidElement "input" xs
 
     static member inline ins xs = Interop.createElement "ins" xs
     static member inline ins (value: float) = Interop.reactElementWithChild "ins" value
@@ -309,8 +309,7 @@ type Html =
     static member inline linearGradient xs = Interop.createElement "linearGradient" xs
     static member inline linearGradient (children: #seq<ReactElement>) = Interop.reactElementWithChildren "linearGradient" children
 
-    static member inline link xs = Interop.createElement "link" xs
-    static member inline link (children: #seq<ReactElement>) = Interop.reactElementWithChildren "link" children
+    static member inline link xs = Interop.createVoidElement "link" xs
 
     static member inline listItem xs = Interop.createElement "li" xs
     static member inline listItem (value: float) = Interop.reactElementWithChild "li" value
@@ -332,7 +331,7 @@ type Html =
     static member inline mark (value: string) = Interop.reactElementWithChild "mark" value
     static member inline mark (children: #seq<ReactElement>) = Interop.reactElementWithChildren "mark" children
 
-    static member inline meta xs = Interop.createElement "meta" xs
+    static member inline meta xs = Interop.createVoidElement "meta" xs
 
     static member inline meter xs = Interop.createElement "meter" xs
     static member inline meter (value: float) = Interop.reactElementWithChild "meter" value
@@ -390,7 +389,7 @@ type Html =
     static member inline paragraph (value: string) = Interop.reactElementWithChild "p" value
     static member inline paragraph (children: #seq<ReactElement>) = Interop.reactElementWithChildren "p" children
 
-    static member inline param xs = Interop.createElement "param" xs
+    static member inline param xs = Interop.createVoidElement "param" xs
 
     static member inline path xs = Interop.createElement "path" xs
     static member inline path (children: #seq<ReactElement>) = Interop.reactElementWithChildren "path" children
@@ -621,4 +620,4 @@ type Html =
     static member inline video xs = Interop.createElement "video" xs
     static member inline video (children: #seq<ReactElement>) = Interop.reactElementWithChildren "video" children
 
-    static member inline wbr xs = Interop.createElement "wbr" xs
+    static member inline wbr xs = Interop.createVoidElement "wbr" xs
