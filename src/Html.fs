@@ -108,6 +108,7 @@ type Html =
 
     static member inline colgroup xs = Interop.createElement "colgroup" xs
     static member inline colgroup (children: #seq<ReactElement>) = Interop.reactElementWithChildren "colgroup" children
+    static member inline comment (content : string) = Interop.createRawTextElement (sprintf "<!-- %s -->" content)
 
     static member inline data xs = Interop.createElement "data" xs
     static member inline data (value: float) = Interop.reactElementWithChild "data" value
@@ -560,10 +561,11 @@ type Html =
     static member inline template (children: #seq<ReactElement>) = Interop.reactElementWithChildren "template" children
 
     static member inline text xs = Interop.createElement "text" xs
-    static member inline text (value: float) : ReactElement = TextElement (value.ToString ())
-    static member inline text (value: int) : ReactElement = TextElement (value.ToString ())
-    static member inline text (value: string) : ReactElement = TextElement value
-    static member inline text (value: System.Guid) : ReactElement = TextElement (string value)
+    static member inline text (value: float) : ReactElement = Interop.createTextElement (value.ToString ())
+    static member inline text (value: int) : ReactElement = Interop.createTextElement (value.ToString ())
+    static member inline text (value: string) : ReactElement = Interop.createTextElement value
+    static member inline text (value: System.Guid) : ReactElement = Interop.createTextElement (string value)
+    static member inline rawText (value: string) : ReactElement = Interop.createRawTextElement value
 
     static member inline textarea xs = Interop.createElement "textarea" xs
     static member inline textarea (children: #seq<ReactElement>) = Interop.reactElementWithChildren "textarea" children

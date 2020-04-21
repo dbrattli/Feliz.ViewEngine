@@ -161,3 +161,18 @@ let ``h1 element with text and style property with css unit is Ok``() =
     // Assert
     test <@ result = "<h1 style=\"font-size:100em\">examples</h1>" @>
 
+[<Fact>]
+let ``Nested content should render correctly`` () =
+    let nested =
+        Html.div [
+            Html.comment "this is a test"
+            Html.h1 [ Html.text "Header" ]
+            Html.p [
+                Html.rawText "Lorem "
+                Html.strong [ Html.text "Ipsum" ]
+                Html.text " dollar"
+        ] ]
+    let html =
+        nested
+        |> Render.xmlNode
+    Assert.Equal("<div><!-- this is a test --><h1>Header</h1><p>Lorem <strong>Ipsum</strong> dollar</p></div>", html)

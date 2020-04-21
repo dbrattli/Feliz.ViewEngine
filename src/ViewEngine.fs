@@ -63,7 +63,7 @@ module ViewBuilder =
 
                 props
                 |> List.iter (fun (key, value) ->
-                    sb += " " += key += "=\"" += (value.ToString () |> escape) +! "\"")
+                    sb += " " += key += "=\"" += value.ToString () +! "\"")
 
                 sb +! closingBracket
 
@@ -73,7 +73,7 @@ module ViewBuilder =
             sb += "</" += elemName +! ">"
 
         match node with
-        | TextElement text -> sb +! (escape text)
+        | TextElement text -> sb +! text
         | Element (name, props) ->
             let children, text, attrs = props |> List.fold splitProps init
             match children, text, attrs with

@@ -1104,11 +1104,11 @@ type prop =
 
     /// Defines the text content of the element. Alias for `children [ Html.text value ]`
         /// Defines the text content of the element. Alias for `children [ Html.text value ]`
-    static member inline text (value: float) = Text (value.ToString ())
+    static member inline text (value: float) = Interop.mkText (value.ToString ())
     /// Defines the text content of the element. Alias for `children [ Html.text value ]`
-    static member inline text (value: int) = Text (value.ToString ())
+    static member inline text (value: int) = Interop.mkText (value.ToString ())
     /// Defines the text content of the element. Alias for `children [ Html.text value ]`
-    static member inline text (value: string) = Text value
+    static member inline text (value: string) = Interop.mkText value
 
     /// The title global attribute contains text representing advisory information related to the element it belongs to.
     static member inline title (value: string) = Interop.mkAttr "title" value
