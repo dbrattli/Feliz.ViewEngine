@@ -3,7 +3,12 @@
 ![Build and Test](https://github.com/dbrattli/Feliz.ViewEngine/workflows/Build%20and%20Test/badge.svg)
 [![NuGet](https://img.shields.io/nuget/v/Feliz.ViewEngine.svg?maxAge=0&colorB=brightgreen)](https://www.nuget.org/packages/Feliz.ViewEngine)
 
-Work in progress (WIP) for using [Feliz](https://github.com/Zaid-Ajaj/Feliz) DSL with Server Side Rendering (SSR). Can be used for Giraffe or other servers. Both for HTML and XML.
+Feliz.ViewEngine lets you render [Feliz](https://github.com/Zaid-Ajaj/Feliz) DSL to plain HTML (or XML). Use with e.g
+Giraffe for handling Server Side Rendering (SSR), returning HTML or XML. You can use it for e.g generating HTML emails
+or any other use-case where you need to generate HTML output.
+
+Feliz.ViewEngine have no dependencies, is Fable compatible, and can thus be used with both servers (e.g Node.js) or
+clients.
 
 ## Installation
 
@@ -38,6 +43,9 @@ Giraffe example at https://github.com/dbrattli/Feliz.ViewEngine/blob/master/exam
 
 ## Sharing views between client and server
 
+Feliz.ViewEngine re-implements Feliz DSL for server-side so you will need to choose Feliz for client side rendering and
+Feliz.ViewEngine for server side rendering:
+
 ```fs
 #if FABLE_COMPILER
 open Feliz
@@ -45,12 +53,13 @@ open Feliz
 open Feliz.ViewEngine
 #endif
 
-let view  = ...
+let view = ...
 ```
 
 ## Documentation
 
-Feliz has extensive documentation at https://zaid-ajaj.github.io/Feliz with live examples along side code samples, check them out and if you have any question, let us know!
+Feliz has extensive documentation at https://zaid-ajaj.github.io/Feliz with live examples along side code samples, check
+them out and if you have any question, let us know!
 
 ## License
 

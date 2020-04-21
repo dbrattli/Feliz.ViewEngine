@@ -3,12 +3,15 @@ namespace Feliz.ViewEngine
 open System
 open Feliz.ViewEngine.Styles
 
+#if FABLE_COMPILER
+type EraseAttribute = Fable.Core.EraseAttribute
+#else
 [<AttributeUsage(AttributeTargets.Class)>]
 type EraseAttribute () =
     inherit Attribute ()
+#endif
 
-/// Describes a basic style attribute
-// Interop between Feliz React DSL and Giraffe XmlNode.
+/// Describes a basic style attribute. Interop between Feliz React and ViewEngine DSLs.
 [<RequireQualifiedAccess>]
 module Interop =
     let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) : ReactElement =

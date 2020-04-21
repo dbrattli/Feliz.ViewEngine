@@ -372,10 +372,12 @@ type style () =
         Interop.mkStyle "transition-delay" (n.ToString() + "ms")
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty ([<ParamArray>] properties: ITransitionProperty[]) =
-        Interop.mkStyle "transition-property" (String.concat "," (unbox<string[]> properties))
+        let strings = properties |> Seq.map (fun p -> p.ToString())
+        Interop.mkStyle "transition-property" (String.concat "," strings)
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty (properties: ITransitionProperty list) =
-        Interop.mkStyle "transition-property" (String.concat "," (unbox<string list> properties))
+        let strings = properties |> Seq.map (fun p -> p.ToString())
+        Interop.mkStyle "transition-property" (String.concat "," strings)
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty (property: ITransitionProperty) =
         Interop.mkStyle "transition-property" property
@@ -387,7 +389,8 @@ type style () =
         Interop.mkStyle "transform" transformation
 
     static member inline transform(transformations: ITransformProperty list) =
-        Interop.mkStyle "transform" (String.concat " " (unbox transformations))
+        let strings = transformations |> Seq.map (fun p -> p.ToString())
+        Interop.mkStyle "transform" (String.concat " " strings)
 
     /// Sets the size of the font.
     ///
