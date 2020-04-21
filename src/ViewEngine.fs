@@ -91,26 +91,29 @@ module ViewBuilder =
         sb += "<!DOCTYPE html>" +! Environment.NewLine
         buildHtmlNode sb document
 
-// ---------------------------
-// Render HTML/XML views
-// ---------------------------
-module Render =
-    let xmlNode (node: ReactElement) : string =
+/// Render HTML/XML views
+type Render =
+    // Create XML view
+    static member xmlView (node: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNode sb node
         sb.ToString()
 
-    let xmlNodes (nodes: ReactElement list) : string =
+    // Create XML view
+    static member xmlView (nodes: ReactElement list) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNodes sb nodes
         sb.ToString()
 
-    let htmlNode (node: ReactElement) : string =
+    // Create HTML view
+    static member htmlView (node: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildHtmlNode sb node
         sb.ToString()
 
-    let htmlNodes (nodes: ReactElement list) : string =
+    /// Create HTML view
+    static member htmlView (nodes: ReactElement list) : string =
         let sb = new StringBuilder() in ViewBuilder.buildHtmlNodes sb nodes
         sb.ToString()
 
-    let htmlDocument (document: ReactElement) : string =
+    /// Create HTML document view with <!DOCTYPE html>
+    static member htmlDocument (document: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildHtmlDocument sb document
         sb.ToString()

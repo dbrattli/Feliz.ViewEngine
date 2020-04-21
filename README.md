@@ -34,7 +34,7 @@ let html =
         prop.style [ style.fontSize(100); style.color("#137373") ]
         prop.text "Hello, world!"
     ]
-    |> Render.htmlNode
+    |> Render.htmlView
 
 printfn "Output: %s" html
 ```
@@ -57,6 +57,15 @@ let view = ...
 ```
 
 ## Documentation
+
+The following API is available for converting `ReactElement` to string:
+
+```fs
+type Render
+  static member htmlDocument: document: ReactElement -> string
+  static member htmlView: node: ReactElement -> string (+ 1 overloads)
+  static member xmlView: node: ReactElement -> string (+ 1 overloads)
+```
 
 Feliz has extensive documentation at https://zaid-ajaj.github.io/Feliz with live examples along side code samples, check
 them out and if you have any question, let us know!

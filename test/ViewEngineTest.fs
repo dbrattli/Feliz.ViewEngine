@@ -9,7 +9,7 @@ let ``Simple text element is Ok``() =
     // Arrange / Act
     let result =
         Html.text "test"
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "test" @>
@@ -19,7 +19,7 @@ let ``Simple text element is escaped Ok``() =
     // Arrange / Act
     let result =
         Html.text "te<st"
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "te&lt;st" @>
@@ -29,7 +29,7 @@ let ``p element with text is Ok``() =
     // Arrange / Act
     let result =
         Html.p "test"
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<p>test</p>" @>
@@ -39,7 +39,7 @@ let ``p element with text is escaped Ok``() =
     // Arrange / Act
     let result =
         Html.p "te>st"
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<p>te&gt;st</p>" @>
@@ -51,7 +51,7 @@ let ``p element with text property is Ok``() =
         Html.p [
             prop.text "test"
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<p>test</p>" @>
@@ -63,7 +63,7 @@ let ``p element with text property is escaped Ok``() =
         Html.p [
             prop.text "tes&t"
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<p>tes&amp;t</p>" @>
@@ -75,7 +75,7 @@ let ``p element with text element is Ok``() =
         Html.p [
             Html.text "test"
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<p>test</p>" @>
@@ -87,7 +87,7 @@ let ``p element with text element is escaped Ok``() =
         Html.p [
             Html.text "t\"est"
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<p>t&quot;est</p>" @>
@@ -99,7 +99,7 @@ let ``Closed element Ok``() =
         Html.div [
             Html.br []
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<div><br></div>" @>
@@ -114,7 +114,7 @@ let ``p element with text element and class property is Ok``() =
                 Html.text "test"
             ]
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<p class=\"main\">test</p>" @>
@@ -129,7 +129,7 @@ let ``p element with text element and classes property is Ok``() =
                 Html.text "test"
             ]
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<p class=\"c1 c2\">test</p>" @>
@@ -143,7 +143,7 @@ let ``h1 element with text and style property is Ok``() =
             prop.style [ style.fontSize(100); style.color("#137373") ]
             prop.text "examples"
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<h1 style=\"font-size:100px;color:#137373\">examples</h1>" @>
@@ -156,7 +156,7 @@ let ``h1 element with text and style property with css unit is Ok``() =
             prop.style [ style.fontSize(length.em(100)) ]
             prop.text "examples"
         ]
-        |> Render.htmlNode
+        |> Render.htmlView
 
     // Assert
     test <@ result = "<h1 style=\"font-size:100em\">examples</h1>" @>
@@ -174,5 +174,5 @@ let ``Nested content should render correctly`` () =
         ] ]
     let html =
         nested
-        |> Render.xmlNode
+        |> Render.xmlView
     Assert.Equal("<div><!-- this is a test --><h1>Header</h1><p>Lorem <strong>Ipsum</strong> dollar</p></div>", html)
