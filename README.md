@@ -62,8 +62,13 @@ The following API is available for converting `ReactElement` to string:
 
 ```fs
 type Render
+  /// Create HTML document view with <!DOCTYPE html>
   static member htmlDocument: document: ReactElement -> string
+  /// Create HTML view
   static member htmlView: node: ReactElement -> string (+ 1 overloads)
+  /// Create XML document view with <?xml version="1.0" encoding="utf-8"?>
+  static member xmlDocument: document: ReactElement -> string
+  /// Create XML view
   static member xmlView: node: ReactElement -> string (+ 1 overloads)
 ```
 

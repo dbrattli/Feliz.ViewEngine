@@ -488,7 +488,7 @@ type Html =
     static member inline small (value: string) = Interop.reactElementWithChild "small" value
     static member inline small (children: #seq<ReactElement>) = Interop.reactElementWithChildren "small" children
 
-    static member inline source xs = Interop.createElement "source" xs
+    static member inline source xs = Interop.createVoidElement "source" xs
 
     static member inline span xs = Interop.createElement "span" xs
     static member inline span (value: float) = Interop.reactElementWithChild "span" value
@@ -595,7 +595,7 @@ type Html =
     static member inline tr xs = Interop.createElement "tr" xs
     static member inline tr (children: #seq<ReactElement>) = Interop.reactElementWithChildren "tr" children
 
-    static member inline track xs = Interop.createElement "track" xs
+    static member inline track xs = Interop.createVoidElement "track" xs
 
     static member inline u xs = Interop.createElement "u" xs
     static member inline u (value: float) = Interop.reactElementWithChild "u" value

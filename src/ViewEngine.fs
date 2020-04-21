@@ -103,22 +103,22 @@ module ViewBuilder =
 
 /// Render HTML/XML views
 type Render =
-    // Create XML view
+    /// Create XML view
     static member xmlView (node: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNode sb node
         sb.ToString()
 
-    // Create XML view
+    /// Create XML view
     static member xmlView (nodes: ReactElement list) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNodes sb nodes
         sb.ToString()
 
-    // Create XML document view with <?xml version="1.0" encoding="utf-8"?>
+    /// Create XML document view with <?xml version="1.0" encoding="utf-8"?>
     static member xmlDocument (document: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlDocument sb document
         sb.ToString()
 
-    // Create HTML view
+    /// Create HTML view
     static member htmlView (node: ReactElement) : string =
         let sb = new StringBuilder() in ViewBuilder.buildHtmlNode sb node
         sb.ToString()
