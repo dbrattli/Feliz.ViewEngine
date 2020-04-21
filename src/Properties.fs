@@ -1104,9 +1104,9 @@ type prop =
 
     /// Defines the text content of the element. Alias for `children [ Html.text value ]`
         /// Defines the text content of the element. Alias for `children [ Html.text value ]`
-    static member inline text (value: float) = Interop.mkText (value.ToString ())
+    static member inline text (value: float) = Interop.mkText value
     /// Defines the text content of the element. Alias for `children [ Html.text value ]`
-    static member inline text (value: int) = Interop.mkText (value.ToString ())
+    static member inline text (value: int) = Interop.mkText value
     /// Defines the text content of the element. Alias for `children [ Html.text value ]`
     static member inline text (value: string) = Interop.mkText value
 
