@@ -1,7 +1,8 @@
 STORAGE: NONE
+RESTRICTION: == netstandard2.0
 NUGET
   remote: https://www.nuget.org/api/v2
-    FSharp.Core (4.7.1)
+    FSharp.Core (4.7)
 
 GROUP Test
 STORAGE: NONE
@@ -9,21 +10,21 @@ NUGET
   remote: https://www.nuget.org/api/v2
     coverlet.msbuild (2.8.1)
     FSharp.Core (4.7.1)
-    Microsoft.CodeCoverage (16.5) - restriction: || (>= net45) (>= netcoreapp2.1)
+    Microsoft.CodeCoverage (16.6) - restriction: || (>= net45) (>= netcoreapp2.1)
     Microsoft.CSharp (4.7) - restriction: || (&& (< netstandard1.3) (>= uap10.0)) (&& (< netstandard2.0) (>= uap10.0))
-    Microsoft.NET.Test.Sdk (16.5)
-      Microsoft.CodeCoverage (>= 16.5) - restriction: || (>= net45) (>= netcoreapp2.1)
-      Microsoft.TestPlatform.TestHost (>= 16.5) - restriction: >= netcoreapp2.1
+    Microsoft.NET.Test.Sdk (16.6)
+      Microsoft.CodeCoverage (>= 16.6) - restriction: || (>= net45) (>= netcoreapp2.1)
+      Microsoft.TestPlatform.TestHost (>= 16.6) - restriction: >= netcoreapp2.1
       Newtonsoft.Json (>= 9.0.1) - restriction: >= uap10.0
       System.ComponentModel.Primitives (>= 4.1) - restriction: >= uap10.0
       System.ComponentModel.TypeConverter (>= 4.1) - restriction: >= uap10.0
       System.Runtime.InteropServices.RuntimeInformation (>= 4.0) - restriction: >= uap10.0
     Microsoft.NETCore.Platforms (3.1) - restriction: >= netcoreapp1.0
     Microsoft.NETCore.Targets (3.1) - restriction: >= netcoreapp1.0
-    Microsoft.TestPlatform.ObjectModel (16.5) - restriction: >= netcoreapp2.1
+    Microsoft.TestPlatform.ObjectModel (16.6) - restriction: >= netcoreapp2.1
       NuGet.Frameworks (>= 5.0) - restriction: || (>= net451) (>= netstandard2.0)
-    Microsoft.TestPlatform.TestHost (16.5) - restriction: >= netcoreapp2.1
-      Microsoft.TestPlatform.ObjectModel (>= 16.5) - restriction: || (>= netcoreapp2.1) (>= uap10.0)
+    Microsoft.TestPlatform.TestHost (16.6) - restriction: >= netcoreapp2.1
+      Microsoft.TestPlatform.ObjectModel (>= 16.6) - restriction: || (>= netcoreapp2.1) (>= uap10.0)
       Newtonsoft.Json (>= 9.0.1) - restriction: || (>= netcoreapp2.1) (>= uap10.0)
     Microsoft.Win32.Primitives (4.3) - restriction: || (&& (>= netcoreapp1.0) (< netstandard1.4)) (&& (>= netcoreapp1.0) (< netstandard1.5)) (&& (>= netcoreapp1.0) (< netstandard1.6)) (&& (>= netcoreapp1.0) (< netstandard2.0))
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: && (< monoandroid) (< monotouch) (< net46) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
