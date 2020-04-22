@@ -58,7 +58,8 @@ let view = ...
 
 ## Documentation
 
-The following API is available for converting `ReactElement` to string:
+The following API is available for converting a `ReactElement` view into a string that you can return from e.g a Giraffe
+HTTP handler.
 
 ```fs
 type Render
