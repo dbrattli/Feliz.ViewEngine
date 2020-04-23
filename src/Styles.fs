@@ -3,84 +3,86 @@ namespace Feliz.ViewEngine
 open System
 open Feliz.ViewEngine.Styles
 
+//fsharplint:disable
+
 /// Specifies a number of specialized CSS units
 type length =
     /// Pixels are (1px = 1/96th of 1in).
     ///
     /// **Note**: Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
-    static member inline px(value: int) : ICssUnit = value.ToString() + "px" |> Unit :> _
+    static member inline px(value: int) : ICssUnit = value.ToString() + "px" |> CssUnit :> _
     /// Pixels are (1px = 1/96th of 1in).
     ///
     /// **Note**: Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
-    static member inline px(value: double) : ICssUnit = value.ToString() + "px" |> Unit :> _
+    static member inline px(value: double) : ICssUnit = value.ToString() + "px" |> CssUnit :> _
     /// Centimeters
-    static member inline cm(value: int) : ICssUnit = value.ToString() + "cm" |> Unit :> _
+    static member inline cm(value: int) : ICssUnit = value.ToString() + "cm" |> CssUnit :> _
     /// Centimeters
-    static member inline cm(value: double) : ICssUnit = value.ToString() + "cm" |> Unit :> _
+    static member inline cm(value: double) : ICssUnit = value.ToString() + "cm" |> CssUnit :> _
     /// Millimeters
-    static member inline mm(value: int) : ICssUnit = value.ToString() + "mm" |> Unit :> _
+    static member inline mm(value: int) : ICssUnit = value.ToString() + "mm" |> CssUnit :> _
     /// Millimeters
-    static member inline mm(value: double) : ICssUnit = value.ToString() + "mm" |> Unit :> _
+    static member inline mm(value: double) : ICssUnit = value.ToString() + "mm" |> CssUnit :> _
     /// Inches (1in = 96px = 2.54cm)
-    static member inline inch(value: int) : ICssUnit = value.ToString() + "in" |> Unit :> _
+    static member inline inch(value: int) : ICssUnit = value.ToString() + "in" |> CssUnit :> _
     /// Inches (1in = 96px = 2.54cm)
-    static member inline inch(value: double) : ICssUnit = value.ToString() + "in" |> Unit :> _
+    static member inline inch(value: double) : ICssUnit = value.ToString() + "in" |> CssUnit :> _
     /// Points (1pt = 1/72 of 1in)
-    static member inline pt(value: int) : ICssUnit = value.ToString() + "pt" |> Unit :> _
+    static member inline pt(value: int) : ICssUnit = value.ToString() + "pt" |> CssUnit :> _
     /// Points (1pt = 1/72 of 1in)
-    static member inline pt(value: double) : ICssUnit = value.ToString() + "pt" |> Unit :> _
+    static member inline pt(value: double) : ICssUnit = value.ToString() + "pt" |> CssUnit :> _
     /// Picas (1pc = 12 pt)
-    static member inline pc(value: int) : ICssUnit = value.ToString() + "pc" |> Unit :> _
+    static member inline pc(value: int) : ICssUnit = value.ToString() + "pc" |> CssUnit :> _
     /// Picas (1pc = 12 pt)
-    static member inline pc(value: double) : ICssUnit = value.ToString() + "pc" |> Unit :> _
+    static member inline pc(value: double) : ICssUnit = value.ToString() + "pc" |> CssUnit :> _
     /// Relative to the font-size of the element (2em means 2 times the size of the current font
-    static member inline em(value: int) : ICssUnit = value.ToString() + "em" |> Unit :> _
+    static member inline em(value: int) : ICssUnit = value.ToString() + "em" |> CssUnit :> _
     /// Relative to the font-size of the element (2em means 2 times the size of the current font
-    static member inline em(value: double) : ICssUnit = value.ToString() + "em" |> Unit :> _
+    static member inline em(value: double) : ICssUnit = value.ToString() + "em" |> CssUnit :> _
     /// Relative to the x-height of the current font (rarely used)
-    static member inline ex(value: int) : ICssUnit = value.ToString() + "ex" |> Unit :> _
+    static member inline ex(value: int) : ICssUnit = value.ToString() + "ex" |> CssUnit :> _
     /// Relative to the x-height of the current font (rarely used)
-    static member inline ex(value: double) : ICssUnit = value.ToString() + "ex" |> Unit :> _
+    static member inline ex(value: double) : ICssUnit = value.ToString() + "ex" |> CssUnit :> _
     /// Relative to width of the "0" (zero)
-    static member inline ch(value: int) : ICssUnit = value.ToString() + "ch" |> Unit :> _
+    static member inline ch(value: int) : ICssUnit = value.ToString() + "ch" |> CssUnit :> _
     /// Relative to font-size of the root element
-    static member inline rem(value: double) : ICssUnit = value.ToString() + "rem" |> Unit :> _
+    static member inline rem(value: double) : ICssUnit = value.ToString() + "rem" |> CssUnit :> _
     /// Relative to font-size of the root element
-    static member inline rem(value: int) : ICssUnit = value.ToString() + "rem" |> Unit :> _
+    static member inline rem(value: int) : ICssUnit = value.ToString() + "rem" |> CssUnit :> _
     /// Relative to 1% of the height of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vh(value: int) : ICssUnit = value.ToString() + "vh" |> Unit :> _
+    static member inline vh(value: int) : ICssUnit = value.ToString() + "vh" |> CssUnit :> _
     /// Relative to 1% of the height of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vh(value: double) : ICssUnit = value.ToString() + "vh" |> Unit :> _
+    static member inline vh(value: double) : ICssUnit = value.ToString() + "vh" |> CssUnit :> _
     /// Relative to 1% of the width of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vw(value: int) : ICssUnit = value.ToString() + "vw" |> Unit :> _
+    static member inline vw(value: int) : ICssUnit = value.ToString() + "vw" |> CssUnit :> _
     /// Relative to 1% of the width of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vw(value: double) : ICssUnit = value.ToString() + "vw" |> Unit :> _
+    static member inline vw(value: double) : ICssUnit = value.ToString() + "vw" |> CssUnit :> _
     /// Relative to 1% of viewport's smaller dimension
-    static member inline vmin(value: double) : ICssUnit = value.ToString() + "vmin" |> Unit :> _
+    static member inline vmin(value: double) : ICssUnit = value.ToString() + "vmin" |> CssUnit :> _
     /// Relative to 1% of viewport's smaller dimension
-    static member inline vmin(value: int) : ICssUnit = value.ToString() + "vmin" |> Unit :> _
+    static member inline vmin(value: int) : ICssUnit = value.ToString() + "vmin" |> CssUnit :> _
     /// Relative to 1% of viewport's larger dimension
-    static member inline vmax(value: double) : ICssUnit = value.ToString() + "vmax" |> Unit :> _
+    static member inline vmax(value: double) : ICssUnit = value.ToString() + "vmax" |> CssUnit :> _
     /// Relative to 1% of viewport's* larger dimension
-    static member inline vmax(value: int) : ICssUnit = value.ToString() + "vmax" |> Unit :> _
+    static member inline vmax(value: int) : ICssUnit = value.ToString() + "vmax" |> CssUnit :> _
     /// Relative to the parent element
-    static member inline perc(value: int) : ICssUnit = value.ToString() + "%" |> Unit :> _
+    static member inline perc(value: int) : ICssUnit = value.ToString() + "%" |> CssUnit :> _
     /// Relative to the parent element
-    static member inline perc(value: double) : ICssUnit = value.ToString() + "%" |> Unit :> _
+    static member inline perc(value: double) : ICssUnit = value.ToString() + "%" |> CssUnit :> _
     /// Relative to the parent element
-    static member inline percent(value: int) : ICssUnit = value.ToString() + "%" |> Unit :> _
+    static member inline percent(value: int) : ICssUnit = value.ToString() + "%" |> CssUnit :> _
     /// Relative to the parent element
-    static member inline percent(value: double) : ICssUnit = value.ToString() + "%" |> Unit :> _
+    static member inline percent(value: double) : ICssUnit = value.ToString() + "%" |> CssUnit :> _
     /// The browser calculates the length.
-    static member inline auto : ICssUnit = "auto" |> Unit :> _
+    static member inline auto : ICssUnit = "auto" |> CssUnit :> _
 
 [<Erase>]
 type style () =

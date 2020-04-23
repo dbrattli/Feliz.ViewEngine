@@ -37,6 +37,7 @@ let html =
     |> Render.htmlView
 
 printfn "Output: %s" html
+// Will output "<h1 style=\"font-size:100px;color:#137373\">Hello, world!</h1>"
 ```
 
 Giraffe example at https://github.com/dbrattli/Feliz.ViewEngine/blob/master/examples/giraffe/Program.fs

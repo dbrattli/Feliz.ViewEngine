@@ -57,9 +57,25 @@ type StyleAttribute =
         String.Join(":", key, value)
 
 type CssUnit =
-    | Unit of string
+    | CssUnit of string
     interface ICssUnit
 
     override x.ToString () =
-        let (Unit value) = x
+        let (CssUnit value) = x
+        value
+
+type TextDecorationLine =
+    | TextDecorationLine of string
+    interface ITextDecorationLine
+
+    override x.ToString () =
+        let (TextDecorationLine value) = x
+        value
+
+type TextDecoration =
+    | TextDecoration of string
+    interface ITextDecoration
+
+    override x.ToString () =
+        let (TextDecoration value) = x
         value

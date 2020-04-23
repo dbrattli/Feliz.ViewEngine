@@ -38,6 +38,8 @@ type AriaRelevant =
     /// Text is added to any DOM descendant nodes of the live region.
     | Text
 
+// fsharplint:disable
+
 /// Represents the native Html properties.
 type prop =
     /// List of types the server accepts, typically a file type.

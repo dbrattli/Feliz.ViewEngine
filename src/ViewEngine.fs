@@ -25,8 +25,8 @@ type ReactProperty =
     | Text of string
 
 and ReactElement =
-    | Element of string * ReactProperty list // An element which contains properties
-    | VoidElement of string * ReactProperty list // An empty self-closed element which contains properties
+    | Element of string * ReactProperty list // An element which may contain properties
+    | VoidElement of string * ReactProperty list // An empty self-closed element which may contain properties
     | TextElement of string
 
 [<RequireQualifiedAccess>]
@@ -101,7 +101,9 @@ module ViewBuilder =
         sb += """<?xml version="1.0" encoding="utf-8"?>""" +! Environment.NewLine
         buildXmlNode sb document
 
-/// Render HTML/XML views
+// fsharplint:disable
+
+/// Render HTML/XML views fsharplint:disable
 type Render =
     /// Create XML view
     static member xmlView (node: ReactElement) : string =

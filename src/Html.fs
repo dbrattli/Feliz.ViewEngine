@@ -1,5 +1,7 @@
 namespace Feliz.ViewEngine
 
+// fsharplint:disable
+
 type Html =
     static member inline a xs = Interop.createElement "a" xs
     static member inline a (children: #seq<ReactElement>) = Interop.reactElementWithChildren "a" children
