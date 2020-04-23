@@ -96,7 +96,7 @@ type style () =
     static member inline zIndex(value: int) = Interop.mkStyle "zIndex" value
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
-    static member inline margin(value: int) = Interop.mkStyle "margin" value
+    static member inline margin(value: int) = Interop.mkStyle "margin" (string value + "px")
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: int, right: int) =
         Interop.mkStyle "margin" (
@@ -192,25 +192,25 @@ type style () =
     static member inline margin(value: ICssUnit) = Interop.mkStyle "margin" value
     /// Sets the margin area on the left side of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginLeft(value: int) = Interop.mkStyle "margin-left" value
+    static member inline marginLeft(value: int) = Interop.mkStyle "margin-left" (string value + "px")
     /// Sets the margin area on the left side of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
     static member inline marginLeft(value: ICssUnit) = Interop.mkStyle "margin-left" value
     /// sets the margin area on the right side of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginRight(value: int) = Interop.mkStyle "margin-right" value
+    static member inline marginRight(value: int) = Interop.mkStyle "margin-right" (string value + "px")
     /// sets the margin area on the right side of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
     static member inline marginRight(value: ICssUnit) = Interop.mkStyle "margin-right" value
     /// Sets the margin area on the top of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginTop(value: int) = Interop.mkStyle "margin-top" value
+    static member inline marginTop(value: int) = Interop.mkStyle "margin-top" (string value + "px")
     /// Sets the margin area on the top of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
     static member inline marginTop(value: ICssUnit) = Interop.mkStyle "margin-top" value
     /// Sets the margin area on the bottom of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginBottom(value: int) = Interop.mkStyle "margin-bottom" value
+    static member inline marginBottom(value: int) = Interop.mkStyle "margin-bottom" (string value + "px")
     /// Sets the margin area on the bottom of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
     static member inline marginBottom(value: ICssUnit) = Interop.mkStyle "margin-bottom" value
@@ -279,7 +279,7 @@ type style () =
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
-    static member inline padding(value: int) = Interop.mkStyle "padding" value
+    static member inline padding(value: int) = Interop.mkStyle "padding" (string value + "px")
     /// Sets the padding area on two sides of an element. It is a shorthand for padding-top and padding-right.
     static member inline padding(top: int, right: int) =
         Interop.mkStyle "padding" (
@@ -307,19 +307,19 @@ type style () =
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(value: ICssUnit) = Interop.mkStyle "padding" value
     /// Sets the height of the padding area on the bottom of an element.
-    static member inline paddingBottom(value: int) = Interop.mkStyle "padding-bottom" value
+    static member inline paddingBottom(value: int) = Interop.mkStyle "padding-bottom" (string value + "px")
     /// Sets the height of the padding area on the bottom of an element.
     static member inline paddingBottom(value: ICssUnit) = Interop.mkStyle "padding-bottom" value
     /// Sets the width of the padding area to the left of an element.
-    static member inline paddingLeft(value: int) = Interop.mkStyle "padding-left" value
+    static member inline paddingLeft(value: int) = Interop.mkStyle "padding-left" (string value + "px")
     /// Sets the width of the padding area to the left of an element.
     static member inline paddingLeft(value: ICssUnit) = Interop.mkStyle "padding-left" value
     /// Sets the width of the padding area on the right of an element.
-    static member inline paddingRight(value: int) = Interop.mkStyle "padding-right" value
+    static member inline paddingRight(value: int) = Interop.mkStyle "padding-right" (string value + "px")
     /// Sets the width of the padding area on the right of an element.
     static member inline paddingRight(value: ICssUnit) = Interop.mkStyle "paddingRight" value
     /// Sets the height of the padding area on the top of an element.
-    static member inline paddingTop(value: int) = Interop.mkStyle "padding-top" value
+    static member inline paddingTop(value: int) = Interop.mkStyle "padding-top" (string value + "px")
     /// Sets the height of the padding area on the top of an element.
     static member inline paddingTop(value: ICssUnit) = Interop.mkStyle "padding-top" value
     /// Sets the flex shrink factor of a flex item. If the size of all flex items is larger than
