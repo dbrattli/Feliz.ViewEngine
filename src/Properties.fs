@@ -1085,7 +1085,7 @@ type prop =
 
     static member inline style (properties: #IStyleAttribute list) =
         properties
-        |> List.map (fun p -> p.ToString ())
+        |> List.map string
         |> String.concat ";"
         |> Interop.mkAttr "style"
 
@@ -1093,7 +1093,7 @@ type prop =
         properties
         |> List.filter fst
         |> List.collect snd
-        |> List.map (fun p -> p.ToString ())
+        |> List.map string
         |> String.concat ";"
         |> Interop.mkAttr "style"
 
@@ -1170,10 +1170,10 @@ type prop =
     /// Set visible area of the SVG image.
     static member inline viewPort (x: int, y: int, height: int, width: int) =
         Interop.mkAttr "viewport"
-          ((unbox<string> x) + " " +
-           (unbox<string> y) + " " +
-           (unbox<string> height) + " " +
-           (unbox<string> width))
+          ((string x) + " " +
+           (string y) + " " +
+           (string height) + " " +
+           (string width))
 
     /// Specifies the width of elements listed here. For all other elements, use the CSS height property.
     ///
@@ -1458,23 +1458,23 @@ module prop =
     type coords =
         static member inline rect (left: int, top: int, right: int, bottom: int) =
             Interop.mkAttr "coords"
-                ((unbox<string> left) + "," +
-                 (unbox<string> top) + "," +
-                 (unbox<string> right) + "," +
-                 (unbox<string> bottom))
+                ((string left) + "," +
+                 (string top) + "," +
+                 (string right) + "," +
+                 (string bottom))
         static member inline circle (x: int, y: int, r: int) =
             Interop.mkAttr "coords"
-                ((unbox<string> x) + "," +
-                 (unbox<string> y) + "," +
-                 (unbox<string> r))
+                ((string x) + "," +
+                 (string y) + "," +
+                 (string r))
         static member inline poly (x1: int, y1: int, x2: int, y2: int, x3: int, y3: int) =
             Interop.mkAttr "coords"
-                ((unbox<string> x1) + "," +
-                 (unbox<string> y1) + "," +
-                 (unbox<string> x2) + "," +
-                 (unbox<string> y2) + "," +
-                 (unbox<string> x3) + "," +
-                 (unbox<string> y3))
+                ((string x1) + "," +
+                 (string y1) + "," +
+                 (string x2) + "," +
+                 (string y2) + "," +
+                 (string x3) + "," +
+                 (string y3))
 
     /// Indicates whether CORS must be used when fetching the resource.
     [<Erase>]
@@ -2020,102 +2020,102 @@ module prop =
         static member inline matrix(x1: int, y1: int, z1: int, x2: int, y2: int, z2: int) =
             Interop.mkAttr "transform" (
                 "matrix(" +
-                (unbox<string> x1) + "," +
-                (unbox<string> y1) + "," +
-                (unbox<string> z1) + "," +
-                (unbox<string> x2) + "," +
-                (unbox<string> y2) + "," +
-                (unbox<string> z2) + ")"
+                (string x1) + "," +
+                (string y1) + "," +
+                (string z1) + "," +
+                (string x2) + "," +
+                (string y2) + "," +
+                (string z2) + ")"
             )
         /// Defines that there should be no transformation.
         static member inline none = Interop.mkAttr "transform" "none"
         /// Defines a perspective view for a 3D transformed element
         static member inline perspective(n: int) =
-            Interop.mkAttr "transform" ("perspective(" + (unbox<string> n) + ")")
+            Interop.mkAttr "transform" ("perspective(" + (string n) + ")")
         /// Defines a 2D rotation, the angle is specified in the parameter.
         static member inline rotate(deg: int) =
-            Interop.mkAttr "transform" ("rotate(" + (unbox<string> deg) + "deg)")
+            Interop.mkAttr "transform" ("rotate(" + (string deg) + "deg)")
         /// Defines a 2D rotation, the angle is specified in the parameter.
         static member inline rotate(deg: float) =
-            Interop.mkAttr "transform" ("rotate(" + (unbox<string> deg) + "deg)")
+            Interop.mkAttr "transform" ("rotate(" + (string deg) + "deg)")
         /// Defines a 3D rotation along the X-axis.
         static member inline rotateX(deg: float) =
-            Interop.mkAttr "transform" ("rotateX(" + (unbox<string> deg) + "deg)")
+            Interop.mkAttr "transform" ("rotateX(" + (string deg) + "deg)")
         /// Defines a 3D rotation along the X-axis.
         static member inline rotateX(deg: int) =
-            Interop.mkAttr "transform" ("rotateX(" + (unbox<string> deg) + "deg)")
+            Interop.mkAttr "transform" ("rotateX(" + (string deg) + "deg)")
         /// Defines a 3D rotation along the Y-axis
         static member inline rotateY(deg: float) =
-            Interop.mkAttr "transform" ("rotateY(" + (unbox<string> deg) + "deg)")
+            Interop.mkAttr "transform" ("rotateY(" + (string deg) + "deg)")
         /// Defines a 3D rotation along the Y-axis
         static member inline rotateY(deg: int) =
-            Interop.mkAttr "transform" ("rotateY(" + (unbox<string> deg) + "deg)")
+            Interop.mkAttr "transform" ("rotateY(" + (string deg) + "deg)")
         /// Defines a 3D rotation along the Z-axis
         static member inline rotateZ(deg: float) =
-            Interop.mkAttr "transform" ("rotateZ(" + (unbox<string> deg) + "deg)")
+            Interop.mkAttr "transform" ("rotateZ(" + (string deg) + "deg)")
         /// Defines a 3D rotation along the Z-axis
         static member inline rotateZ(deg: int) =
-            Interop.mkAttr "transform" ("rotateZ(" + (unbox<string> deg) + "deg)")
+            Interop.mkAttr "transform" ("rotateZ(" + (string deg) + "deg)")
         /// Defines a 2D scale transformation.
         static member inline scale(x: int, y: int) =
             Interop.mkAttr "transform" (
-                "scale(" + (unbox<string> x) + "," + (unbox<string> y) + ")"
+                "scale(" + (string x) + "," + (string y) + ")"
             )
         /// Defines a 3D scale transformation
         static member inline scale3D(x: int, y: int, z: int) =
             Interop.mkAttr "transform" (
-                "scale3d(" + (unbox<string> x) + "," + (unbox<string> y) + "," + (unbox<string> z) + ")"
+                "scale3d(" + (string x) + "," + (string y) + "," + (string z) + ")"
             )
         /// Defines a scale transformation by giving a value for the X-axis.
         static member inline scaleX(x: int) =
-            Interop.mkAttr "transform" ("scaleX(" + (unbox<string> x) + ")")
+            Interop.mkAttr "transform" ("scaleX(" + (string x) + ")")
         /// Defines a scale transformation by giving a value for the Y-axis.
         static member inline scaleY(y: int) =
-            Interop.mkAttr "transform" ("scaleY(" + (unbox<string> y) + ")")
+            Interop.mkAttr "transform" ("scaleY(" + (string y) + ")")
         /// Defines a 3D translation, using only the value for the Z-axis
         static member inline scaleZ(z: int) =
-            Interop.mkAttr "transform" ("scaleZ(" + (unbox<string> z) + ")")
+            Interop.mkAttr "transform" ("scaleZ(" + (string z) + ")")
         /// Defines a 2D skew transformation along the X- and the Y-axis.
         static member inline skew(xAngle: int, yAngle: int) =
-            Interop.mkAttr "transform" ("skew(" + (unbox<string> xAngle) + "deg," + (unbox<string> yAngle) + "deg)")
+            Interop.mkAttr "transform" ("skew(" + (string xAngle) + "deg," + (string yAngle) + "deg)")
         /// Defines a 2D skew transformation along the X- and the Y-axis.
         static member inline skew(xAngle: float, yAngle: float) =
-            Interop.mkAttr "transform" ("skew(" + (unbox<string> xAngle) + "deg," + (unbox<string> yAngle) + "deg)")
+            Interop.mkAttr "transform" ("skew(" + (string xAngle) + "deg," + (string yAngle) + "deg)")
         /// Defines a 2D skew transformation along the X-axis
         static member inline skewX(xAngle: int) =
-            Interop.mkAttr "transform" ("skewX(" + (unbox<string> xAngle) + "deg)")
+            Interop.mkAttr "transform" ("skewX(" + (string xAngle) + "deg)")
         /// Defines a 2D skew transformation along the X-axis
         static member inline skewX(xAngle: float) =
-            Interop.mkAttr "transform" ("skewX(" + (unbox<string> xAngle) + "deg)")
+            Interop.mkAttr "transform" ("skewX(" + (string xAngle) + "deg)")
         /// Defines a 2D skew transformation along the Y-axis
         static member inline skewY(xAngle: int) =
-            Interop.mkAttr "transform" ("skewY(" + (unbox<string> xAngle) + "deg)")
+            Interop.mkAttr "transform" ("skewY(" + (string xAngle) + "deg)")
         /// Defines a 2D skew transformation along the Y-axis
         static member inline skewY(xAngle: float) =
-            Interop.mkAttr "transform" ("skewY(" + (unbox<string> xAngle) + "deg)")
+            Interop.mkAttr "transform" ("skewY(" + (string xAngle) + "deg)")
         /// Defines a 2D translation.
         static member inline translate(x: int, y: int) =
             Interop.mkAttr "transform" (
-                "translate(" + (unbox<string> x) + "," + (unbox<string> y) + ")"
+                "translate(" + (string x) + "," + (string y) + ")"
             )
         static member inline translate(x: float, y: float) =
             Interop.mkAttr "transform" (
-                "translate(" + (unbox<string> x) + "," + (unbox<string> y) + ")"
+                "translate(" + (string x) + "," + (string y) + ")"
             )
         /// Defines that there should be no transformation.
         static member inline translate3D(x: int, y: int, z: int) =
             Interop.mkAttr "transform" (
-                "translate3d(" + (unbox<string> x) + "," + (unbox<string> y) + "," + (unbox<string> z) + ")"
+                "translate3d(" + (string x) + "," + (string y) + "," + (string z) + ")"
             )
         /// Defines a translation, using only the value for the X-axis.
         static member inline translateX(x: int) =
-            Interop.mkAttr "transform" ("translateX(" + (unbox<string> x) + ")")
+            Interop.mkAttr "transform" ("translateX(" + (string x) + ")")
         /// Defines a translation, using only the value for the Y-axis
         static member inline translateY(y: int) =
-            Interop.mkAttr "transform" ("translateY(" + (unbox<string> y) + ")")
+            Interop.mkAttr "transform" ("translateY(" + (string y) + ")")
         /// Defines a 3D translation, using only the value for the Z-axis
         static member inline translateZ(z: int) =
-            Interop.mkAttr "transform" ("translateZ(" + (unbox<string> z) + ")")
+            Interop.mkAttr "transform" ("translateZ(" + (string z) + ")")
 
     [<Erase>]
     type type' =

@@ -10,77 +10,77 @@ type length =
     /// Pixels are (1px = 1/96th of 1in).
     ///
     /// **Note**: Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
-    static member inline px(value: int) : ICssUnit = value.ToString() + "px" |> CssUnit :> _
+    static member inline px(value: int) : ICssUnit = string value + "px" |> CssUnit :> _
     /// Pixels are (1px = 1/96th of 1in).
     ///
     /// **Note**: Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel (dot) of the display. For printers and high resolution screens 1px implies multiple device pixels.
-    static member inline px(value: double) : ICssUnit = value.ToString() + "px" |> CssUnit :> _
+    static member inline px(value: double) : ICssUnit = string value + "px" |> CssUnit :> _
     /// Centimeters
-    static member inline cm(value: int) : ICssUnit = value.ToString() + "cm" |> CssUnit :> _
+    static member inline cm(value: int) : ICssUnit = string value + "cm" |> CssUnit :> _
     /// Centimeters
-    static member inline cm(value: double) : ICssUnit = value.ToString() + "cm" |> CssUnit :> _
+    static member inline cm(value: double) : ICssUnit = string value + "cm" |> CssUnit :> _
     /// Millimeters
-    static member inline mm(value: int) : ICssUnit = value.ToString() + "mm" |> CssUnit :> _
+    static member inline mm(value: int) : ICssUnit = string value + "mm" |> CssUnit :> _
     /// Millimeters
-    static member inline mm(value: double) : ICssUnit = value.ToString() + "mm" |> CssUnit :> _
+    static member inline mm(value: double) : ICssUnit = string value + "mm" |> CssUnit :> _
     /// Inches (1in = 96px = 2.54cm)
-    static member inline inch(value: int) : ICssUnit = value.ToString() + "in" |> CssUnit :> _
+    static member inline inch(value: int) : ICssUnit = string value + "in" |> CssUnit :> _
     /// Inches (1in = 96px = 2.54cm)
-    static member inline inch(value: double) : ICssUnit = value.ToString() + "in" |> CssUnit :> _
+    static member inline inch(value: double) : ICssUnit = string value + "in" |> CssUnit :> _
     /// Points (1pt = 1/72 of 1in)
-    static member inline pt(value: int) : ICssUnit = value.ToString() + "pt" |> CssUnit :> _
+    static member inline pt(value: int) : ICssUnit = string value + "pt" |> CssUnit :> _
     /// Points (1pt = 1/72 of 1in)
-    static member inline pt(value: double) : ICssUnit = value.ToString() + "pt" |> CssUnit :> _
+    static member inline pt(value: double) : ICssUnit = string value + "pt" |> CssUnit :> _
     /// Picas (1pc = 12 pt)
-    static member inline pc(value: int) : ICssUnit = value.ToString() + "pc" |> CssUnit :> _
+    static member inline pc(value: int) : ICssUnit = string value + "pc" |> CssUnit :> _
     /// Picas (1pc = 12 pt)
-    static member inline pc(value: double) : ICssUnit = value.ToString() + "pc" |> CssUnit :> _
+    static member inline pc(value: double) : ICssUnit = string value + "pc" |> CssUnit :> _
     /// Relative to the font-size of the element (2em means 2 times the size of the current font
-    static member inline em(value: int) : ICssUnit = value.ToString() + "em" |> CssUnit :> _
+    static member inline em(value: int) : ICssUnit = string value + "em" |> CssUnit :> _
     /// Relative to the font-size of the element (2em means 2 times the size of the current font
-    static member inline em(value: double) : ICssUnit = value.ToString() + "em" |> CssUnit :> _
+    static member inline em(value: double) : ICssUnit = string value + "em" |> CssUnit :> _
     /// Relative to the x-height of the current font (rarely used)
-    static member inline ex(value: int) : ICssUnit = value.ToString() + "ex" |> CssUnit :> _
+    static member inline ex(value: int) : ICssUnit = string value + "ex" |> CssUnit :> _
     /// Relative to the x-height of the current font (rarely used)
-    static member inline ex(value: double) : ICssUnit = value.ToString() + "ex" |> CssUnit :> _
+    static member inline ex(value: double) : ICssUnit = string value + "ex" |> CssUnit :> _
     /// Relative to width of the "0" (zero)
-    static member inline ch(value: int) : ICssUnit = value.ToString() + "ch" |> CssUnit :> _
+    static member inline ch(value: int) : ICssUnit = string value + "ch" |> CssUnit :> _
     /// Relative to font-size of the root element
-    static member inline rem(value: double) : ICssUnit = value.ToString() + "rem" |> CssUnit :> _
+    static member inline rem(value: double) : ICssUnit = string value + "rem" |> CssUnit :> _
     /// Relative to font-size of the root element
-    static member inline rem(value: int) : ICssUnit = value.ToString() + "rem" |> CssUnit :> _
+    static member inline rem(value: int) : ICssUnit = string value + "rem" |> CssUnit :> _
     /// Relative to 1% of the height of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vh(value: int) : ICssUnit = value.ToString() + "vh" |> CssUnit :> _
+    static member inline vh(value: int) : ICssUnit = string value + "vh" |> CssUnit :> _
     /// Relative to 1% of the height of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vh(value: double) : ICssUnit = value.ToString() + "vh" |> CssUnit :> _
+    static member inline vh(value: double) : ICssUnit = string value + "vh" |> CssUnit :> _
     /// Relative to 1% of the width of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vw(value: int) : ICssUnit = value.ToString() + "vw" |> CssUnit :> _
+    static member inline vw(value: int) : ICssUnit = string value + "vw" |> CssUnit :> _
     /// Relative to 1% of the width of the viewport*
     ///
     /// **Viewport** = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
-    static member inline vw(value: double) : ICssUnit = value.ToString() + "vw" |> CssUnit :> _
+    static member inline vw(value: double) : ICssUnit = string value + "vw" |> CssUnit :> _
     /// Relative to 1% of viewport's smaller dimension
-    static member inline vmin(value: double) : ICssUnit = value.ToString() + "vmin" |> CssUnit :> _
+    static member inline vmin(value: double) : ICssUnit = string value + "vmin" |> CssUnit :> _
     /// Relative to 1% of viewport's smaller dimension
-    static member inline vmin(value: int) : ICssUnit = value.ToString() + "vmin" |> CssUnit :> _
+    static member inline vmin(value: int) : ICssUnit = string value + "vmin" |> CssUnit :> _
     /// Relative to 1% of viewport's larger dimension
-    static member inline vmax(value: double) : ICssUnit = value.ToString() + "vmax" |> CssUnit :> _
+    static member inline vmax(value: double) : ICssUnit = string value + "vmax" |> CssUnit :> _
     /// Relative to 1% of viewport's* larger dimension
-    static member inline vmax(value: int) : ICssUnit = value.ToString() + "vmax" |> CssUnit :> _
+    static member inline vmax(value: int) : ICssUnit = string value + "vmax" |> CssUnit :> _
     /// Relative to the parent element
-    static member inline perc(value: int) : ICssUnit = value.ToString() + "%" |> CssUnit :> _
+    static member inline perc(value: int) : ICssUnit = string value + "%" |> CssUnit :> _
     /// Relative to the parent element
-    static member inline perc(value: double) : ICssUnit = value.ToString() + "%" |> CssUnit :> _
+    static member inline perc(value: double) : ICssUnit = string value + "%" |> CssUnit :> _
     /// Relative to the parent element
-    static member inline percent(value: int) : ICssUnit = value.ToString() + "%" |> CssUnit :> _
+    static member inline percent(value: int) : ICssUnit = string value + "%" |> CssUnit :> _
     /// Relative to the parent element
-    static member inline percent(value: double) : ICssUnit = value.ToString() + "%" |> CssUnit :> _
+    static member inline percent(value: double) : ICssUnit = string value + "%" |> CssUnit :> _
     /// The browser calculates the length.
     static member inline auto : ICssUnit = "auto" |> CssUnit :> _
 
@@ -100,93 +100,93 @@ type style () =
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: int, right: int) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px"
+            (string top) + "px " +
+            (string right) + "px"
         )
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: ICssUnit, right: int) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + "px"
+            (string top) + " " +
+            (string right) + "px"
         )
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: ICssUnit, right: ICssUnit) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + " " +
-            (right.ToString ())
+            (string top) + " " +
+            (string right)
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: ICssUnit, right: int, bottom: int) =
         Interop.mkStyle "margin" (
-            (top.ToString()) + " " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px"
+            (string top) + " " +
+            (string right) + "px " +
+            (string bottom) + "px"
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: ICssUnit, right: ICssUnit, bottom: int) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + " " +
-            (bottom.ToString ()) + "px"
+            (string top) + " " +
+            (string right) + " " +
+            (string bottom) + "px"
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: ICssUnit, right: ICssUnit, bottom: ICssUnit) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + " " +
-            (bottom.ToString ())
+            (string top) + " " +
+            (string right) + " " +
+            (string bottom)
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: ICssUnit, right: int, bottom: ICssUnit) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ())
+            (string top) + " " +
+            (string right) + "px " +
+            (string bottom)
         )
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(top: ICssUnit, right: ICssUnit, bottom: ICssUnit, left: ICssUnit) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + " " +
-            (bottom.ToString ()) + " " +
-            (left.ToString ())
+            (string top) + " " +
+            (string right) + " " +
+            (string bottom) + " " +
+            (string left)
         )
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(top: ICssUnit, right: int, bottom: int, left: int) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px " +
-            (left.ToString ()) + "px"
+            (string top) + " " +
+            (string right) + "px " +
+            (string bottom) + "px " +
+            (string left) + "px"
         )
     /// Sets the margin area on two sides of an element. It is a shorthand for margin-top and margin-right.
     static member inline margin(top: int, right: ICssUnit) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + "px " +
-            (right.ToString ())
+            (string top) + "px " +
+            (string right)
         )
     /// Sets the margin area on three sides of an element. It is a shorthand for margin-top, margin-right
     /// and margin-bottom.
     static member inline margin(top: int, right: int, bottom: int) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px"
+            (string top) + "px " +
+            (string right) + "px " +
+            (string bottom) + "px"
         )
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(top: int, right: int, bottom: int, left: int) =
         Interop.mkStyle "margin" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px " +
-            (left.ToString ()) + "px")
+            (string top) + "px " +
+            (string right) + "px " +
+            (string bottom) + "px " +
+            (string left) + "px")
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(value: ICssUnit) = Interop.mkStyle "margin" value
@@ -218,64 +218,64 @@ type style () =
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(top: ICssUnit, right: int) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + "px"
+            (string top) + " " +
+            (string right) + "px"
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: ICssUnit, right: int, bottom: int) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px"
+            (string top) + " " +
+            (string right) + "px " +
+            (string bottom) + "px"
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: ICssUnit, right: ICssUnit, bottom: int) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + " " +
-            (bottom.ToString ()) + "px"
+            (string top) + " " +
+            (string right) + " " +
+            (string bottom) + "px"
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: ICssUnit, right: ICssUnit, bottom: ICssUnit) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + " " +
-            (bottom.ToString ())
+            (string top) + " " +
+            (string right) + " " +
+            (string bottom)
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: ICssUnit, right: int, bottom: ICssUnit) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ())
+            (string top) + " " +
+            (string right) + "px " +
+            (string bottom)
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(top: ICssUnit, right: ICssUnit, bottom: ICssUnit, left: ICssUnit) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + " " +
-            (bottom.ToString ()) + " " +
-            (left.ToString ())
+            (string top) + " " +
+            (string right) + " " +
+            (string bottom) + " " +
+            (string left)
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(top: ICssUnit, right: int, bottom: int, left: int) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + " " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px " +
-            (left.ToString ()) + "px"
+            (string top) + " " +
+            (string right) + "px " +
+            (string bottom) + "px " +
+            (string left) + "px"
         )
     /// Sets the padding area on two sides of an element. It is a shorthand for padding-top and padding-right.
     static member inline padding(top: int, right: ICssUnit) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + "px " +
-            (right.ToString ())
+            (string top) + "px " +
+            (string right)
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
@@ -283,25 +283,25 @@ type style () =
     /// Sets the padding area on two sides of an element. It is a shorthand for padding-top and padding-right.
     static member inline padding(top: int, right: int) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px"
+            (string top) + "px " +
+            (string right) + "px"
         )
     /// Sets the padding area on three sides of an element. It is a shorthand for padding-top,
     /// padding-right, and padding-bottom.
     static member inline padding(top: int, right: int, bottom: int) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px"
+            (string top) + "px " +
+            (string right) + "px " +
+            (string bottom) + "px"
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
     static member inline padding(top: int, right: int, bottom: int, left: int) =
         Interop.mkStyle "padding" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px " +
-            (left.ToString ()) + "px"
+            (string top) + "px " +
+            (string right) + "px " +
+            (string bottom) + "px " +
+            (string left) + "px"
         )
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
@@ -344,19 +344,19 @@ type style () =
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationSeconds(n: float) =
-        Interop.mkStyle "transition-duration" (n.ToString() + "s")
+        Interop.mkStyle "transition-duration" (string n + "s")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationMilliseconds(n: float) =
-        Interop.mkStyle "transition-duration" (n.ToString() + "ms")
+        Interop.mkStyle "transition-duration" (string n + "ms")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationSeconds(n: int) =
-        Interop.mkStyle "transition-duration" (n.ToString() + "s")
+        Interop.mkStyle "transition-duration" (string n + "s")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationMilliseconds(n: int) =
-        Interop.mkStyle "transition-duration" (n.ToString() + "ms")
+        Interop.mkStyle "transition-duration" (string n + "ms")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelay(timespan: TimeSpan) =
         Interop.mkStyle "transition-delay" (timespan.TotalMilliseconds.ToString("0") + "ms")
@@ -368,17 +368,17 @@ type style () =
         Interop.mkStyle "transition-delay" (n.ToString("0") + "ms")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelaySeconds(n: int) =
-        Interop.mkStyle "transition-delay" (n.ToString() + "s")
+        Interop.mkStyle "transition-delay" (string n + "s")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelayMilliseconds(n: int) =
-        Interop.mkStyle "transition-delay" (n.ToString() + "ms")
+        Interop.mkStyle "transition-delay" (string n + "ms")
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty ([<ParamArray>] properties: ITransitionProperty[]) =
-        let strings = properties |> Seq.map (fun p -> p.ToString())
+        let strings = properties |> Seq.map string
         Interop.mkStyle "transition-property" (String.concat "," strings)
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty (properties: ITransitionProperty list) =
-        let strings = properties |> Seq.map (fun p -> p.ToString())
+        let strings = properties |> Seq.map string
         Interop.mkStyle "transition-property" (String.concat "," strings)
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty (property: ITransitionProperty) =
@@ -391,17 +391,17 @@ type style () =
         Interop.mkStyle "transform" transformation
 
     static member inline transform(transformations: ITransformProperty list) =
-        let strings = transformations |> Seq.map (fun p -> p.ToString())
+        let strings = transformations |> Seq.map string
         Interop.mkStyle "transform" (String.concat " " strings)
 
     /// Sets the size of the font.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
-    static member inline fontSize(size: int) = Interop.mkStyle "font-size" (size.ToString() + "px")
+    static member inline fontSize(size: int) = Interop.mkStyle "font-size" (string size + "px")
     /// Sets the size of the font.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
-    static member inline fontSize(size: float) = Interop.mkStyle "font-size" (size.ToString() + "px")
+    static member inline fontSize(size: float) = Interop.mkStyle "font-size" (string size + "px")
     /// Sets the size of the font.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
@@ -411,13 +411,13 @@ type style () =
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
     ///
     /// Note: Negative values are not allowed.
-    static member inline lineHeight(size: int) = Interop.mkStyle "line-height" (size.ToString() + "px")
+    static member inline lineHeight(size: int) = Interop.mkStyle "line-height" (string size + "px")
     /// Specifies the height of a text lines.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
     ///
     /// Note: Negative values are not allowed.
-    static member inline lineHeight(size: float) = Interop.mkStyle "line-height" (size.ToString() + "px")
+    static member inline lineHeight(size: float) = Interop.mkStyle "line-height" (string size + "px")
     /// Specifies the height of a text lines.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
@@ -452,16 +452,16 @@ type style () =
     /// border-bottom-style and border-bottom-color.
     static member inline borderBottom(width: int, style: IBorderStyle, color: string) =
         Interop.mkStyle "border-bottom" (
-            (width.ToString ()) + "px " +
-            (style.ToString ()) + " " +
+            (string width) + "px " +
+            (string style) + " " +
             color
         )
     /// Sets an element's bottom border. It sets the values of border-bottom-width,
     /// border-bottom-style and border-bottom-color.
     static member inline borderBottom(width: ICssUnit, style: IBorderStyle, color: string) =
         Interop.mkStyle "border-bottom" (
-            (width.ToString ()) + " " +
-            (style.ToString ()) + " " +
+            (string width) + " " +
+            (string style) + " " +
             color
         )
 
@@ -469,7 +469,7 @@ type style () =
     /// It is displayed around the margin of the element. However, it is different from the border property.
     /// The outline is not a part of the element's dimensions, therefore the element's width and height properties do not contain the width of the outline.
     static member inline outlineWidth(width: int) =
-        Interop.mkStyle "outline-width" (width.ToString() + "px")
+        Interop.mkStyle "outline-width" (string width + "px")
 
     /// An outline is a line around an element.
     /// It is displayed around the margin of the element. However, it is different from the border property.
@@ -513,81 +513,81 @@ type style () =
     /// Set an element's left border.
     static member inline borderLeft(width: int, style: IBorderStyle, color: string) =
         Interop.mkStyle "border-left" (
-            (width.ToString ()) + "px " +
-            (style.ToString ()) + " " +
+            (string width) + "px " +
+            (string style) + " " +
             color
         )
     /// Set an element's left border.
     static member inline borderLeft(width: ICssUnit, style: IBorderStyle, color: string) =
         Interop.mkStyle "border-bottom" (
-            (width.ToString ()) + " " +
-            (style.ToString ()) + " " +
+            (string width) + " " +
+            (string style) + " " +
             color
         )
     /// Set an element's right border.
     static member inline borderRight(width: int, style: IBorderStyle, color: string) =
         Interop.mkStyle "border-right" (
-            (width.ToString ()) + "px " +
-            (style.ToString ()) + " " +
+            (string width) + "px " +
+            (string style) + " " +
             color
         )
     /// Set an element's right border.
     static member inline borderRight(width: ICssUnit, style: IBorderStyle, color: string) =
         Interop.mkStyle "border-right" (
-            (width.ToString ()) + " " +
-            (style.ToString ()) + " " +
+            (string width) + " " +
+            (string style) + " " +
             color
         )
     /// Set an element's top border.
     static member inline borderTop(width: int, style: IBorderStyle, color: string) =
         Interop.mkStyle "border-top" (
-            (width.ToString ()) + "px " +
-            (style.ToString ()) + " " +
+            (string width) + "px " +
+            (string style) + " " +
             color
         )
     /// Set an element's top border.
     static member inline borderTop(width: ICssUnit, style: IBorderStyle, color: string) =
         Interop.mkStyle "border-top" (
-            (width.ToString ()) + " " +
-            (style.ToString ()) + " " +
+            (string width) + " " +
+            (string style) + " " +
             color
         )
     /// Sets the line style of an element's bottom border.
-    static member inline borderBottomStyle(style: IBorderStyle) = Interop.mkStyle "border-bottom-style" (style.ToString())
+    static member inline borderBottomStyle(style: IBorderStyle) = Interop.mkStyle "border-bottom-style" (string style)
     /// Sets the width of the bottom border of an element.
-    static member inline borderBottomWidth (width: int) = Interop.mkStyle "border-bottom-width" (width.ToString() + "px")
+    static member inline borderBottomWidth (width: int) = Interop.mkStyle "border-bottom-width" (string width + "px")
     /// Sets the width of the bottom border of an element.
-    static member inline borderBottomWidth (width: ICssUnit) = Interop.mkStyle "border-bottom-width" (width.ToString())
+    static member inline borderBottomWidth (width: ICssUnit) = Interop.mkStyle "border-bottom-width" (string width)
     /// Sets the color of an element's bottom border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
     static member inline borderBottomColor (color: string) = Interop.mkStyle "border-bottom-color" color
     /// Sets the line style of an element's top border.
-    static member inline borderTopStyle(style: IBorderStyle) = Interop.mkStyle "border-top-style" (style.ToString())
+    static member inline borderTopStyle(style: IBorderStyle) = Interop.mkStyle "border-top-style" (string style)
     /// Sets the width of the top border of an element.
-    static member inline borderTopWidth (width: int) = Interop.mkStyle "border-top-width" (width.ToString() + "px")
+    static member inline borderTopWidth (width: int) = Interop.mkStyle "border-top-width" (string width + "px")
     /// Sets the width of the top border of an element.
-    static member inline borderTopWidth (width: ICssUnit) = Interop.mkStyle "border-top-width" (width.ToString())
+    static member inline borderTopWidth (width: ICssUnit) = Interop.mkStyle "border-top-width" (string width)
     /// Sets the color of an element's top border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
     static member inline borderTopColor (color: string) = Interop.mkStyle "border-top-color" color
     /// /// Sets the line style of an element's right border.
-    static member inline borderRightStyle(style: IBorderStyle) = Interop.mkStyle "border-right-style" (style.ToString())
+    static member inline borderRightStyle(style: IBorderStyle) = Interop.mkStyle "border-right-style" (string style)
     /// Sets the width of the right border of an element.
-    static member inline borderRightWidth (width: int) = Interop.mkStyle "border-right-width" (width.ToString() + "px")
+    static member inline borderRightWidth (width: int) = Interop.mkStyle "border-right-width" (string width + "px")
     /// Sets the width of the right border of an element.
-    static member inline borderRightWidth (width: ICssUnit) = Interop.mkStyle "border-right-width" (width.ToString())
+    static member inline borderRightWidth (width: ICssUnit) = Interop.mkStyle "border-right-width" (string width)
     /// Sets the color of an element's right border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
     static member inline borderRightColor (color: string) = Interop.mkStyle "border-right-color" color
     /// Sets the line style of an element's left border.
-    static member inline borderLeftStyle(style: IBorderStyle) = Interop.mkStyle "border-left-style" (style.ToString())
+    static member inline borderLeftStyle(style: IBorderStyle) = Interop.mkStyle "border-left-style" (string style)
     /// Sets the width of the left border of an element.
-    static member inline borderLeftWidth (width: int) = Interop.mkStyle "border-left-width" (width.ToString() + "px")
+    static member inline borderLeftWidth (width: int) = Interop.mkStyle "border-left-width" (string width + "px")
     /// Sets the width of the left border of an element.
-    static member inline borderLeftWidth (width: ICssUnit) = Interop.mkStyle "border-left-width" (width.ToString())
+    static member inline borderLeftWidth (width: ICssUnit) = Interop.mkStyle "border-left-width" (string width)
     /// Sets the color of an element's left border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
@@ -597,8 +597,8 @@ type style () =
     /// It sets the values of border-width, border-style, and border-color.
     static member inline border(width: int, style: IBorderStyle, color: string) =
         Interop.mkStyle "border" (
-            (width.ToString ()) + "px " +
-            (style.ToString ()) + " " +
+            (string width) + "px " +
+            (string style) + " " +
             color
         )
     /// Sets an element's border.
@@ -606,8 +606,8 @@ type style () =
     /// It sets the values of border-width, border-style, and border-color.
     static member inline border(width: ICssUnit, style: IBorderStyle, color: string) =
         Interop.mkStyle "border" (
-            (width.ToString ()) + " " +
-            (style.ToString ()) + " " +
+            (string width) + " " +
+            (string style) + " " +
             color
         )
     /// Sets an element's border.
@@ -615,21 +615,21 @@ type style () =
     /// It sets the values of border-width, border-style, and border-color.
     static member inline border(width: string, style: IBorderStyle, color: string) =
         Interop.mkStyle "border" (
-            (width.ToString ()) + " " +
-            (style.ToString ()) + " " +
+            (string width) + " " +
+            (string style) + " " +
             color
         )
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle (style: IBorderStyle) = Interop.mkStyle "border-style" style
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle)  =
-        Interop.mkStyle "border-style" ((top.ToString ()) + " " + (right.ToString ()))
+        Interop.mkStyle "border-style" ((string top) + " " + (string right))
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle, bottom: IBorderStyle) =
-        Interop.mkStyle "border-style" ((top.ToString ()) + " " + (right.ToString ()) + " " +  (bottom.ToString ()))
+        Interop.mkStyle "border-style" ((string top) + " " + (string right) + " " +  (string bottom))
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle, bottom: IBorderStyle, left: IBorderStyle) =
-        Interop.mkStyle "border-style" ((top.ToString ()) + " " + (right.ToString ()) + " " + (bottom.ToString ()) + " " +  (left.ToString ()))
+        Interop.mkStyle "border-style" ((string top) + " " + (string right) + " " + (string bottom) + " " +  (string left))
     /// Sets the color of an element's border.
     static member inline borderColor (color: string) = Interop.mkStyle "border-color" color
     /// Rounds the corners of an element's outer border edge. You can set a single radius to make
@@ -641,25 +641,25 @@ type style () =
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int) =
         Interop.mkStyle "border-width" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px"
+            (string top) + "px " +
+            (string right) + "px"
         )
     /// Sets the width of an element's border.
     static member inline borderWidth (width: int) = Interop.mkStyle "border-width" width
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int, bottom: int) =
         Interop.mkStyle "border-width" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px"
+            (string top) + "px " +
+            (string right) + "px " +
+            (string bottom) + "px"
         )
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int, bottom: int, left: int) =
         Interop.mkStyle "border-width" (
-            (top.ToString ()) + "px " +
-            (right.ToString ()) + "px " +
-            (bottom.ToString ()) + "px " +
-            (left.ToString ()) + "px"
+            (string top) + "px " +
+            (string right) + "px " +
+            (string bottom) + "px " +
+            (string left) + "px"
         )
     /// Sets one or more animations to apply to an element. Each name is an @keyframes at-rule that
     /// sets the property values for the animation sequence.
@@ -667,7 +667,7 @@ type style () =
     /// Sets the length of time that an animation takes to complete one cycle.
     static member inline animationDuration(timespan: TimeSpan) = Interop.mkStyle "animation-duration" (timespan.TotalMilliseconds.ToString() + "ms")
     /// Sets the length of time that an animation takes to complete one cycle.
-    static member inline animationDuration(seconds: int) = Interop.mkStyle "animation-duration" (seconds.ToString() + "s")
+    static member inline animationDuration(seconds: int) = Interop.mkStyle "animation-duration" (string seconds + "s")
     /// Sets when an animation starts.
     ///
     /// The animation can start later, immediately from its beginning, or immediately and partway through the animation.
@@ -675,7 +675,7 @@ type style () =
     /// Sets when an animation starts.
     ///
     /// The animation can start later, immediately from its beginning, or immediately and partway through the animation.
-    static member inline animationDelay(seconds: int) = Interop.mkStyle "animation-delay" (seconds.ToString () + "s")
+    static member inline animationDelay(seconds: int) = Interop.mkStyle "animation-delay" (string seconds + "s")
     /// The number of times the animation runs.
     static member inline animationDurationCount(count: int) = Interop.mkStyle "animation-duration-count" count
     /// Sets the font family for the font specified in a @font-face rule.
@@ -697,19 +697,19 @@ type style () =
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine) =
-        Interop.mkStyle "text-decoration" ((bottom.ToString ()) + " " + (top.ToString ()))
+        Interop.mkStyle "text-decoration" ((string bottom) + " " + (string top))
     /// Sets the appearance of decorative lines on text.
     ///
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine, style: ITextDecoration) =
-        Interop.mkStyle "text-decoration" ((bottom.ToString ()) + " " + (top.ToString ()) + " " + style.ToString())
+        Interop.mkStyle "text-decoration" ((string bottom) + " " + (string top) + " " + string style)
     /// Sets the appearance of decorative lines on text.
     ///
     /// It is a shorthand for text-decoration-line, text-decoration-color, text-decoration-style,
     /// and the newer text-decoration-thickness property.
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine, style: ITextDecoration, color: string) =
-        Interop.mkStyle "text-decoration" ((bottom.ToString ()) + " " + (top.ToString ()) + " " + (style.ToString()) + " " + color)
+        Interop.mkStyle "text-decoration" ((string bottom) + " " + (string top) + " " + (string style) + " " + color)
     /// Sets the length of empty space (indentation) that is put before lines of text in a block.
     static member inline textIndent(value: int) = Interop.mkStyle "text-indent" value
     /// Sets the length of empty space (indentation) that is put before lines of text in a block.
@@ -789,9 +789,9 @@ type style () =
     /// The image can be left to its natural size, stretched, or constrained to fit the available space.
     static member inline backgroundSize (width: ICssUnit, height: ICssUnit) =
         Interop.mkStyle "background-size" (
-            width.ToString ()
+            string width
             + " " +
-            height.ToString ()
+            string height
         )
 
     /// Sets one or more background images on an element.
@@ -807,8 +807,8 @@ type style () =
     /// A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, color: string) =
         Interop.mkStyle "box-shadow" (
-            (horizontalOffset.ToString ()) + "px " +
-            (verticalOffset.ToString ()) + "px " +
+            (string horizontalOffset) + "px " +
+            (string verticalOffset) + "px " +
             color
         )
     /// Adds shadow effects around an element's frame.
@@ -816,9 +816,9 @@ type style () =
     /// A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, blur: int, color: string) =
         Interop.mkStyle "box-shadow" (
-            (horizontalOffset.ToString ()) + "px " +
-            (verticalOffset.ToString ()) + "px " +
-            (blur.ToString ()) + "px " +
+            (string horizontalOffset) + "px " +
+            (string verticalOffset) + "px " +
+            (string blur) + "px " +
             color
         )
     /// Adds shadow effects around an element's frame.
@@ -826,10 +826,10 @@ type style () =
     /// A box shadow is described by X and Y offsets relative to the element, blur and spread radii, and color.
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, blur: int, spread: int, color: string) =
         Interop.mkStyle "box-shadow" (
-            (horizontalOffset.ToString ()) + "px " +
-            (verticalOffset.ToString ()) + "px " +
-            (blur.ToString ()) + "px " +
-            (spread.ToString ()) + "px " +
+            (string horizontalOffset) + "px " +
+            (string verticalOffset) + "px " +
+            (string blur) + "px " +
+            (string spread) + "px " +
             color
         )
 
@@ -1394,37 +1394,37 @@ module style =
         /// Applies a blur effect to the elemeen. A larger value will create more blur.
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
-        static member inline blur(value: int) = Interop.mkStyle "filter" ("blur(" + value.ToString() + "%)")
+        static member inline blur(value: int) = Interop.mkStyle "filter" ("blur(" + string value + "%)")
         /// Applies a blur effect to the elemeen. A larger value will create more blur.
         ///
         /// This overload takes a floating number that goes from 0 to 1,
-        static member inline blur(value: double) = Interop.mkStyle "filter" ("blur(" + value.ToString() + ")")
+        static member inline blur(value: double) = Interop.mkStyle "filter" ("blur(" + string value + ")")
         /// Adjusts the brightness of the elemeen
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
         ///
         /// Values over 100% will provide brighter results.
-        static member inline brightness(value: int) = Interop.mkStyle "filter" ("brightness(" + value.ToString() + "%)")
+        static member inline brightness(value: int) = Interop.mkStyle "filter" ("brightness(" + string value + "%)")
         /// Adjusts the brightness of the elemeen. A larger value will create more blur.
         ///
         /// This overload takes a floating number that goes from 0 to 1,
-        static member inline brightness(value: double) = Interop.mkStyle "filter" ("brightness(" + value.ToString() + ")")
+        static member inline brightness(value: double) = Interop.mkStyle "filter" ("brightness(" + string value + ")")
         /// Adjusts the contrast of the element.
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
-        static member inline contrast(value: int) = Interop.mkStyle "filter" ("contrast(" + value.ToString() + "%)")
+        static member inline contrast(value: int) = Interop.mkStyle "filter" ("contrast(" + string value + "%)")
         /// Adjusts the contrast of the element. A larger value will create more contrast.
         ///
         /// This overload takes a floating number that goes from 0 to 1
-        static member inline contrast(value: double) = Interop.mkStyle "filter" ("contrast(" + value.ToString() + ")")
+        static member inline contrast(value: double) = Interop.mkStyle "filter" ("contrast(" + string value + ")")
         /// Applies a drop shadow effect.
         static member inline dropShadow(horizontalOffset: int, verticalOffset: int, blur: int, spread: int,  color: string) =
             Interop.mkStyle "filter" (
                 "drop-shadow(" +
-                (horizontalOffset.ToString ()) + "px " +
-                (verticalOffset.ToString ()) + "px " +
-                (blur.ToString ()) + "px " +
-                (spread.ToString ()) + "px " +
+                (string horizontalOffset) + "px " +
+                (string verticalOffset) + "px " +
+                (string blur) + "px " +
+                (string spread) + "px " +
                 color +
                 ")"
             )
@@ -1433,9 +1433,9 @@ module style =
         static member inline dropShadow(horizontalOffset: int, verticalOffset: int, blur: int, color: string) =
             Interop.mkStyle "filter" (
                 "drop-shadow(" +
-                (horizontalOffset.ToString ()) + "px " +
-                (verticalOffset.ToString ()) + "px " +
-                (blur.ToString ()) + "px " +
+                (string horizontalOffset) + "px " +
+                (string verticalOffset) + "px " +
+                (string blur) + "px " +
                 color +
                 ")"
             )
@@ -1444,8 +1444,8 @@ module style =
         static member inline dropShadow(horizontalOffset: int, verticalOffset: int, color: string) =
             Interop.mkStyle "filter" (
                 "drop-shadow(" +
-                (horizontalOffset.ToString ()) + "px " +
-                (verticalOffset.ToString ()) + "px " +
+                (string horizontalOffset) + "px " +
+                (string verticalOffset) + "px " +
                 color +
                 ")"
             )
@@ -1453,47 +1453,47 @@ module style =
         /// Converts the image to grayscale
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
-        static member inline grayscale(value: int) = Interop.mkStyle "filter" ("grayscale(" + value.ToString () + "%)")
+        static member inline grayscale(value: int) = Interop.mkStyle "filter" ("grayscale(" + string value + "%)")
         /// Converts the image to grayscale
         ///
         /// This overload takes a floating number that goes from 0 to 1
-        static member inline grayscale(value: double) = Interop.mkStyle "filter" ("grayscale(" + value.ToString () + ")")
+        static member inline grayscale(value: double) = Interop.mkStyle "filter" ("grayscale(" + string value + ")")
         /// Applies a hue rotation on the image. The value defines the number of degrees around the color circle the image samples will be adjusted. 0deg is default, and represents the original image.
         ///
         /// **Note**: Maximum value is 360
-        static member inline hueRotate(degrees: int) = Interop.mkStyle "filter" ("hue-rotate(" + degrees.ToString () + "deg)")
+        static member inline hueRotate(degrees: int) = Interop.mkStyle "filter" ("hue-rotate(" + string degrees + "deg)")
         /// Inverts the element.
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
-        static member inline invert(value: int) = Interop.mkStyle "filter" ("invert(" + value.ToString () + "%)")
+        static member inline invert(value: int) = Interop.mkStyle "filter" ("invert(" + string value + "%)")
         /// Inverts the element.
         ///
         /// This overload takes a floating number that goes from 0 to 1
-        static member inline invert(value: double) = Interop.mkStyle "filter" ("invert(" + value.ToString () + ")")
+        static member inline invert(value: double) = Interop.mkStyle "filter" ("invert(" + string value + ")")
         /// Sets the opacity of the element.
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
-        static member inline opacity(value: int) = Interop.mkStyle "filter" ("opacity(" + value.ToString () + "%)")
+        static member inline opacity(value: int) = Interop.mkStyle "filter" ("opacity(" + string value + "%)")
         /// Sets the opacity of the element.
         ///
         /// This overload takes a floating number that goes from 0 to 1
-        static member inline opacity(value: double) = Interop.mkStyle "filter" ("opacity(" + value.ToString () + ")")
+        static member inline opacity(value: double) = Interop.mkStyle "filter" ("opacity(" + string value + ")")
         /// Sets the saturation of the element.
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
-        static member inline saturate(value: int) = Interop.mkStyle "filter" ("saturate(" + value.ToString () + "%)")
+        static member inline saturate(value: int) = Interop.mkStyle "filter" ("saturate(" + string value + "%)")
         /// Sets the saturation of the element.
         ///
         /// This overload takes a floating number that goes from 0 to 1
-        static member inline saturate(value: double) = Interop.mkStyle "filter" ("saturate(" + value.ToString () + ")")
+        static member inline saturate(value: double) = Interop.mkStyle "filter" ("saturate(" + string value + ")")
         /// Applies Sepia filter to the element.
         ///
         /// This overload takes an integer that represents a percentage from 0 to 100.
-        static member inline sepia(value: int) = Interop.mkStyle "filter" ("sepia(" + value.ToString () + "%)")
+        static member inline sepia(value: int) = Interop.mkStyle "filter" ("sepia(" + string value + "%)")
         /// Applies Sepia filter to the element.
         ///
         /// This overload takes a floating number that goes from 0 to 1
-        static member inline sepia(value: double) = Interop.mkStyle "filter" ("sepia(" + value.ToString () + ")")
+        static member inline sepia(value: double) = Interop.mkStyle "filter" ("sepia(" + string value + ")")
         /// The url() function takes the location of an XML file that specifies an SVG filter, and may include an anchor to a specific filter element.
         ///
         /// Example: `filter: url(svg-url#element-id)`
@@ -1656,10 +1656,10 @@ module style =
         /// Define your own values in the cubic-bezier function. Possible values are numeric values from 0 to 1
         static member inline cubicBezier(n1: float, n2: float, n3: float, n4: float) =
             Interop.mkStyle "animation-timing-function" (
-                "cubic-bezier(" + n1.ToString() + "," +
-                n2.ToString() + "," +
-                n3.ToString() + "," +
-                n4.ToString() + ")"
+                "cubic-bezier(" + string n1 + "," +
+                string n2 + "," +
+                string n3 + "," +
+                string n4 + ")"
             )
         /// Sets this property to its default value
         static member inline initial = Interop.mkStyle "animation-timing-function" "initial"
@@ -1683,16 +1683,16 @@ module style =
         /// Equivalent to steps(1, end)
         static member inline stepEnd = Interop.mkStyle "transition-timing-function" "step-end"
         static member inline stepsToEnd(steps: int) =
-            Interop.mkStyle "transition-timing-function" ("steps(" + steps.ToString() + ", end)")
+            Interop.mkStyle "transition-timing-function" ("steps(" + string steps + ", end)")
         static member inline stepsToStart(steps: int) =
-            Interop.mkStyle "transition-timing-function" ("steps(" + steps.ToString() + ", start)")
+            Interop.mkStyle "transition-timing-function" ("steps(" + string steps + ", start)")
         /// Define your own values in the cubic-bezier function. Possible values are numeric values from 0 to 1
         static member inline cubicBezier(n1: float, n2: float, n3: float, n4: float) =
             Interop.mkStyle "transition-timing-function" (
-                "cubic-bezier(" + n1.ToString() + "," +
-                n2.ToString() + "," +
-                n3.ToString() + "," +
-                n4.ToString() + ")"
+                "cubic-bezier(" + string n1 + "," +
+                string n2 + "," +
+                string n3 + "," +
+                string n4 + ")"
             )
         /// Sets this property to its default value
         static member inline initial = Interop.mkStyle "transition-timing-function" "initial"
@@ -2004,115 +2004,115 @@ module style =
         static member inline matrix(x1: int, y1: int, z1: int, x2: int, y2: int, z2: int) =
             Interop.mkStyle "transform" (
                 "matrix(" +
-                x1.ToString() + "," +
-                y1.ToString() + "," +
-                z1.ToString() + "," +
-                x2.ToString() + "," +
-                y2.ToString() + "," +
-                z2.ToString() + ")"
+                string x1 + "," +
+                string y1 + "," +
+                string z1 + "," +
+                string x2 + "," +
+                string y2 + "," +
+                string z2 + ")"
             )
 
         /// Defines a 2D translation.
         static member inline translate(x: int, y: int) =
             Interop.mkStyle "transform" (
-                "translate(" + x.ToString() + "," + y.ToString() + ")"
+                "translate(" + string x + "," + string y + ")"
             )
 
 
         /// Defines that there should be no transformation.
         static member inline translate3D(x: int, y: int, z: int) =
             Interop.mkStyle "transform" (
-                "translate3d(" + x.ToString() + "," + y.ToString() + "," + z.ToString() + ")"
+                "translate3d(" + string x + "," + string y + "," + string z + ")"
             )
 
         /// Defines a translation, using only the value for the X-axis.
         static member inline translateX(x: int) =
-            Interop.mkStyle "transform" ("translateX(" + x.ToString() + ")")
+            Interop.mkStyle "transform" ("translateX(" + string x + ")")
         /// Defines a translation, using only the value for the Y-axis
         static member inline translateY(y: int) =
-            Interop.mkStyle "transform" ("translateY(" + y.ToString() + ")")
+            Interop.mkStyle "transform" ("translateY(" + string y + ")")
         /// Defines a 3D translation, using only the value for the Z-axis
         static member inline translateZ(z: int) =
-            Interop.mkStyle "transform" ("translateZ(" + z.ToString() + ")")
+            Interop.mkStyle "transform" ("translateZ(" + string z + ")")
 
         /// Defines a 2D scale transformation.
         static member inline scale(x: int, y: int) =
             Interop.mkStyle "transform" (
-                "scale(" + x.ToString() + "," + y.ToString() + ")"
+                "scale(" + string x + "," + string y + ")"
             )
         /// Defines a scale transformation.
         static member inline scale(n: int) =
             Interop.mkStyle "transform" (
-                "scale(" + n.ToString() + ")"
+                "scale(" + string n + ")"
             )
 
         /// Defines a scale transformation.
         static member inline scale(n: float) =
             Interop.mkStyle "transform" (
-                "scale(" + n.ToString() + ")"
+                "scale(" + string n + ")"
             )
 
         /// Defines a 3D scale transformation
         static member inline scale3D(x: int, y: int, z: int) =
             Interop.mkStyle "transform" (
-                "scale3d(" + x.ToString() + "," + y.ToString() + "," + z.ToString() + ")"
+                "scale3d(" + string x + "," + string y + "," + string z + ")"
             )
 
         /// Defines a scale transformation by giving a value for the X-axis.
         static member inline scaleX(x: int) =
-            Interop.mkStyle "transform" ("scaleX(" + x.ToString() + ")")
+            Interop.mkStyle "transform" ("scaleX(" + string x + ")")
 
         /// Defines a scale transformation by giving a value for the Y-axis.
         static member inline scaleY(y: int) =
-            Interop.mkStyle "transform" ("scaleY(" + y.ToString() + ")")
+            Interop.mkStyle "transform" ("scaleY(" + string y + ")")
         /// Defines a 3D translation, using only the value for the Z-axis
         static member inline scaleZ(z: int) =
-            Interop.mkStyle "transform" ("scaleZ(" + z.ToString() + ")")
+            Interop.mkStyle "transform" ("scaleZ(" + string z + ")")
         /// Defines a 2D rotation, the angle is specified in the parameter.
         static member inline rotate(deg: int) =
-            Interop.mkStyle "transform" ("rotate(" + deg.ToString() + "deg)")
+            Interop.mkStyle "transform" ("rotate(" + string deg + "deg)")
         /// Defines a 2D rotation, the angle is specified in the parameter.
         static member inline rotate(deg: float) =
-            Interop.mkStyle "transform" ("rotate(" + deg.ToString() + "deg)")
+            Interop.mkStyle "transform" ("rotate(" + string deg + "deg)")
         /// Defines a 3D rotation along the X-axis.
         static member inline rotateX(deg: float) =
-            Interop.mkStyle "transform" ("rotateX(" + deg.ToString() + "deg)")
+            Interop.mkStyle "transform" ("rotateX(" + string deg + "deg)")
         /// Defines a 3D rotation along the X-axis.
         static member inline rotateX(deg: int) =
-            Interop.mkStyle "transform" ("rotateX(" + deg.ToString() + "deg)")
+            Interop.mkStyle "transform" ("rotateX(" + string deg + "deg)")
         /// Defines a 3D rotation along the Y-axis
         static member inline rotateY(deg: float) =
-            Interop.mkStyle "transform" ("rotateY(" + deg.ToString() + "deg)")
+            Interop.mkStyle "transform" ("rotateY(" + string deg + "deg)")
         /// Defines a 3D rotation along the Y-axis
         static member inline rotateY(deg: int) =
-            Interop.mkStyle "transform" ("rotateY(" + deg.ToString() + "deg)")
+            Interop.mkStyle "transform" ("rotateY(" + string deg + "deg)")
         /// Defines a 3D rotation along the Z-axis
         static member inline rotateZ(deg: float) =
-            Interop.mkStyle "transform" ("rotateZ(" + deg.ToString() + "deg)")
+            Interop.mkStyle "transform" ("rotateZ(" + string deg + "deg)")
         /// Defines a 3D rotation along the Z-axis
         static member inline rotateZ(deg: int) =
-            Interop.mkStyle "transform" ("rotateZ(" + deg.ToString() + "deg)")
+            Interop.mkStyle "transform" ("rotateZ(" + string deg + "deg)")
         /// Defines a 2D skew transformation along the X- and the Y-axis.
         static member inline skew(xAngle: int, yAngle: int) =
-            Interop.mkStyle "transform" ("skew(" + xAngle.ToString() + "deg," + yAngle.ToString() + "deg)")
+            Interop.mkStyle "transform" ("skew(" + string xAngle + "deg," + string yAngle + "deg)")
         /// Defines a 2D skew transformation along the X- and the Y-axis.
         static member inline skew(xAngle: float, yAngle: float) =
-            Interop.mkStyle "transform" ("skew(" + xAngle.ToString() + "deg," + yAngle.ToString() + "deg)")
+            Interop.mkStyle "transform" ("skew(" + string xAngle + "deg," + string yAngle + "deg)")
         /// Defines a 2D skew transformation along the X-axis
         static member inline skewX(xAngle: int) =
-            Interop.mkStyle "transform" ("skewX(" + xAngle.ToString() + "deg)")
+            Interop.mkStyle "transform" ("skewX(" + string xAngle + "deg)")
         /// Defines a 2D skew transformation along the X-axis
         static member inline skewX(xAngle: float) =
-            Interop.mkStyle "transform" ("skewX(" + xAngle.ToString() + "deg)")
+            Interop.mkStyle "transform" ("skewX(" + string xAngle + "deg)")
         /// Defines a 2D skew transformation along the Y-axis
         static member inline skewY(xAngle: int) =
-            Interop.mkStyle "transform" ("skewY(" + xAngle.ToString() + "deg)")
+            Interop.mkStyle "transform" ("skewY(" + string xAngle + "deg)")
         /// Defines a 2D skew transformation along the Y-axis
         static member inline skewY(xAngle: float) =
-            Interop.mkStyle "transform" ("skewY(" + xAngle.ToString() + "deg)")
+            Interop.mkStyle "transform" ("skewY(" + string xAngle + "deg)")
         /// Defines a perspective view for a 3D transformed element
         static member inline perspective(n: int) =
-            Interop.mkStyle "transform" ("perspective(" + n.ToString() + ")")
+            Interop.mkStyle "transform" ("perspective(" + string n + ")")
         /// Sets this property to its default value.
         static member inline initial = Interop.mkStyle "transform" "initial"
         /// Inherits this property from its parent element.
