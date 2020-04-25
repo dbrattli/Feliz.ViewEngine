@@ -721,7 +721,7 @@ type style () =
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: int) = Interop.mkStyle "min-width" (string value + "px"
+    static member inline minWidth (value: int) = Interop.mkStyle "min-width" (string value + "px")
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
