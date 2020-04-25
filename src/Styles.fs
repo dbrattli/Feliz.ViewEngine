@@ -645,7 +645,7 @@ type style () =
             (string right) + "px"
         )
     /// Sets the width of an element's border.
-    static member inline borderWidth (width: int) = Interop.mkStyle "border-width" (string value + "px")
+    static member inline borderWidth (width: int) = Interop.mkStyle "border-width" (string width + "px")
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int, bottom: int) =
         Interop.mkStyle "border-width" (
