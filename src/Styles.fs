@@ -431,19 +431,19 @@ type style () =
     /// and is the default for other color properties, such as border-color.
     static member inline color (color: string) = Interop.mkStyle "color" color
     /// Specifies the vertical position of a positioned element. It has no effect on non-positioned elements.
-    static member inline top(value: int) = Interop.mkStyle "top" value
+    static member inline top(value: int) = Interop.mkStyle "top" (string value + "px")
     /// Specifies the vertical position of a positioned element. It has no effect on non-positioned elements.
     static member inline top(value: ICssUnit) = Interop.mkStyle "top" value
     /// Specifies the vertical position of a positioned element. It has no effect on non-positioned elements.
-    static member inline bottom(value: int) = Interop.mkStyle "bottom" value
+    static member inline bottom(value: int) = Interop.mkStyle "bottom" (string value + "px")
     /// Specifies the vertical position of a positioned element. It has no effect on non-positioned elements.
     static member inline bottom(value: ICssUnit) = Interop.mkStyle "bottom" value
     /// Specifies the horizontal position of a positioned element. It has no effect on non-positioned elements.
-    static member inline left(value: int) = Interop.mkStyle "left" value
+    static member inline left(value: int) = Interop.mkStyle "left" (string value + "px")
     /// Specifies the horizontal position of a positioned element. It has no effect on non-positioned elements.
     static member inline left(value: ICssUnit) = Interop.mkStyle "left" value
     /// Specifies the horizontal position of a positioned element. It has no effect on non-positioned elements.
-    static member inline right(value: int) = Interop.mkStyle "right" value
+    static member inline right(value: int) = Interop.mkStyle "right" (string value + "px")
     /// Specifies the horizontal position of a positioned element. It has no effect on non-positioned elements.
     static member inline right(value: ICssUnit) = Interop.mkStyle "right" value
     /// Define a custom attribute of via key value pair
@@ -645,7 +645,7 @@ type style () =
             (string right) + "px"
         )
     /// Sets the width of an element's border.
-    static member inline borderWidth (width: int) = Interop.mkStyle "border-width" width
+    static member inline borderWidth (width: int) = Interop.mkStyle "border-width" (string value + "px")
     /// Sets the width of an element's border.
     static member inline borderWidth (top: int, right: int, bottom: int) =
         Interop.mkStyle "border-width" (
@@ -721,15 +721,11 @@ type style () =
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: int) = Interop.mkStyle "min-width" value
+    static member inline minWidth (value: int) = Interop.mkStyle "min-width" (string value + "px")
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
     static member inline minWidth (value: ICssUnit) = Interop.mkStyle "min-width" value
-    /// Sets the minimum width of an element.
-    ///
-    /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: string) = Interop.mkStyle "min-width" value
     /// Sets the initial position for each background image.
     ///
     /// The position is relative to the position layer set by background-origin.
@@ -739,7 +735,7 @@ type style () =
     /// Sets the minimum height of an element.
     ///
     /// It prevents the used value of the height property from becoming smaller than the value specified for min-height.
-    static member inline minHeight (value: int) = Interop.mkStyle "min-height" value
+    static member inline minHeight (value: int) = Interop.mkStyle "min-height" (string value + "px")
     /// Sets the minimum height of an element.
     ///
     /// It prevents the used value of the height property from becoming smaller than the value specified for min-height.
@@ -747,7 +743,7 @@ type style () =
     /// Sets the maximum width of an element.
     ///
     /// It prevents the used value of the width property from becoming larger than the value specified by max-width.
-    static member inline maxWidth (value: int) = Interop.mkStyle "max-width" value
+    static member inline maxWidth (value: int) = Interop.mkStyle "max-width" (string value + "px")
     /// Sets the maximum width of an element.
     ///
     /// It prevents the used value of the width property from becoming larger than the value specified by max-width.
@@ -755,7 +751,7 @@ type style () =
     /// Sets the maximum height of an element.
     ///
     /// It prevents the used value of the height property from becoming larger than the value specified for max-height.
-    static member inline maxHeight (value: int) = Interop.mkStyle "max-height" value
+    static member inline maxHeight (value: int) = Interop.mkStyle "max-height" (string value + "px")
     /// Sets the maximum height of an element.
     ///
     /// It prevents the used value of the height property from becoming larger than the value specified for max-height.
@@ -763,7 +759,7 @@ type style () =
     /// Set the height of an element.
     ///
     /// By default, the property defines the height of the content area.
-    static member inline height (value: int) = Interop.mkStyle "height" value
+    static member inline height (value: int) = Interop.mkStyle "height" (string value + "px")
     /// Set the height of an element.
     ///
     /// By default, the property defines the height of the content area.
@@ -771,7 +767,7 @@ type style () =
     /// Sets the width of an element.
     ///
     /// By default, the property defines the width of the content area.
-    static member inline width (value: int) = Interop.mkStyle "width" value
+    static member inline width (value: int) = Interop.mkStyle "width" (string value + "px")
     /// Sets the width of an element.
     ///
     /// By default, the property defines the width of the content area.
