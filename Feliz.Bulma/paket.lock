@@ -1,0 +1,17 @@
+STORAGE: NONE
+RESTRICTION: == netstandard2.0
+NUGET
+  remote: https://www.nuget.org/api/v2
+    Feliz.ViewEngine (0.14)
+      FSharp.Core (>= 4.7 < 5.0)
+    FSharp.Core (4.7)
+GITHUB
+  remote: Dzoukr/Feliz.Bulma
+    LICENSE (cd7656918b4464ecfade7344a4a3d0f4fa137f8f)
+      Feliz
+      FSharp.Core
+    src/Feliz.Bulma/Bulma.fs (cd7656918b4464ecfade7344a4a3d0f4fa137f8f)
+    src/Feliz.Bulma/ElementBuilders.fs (cd7656918b4464ecfade7344a4a3d0f4fa137f8f)
+    src/Feliz.Bulma/Modifiers.fs (cd7656918b4464ecfade7344a4a3d0f4fa137f8f)
+    src/Feliz.Bulma/Operators.fs (cd7656918b4464ecfade7344a4a3d0f4fa137f8f)
+    src/Feliz.Bulma/PropertyBuilders.fs (cd7656918b4464ecfade7344a4a3d0f4fa137f8f)

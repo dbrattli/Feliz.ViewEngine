@@ -5,6 +5,9 @@ open Feliz.ViewEngine.Styles
 type Event () =
     do ()
 
+type MouseEvent () =
+    do ()
+
 [<RequireQualifiedAccess>]
 type AriaDropEffect =
     /// A duplicate of the source object will be dropped into the target.
@@ -304,11 +307,8 @@ type prop =
     static member inline capture (value: bool) = Interop.mkAttr "capture" value
 
     /// Children of this React element.
-    static member inline children (value: seq<ReactElement>) = List.ofSeq value |> Children
-
-    //static member inline children (value: Fable.React.ReactElement) = Interop.mkAttr "children" value
-    /// Children of this React element.
-    //static member inline children (elems: Fable.React.ReactElement seq) = Interop.mkAttr "children" (Interop.reactApi.Children.toArray elems)
+    static member inline children (value: ReactElement) = Children [ value ]
+    static member inline children (elems: seq<ReactElement>) = List.ofSeq elems |> Children
 
     /// A URL that designates a source document or message for the information quoted. This attribute is intended to
     /// point to information explaining the context or the reference for the quote.
@@ -393,7 +393,7 @@ type prop =
     static member inline cy (value: int) = Interop.mkAttr "cy" value
 
     /// Sets the inner Html content of the element.
-    //static member inline dangerouslySetInnerHTML (content: string) = Interop.mkAttr "dangerouslySetInnerHTML" (createObj [ "__html" ==> content ])
+    static member inline dangerouslySetInnerHTML (content: string) = Children [ Interop.createRawTextElement content ]
 
     /// This attribute indicates the time and/or date of the element.
     static member inline dateTime (value: string) = Interop.mkAttr "datetime" value
@@ -807,10 +807,10 @@ type prop =
     static member inline onLoadStart (handler: Event -> unit) = Interop.mkAttr "onLoadStart" handler
 
     /// Fires when a mouse button is pressed down on an element.
-    //static member inline onMouseDown (handler: MouseEvent -> unit) = Interop.mkAttr "onMouseDown" handler
+    static member inline onMouseDown (handler: MouseEvent -> unit) = ()
 
     /// Fires when a pointer enters an element.
-    //static member inline onMouseEnter (handler: MouseEvent -> unit) = Interop.mkAttr "onMouseEnter" handler
+    static member inline onMouseEnter (handler: MouseEvent -> unit) = Interop.mkAttr "onMouseEnter" handler
 
     /// Fires when a pointer leaves an element.
     //static member inline onMouseLeave (handler: MouseEvent -> unit) = Interop.mkAttr "onMouseLeave" handler

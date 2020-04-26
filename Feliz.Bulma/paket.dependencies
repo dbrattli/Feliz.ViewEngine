@@ -1,0 +1,17 @@
+source https://www.nuget.org/api/v2
+storage: none
+
+group Main
+source https://www.nuget.org/api/v2
+    storage: none
+    framework: netstandard2.0
+    nuget FSharp.Core ~> 4.7 lowest_matching: true
+    nuget Feliz.ViewEngine
+
+    github Dzoukr/Feliz.Bulma src/Feliz.Bulma/Bulma.fs
+    github Dzoukr/Feliz.Bulma src/Feliz.Bulma/Modifiers.fs
+    github Dzoukr/Feliz.Bulma src/Feliz.Bulma/Operators.fs
+    github Dzoukr/Feliz.Bulma src/Feliz.Bulma/PropertyBuilders.fs
+    github Dzoukr/Feliz.Bulma src/Feliz.Bulma/ElementBuilders.fs
+
+    github Dzoukr/Feliz.Bulma LICENSE
