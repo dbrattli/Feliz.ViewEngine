@@ -1636,6 +1636,46 @@ module prop =
         /// because it leaks origins and paths from TLS-protected resources to insecure origins.
         static member inline unsafeUrl = Interop.mkAttr "referrerpolicy" "unsafe-url"
 
+    [<Erase>]
+    /// The required rel attribute specifies the relationship between the current document and the linked document/resource.
+    ///
+    /// Docs at https://www.w3schools.com/tags/att_link_rel.asp
+    type rel =
+        /// Provides a link to an alternate version of the document (i.e. print page, translated or mirror).
+        ///
+        /// Example: <link rel="alternate" type="application/atom+xml" title="W3Schools News" href="/blog/news/atom">
+        static member inline alternate = Interop.mkAttr "rel" "alternate"
+        /// Provides a link to the author of the document
+        static member inline author = Interop.mkAttr "rel" "author"
+        /// Specifies that the browser should preemptively perform DNS resolution for the target resource's origin
+        static member inline dnsPrefetch = Interop.mkAttr "rel" "dns-prefetch"
+        /// Provides a link to a help document. Example: <link rel="help" href="/help/">
+        static member inline help = Interop.mkAttr "rel" "help"
+        /// Imports an icon to represent the document.
+        ///
+        /// Example: <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        static member inline icon = Interop.mkAttr "rel" "icon"
+        /// Provides a link to copyright information for the document
+        static member inline license = Interop.mkAttr "rel" "license"
+        /// Provides a link to the next document in the series
+        static member inline next = Interop.mkAttr "rel" "next"
+        /// Provides the address of the pingback server that handles pingbacks to the current document
+        static member inline pingback = Interop.mkAttr "rel" "pingback"
+        /// Specifies that the browser should preemptively connect to the target resource's origin
+        static member inline preconnect = Interop.mkAttr "rel" "preconnect"
+        /// Specifies that the browser should preemptively fetch and cache the target resource as it is likely to be required for a follow-up navigation
+        static member inline prefetch = Interop.mkAttr "rel" "prefetch"
+        /// Specifies that the browser agent must preemptively fetch and cache the target resource for current navigation according to the destination given by the "as" attribute (and the priority associated with that destination).
+        static member inline preload = Interop.mkAttr "rel" "preload"
+        /// Specifies that the browser should pre-render (load) the specified webpage in the background. So, if the user navigates to this page, it speeds up the page load (because the page is already loaded). Warning! This waste the user's bandwidth! Only use prerender if it is absolutely sure that the webpage is required at some point in the user journey
+        static member inline prerender = Interop.mkAttr "rel" "prerender"
+        /// Indicates that the document is a part of a series, and that the previous document in the series is the referenced document
+        static member inline prev = Interop.mkAttr "rel" "prev"
+        /// Provides a link to a resource that can be used to search through the current document and its related pages
+        static member inline search = Interop.mkAttr "rel" "search"
+        /// Imports a style sheet
+        static member inline stylesheet = Interop.mkAttr "rel" "stylesheet"
+
     /// https://www.w3.org/WAI/PF/aria-1.1/roles
     [<Erase>]
     type role =

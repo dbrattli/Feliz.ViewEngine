@@ -3,3 +3,5 @@ src/obj
 paket-files
 examples/giraffe/bin
 examples/giraffe/obj
+bin
+obj
