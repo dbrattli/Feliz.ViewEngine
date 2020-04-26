@@ -42,6 +42,8 @@ module Interop =
 
 type FunctionComponent<'Props> = 'Props -> ReactElement
 
+// fsharplint:disable
+
 type React =
     static member functionComponent(name: string, render: 'props -> ReactElement) : FunctionComponent<'props> =
         render
