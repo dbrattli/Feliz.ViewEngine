@@ -153,7 +153,7 @@ let ``The order of properties for an element is preserved``() =
     // Arrange / Act
     let result =
         Html.link [
-            prop.rel  "stylesheet"
+            prop.rel.stylesheet
             prop.type' "text/css"
             prop.href "main.css"
         ]
