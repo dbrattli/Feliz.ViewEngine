@@ -77,6 +77,16 @@ type Render
 Feliz has extensive documentation at https://zaid-ajaj.github.io/Feliz with live examples along side code samples, check
 them out and if you have any question, let us know!
 
+## Extensions
+
+- [Feliz.Bulma.ViewEngine](https://www.nuget.org/packages/Feliz.Bulma.ViewEngine/) - Port of [Feliz.Bulma](https://github.com/Dzoukr/Feliz.Bulma)
+
+## Common Pitfalls
+
+Feliz.ViewEngine (`ReactElement`) is not compatible with GiraffeViewEngine (`XmlNode`) so you cannot mix the two as you
+can with Feliz and React. Thus when you convert your existing server side rendering, then all the elements must be
+converted to Feliz.
+
 ## License
 
 This work is dual-licensed under Apache 2.0 and MIT. You can choose between one of them if you use this work.
