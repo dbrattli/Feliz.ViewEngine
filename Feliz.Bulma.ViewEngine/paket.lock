@@ -2,6 +2,6 @@ STORAGE: NONE
 RESTRICTION: == netstandard2.0
 NUGET
   remote: https://www.nuget.org/api/v2
-    Feliz.ViewEngine (0.15)
+    Feliz.ViewEngine (0.16)
       FSharp.Core (>= 4.7 < 5.0)
     FSharp.Core (4.7)

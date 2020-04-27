@@ -57,6 +57,19 @@ let ``p element with text property is Ok``() =
     test <@ result = "<p>test</p>" @>
 
 [<Fact>]
+let ``p element with onchange handler is Ok``() =
+    // Arrange / Act
+    let result =
+        Html.p [
+            prop.onChange (fun (ev: Event) -> ())
+            prop.text "test"
+        ]
+        |> Render.htmlView
+
+    // Assert
+    test <@ result = "<p>test</p>" @>
+
+[<Fact>]
 let ``p element with text property is escaped Ok``() =
     // Arrange / Act
     let result =

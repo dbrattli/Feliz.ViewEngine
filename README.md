@@ -79,7 +79,8 @@ them out and if you have any question, let us know!
 
 ## Extensions
 
-- [Feliz.Bulma.ViewEngine](https://www.nuget.org/packages/Feliz.Bulma.ViewEngine/) - Port of [Feliz.Bulma](https://github.com/Dzoukr/Feliz.Bulma)
+- [Feliz.Bulma.ViewEngine](https://www.nuget.org/packages/Feliz.Bulma.ViewEngine/) - Port of
+  [Feliz.Bulma](https://github.com/Dzoukr/Feliz.Bulma) to Feliz.ViewEngine.
 
 ## Common Pitfalls
 
