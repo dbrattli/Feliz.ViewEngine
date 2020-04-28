@@ -7,13 +7,13 @@ module internal Helpers =
 
     let inline getClasses (xs:ReactProperty list) =
         xs
-        |> List.map unbox<string * obj>
+        |> List.choose (function | KeyValue (k, v) -> Some (k, v) | _ -> None)
         |> List.filter (fun (v,_) -> v = ClassName)
         |> List.map (snd >> string)
 
     let inline partitionClasses (xs:ReactProperty list) =
         xs
-        |> List.partition (unbox<string * obj> >> fst >> ((=) ClassName))
+        |> List.partition (function | KeyValue (k, v) -> k = ClassName | _ -> false)
 
     let inline combineClasses cn (xs:ReactProperty list) =
         xs
