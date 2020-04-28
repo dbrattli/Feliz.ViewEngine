@@ -2,20 +2,6 @@ namespace Feliz.ViewEngine
 
 open Feliz.ViewEngine.Styles
 
-type AnimationEvent = class end
-type ClipboardEvent = class end
-type CompositionEvent = class end
-type DragEvent = class end
-type Event = class end
-type IKeyboardKey = interface end
-type KeyboardEvent = class end
-type FocusEvent = class end
-type MouseEvent = class end
-type TouchEvent = class end
-type TransitionEvent = class end
-type WheelEvent = class end
-type File = class end
-
 [<RequireQualifiedAccess>]
 type AriaDropEffect =
     /// A duplicate of the source object will be dropped into the target.
@@ -314,6 +300,9 @@ type prop =
 
     static member inline capture (value: bool) = Interop.mkAttr "capture" value
 
+    /// This attribute declares the document's character encoding. Must be used in the meta tag.
+    static member inline charset (value: string) = Interop.mkAttr "charset" value
+    
     /// Children of this React element.
     static member inline children (value: ReactElement) = Children [ value ]
     static member inline children (elems: #seq<ReactElement>) = List.ofSeq elems |> Children
@@ -1426,6 +1415,10 @@ module prop =
         /// The first letter of each word defaults to a capital letter; all other letters default to lowercase
         static member inline words = Interop.mkAttr "autocapitalize" "words"
 
+    [<Erase>]
+    type charset = 
+        static member inline utf8 = Interop.mkAttr "charset" "utf-8"
+
     /// A set of values specifying the coordinates of the hot-spot region.
     ///
     /// The number and meaning of the values depend upon the value specified for the shape attribute
@@ -1539,6 +1532,29 @@ module prop =
         static member inline textBeforeEdge = Interop.mkAttr "dominantBaseline" "text-before-edge"
         /// This value uses the top of the em box as the baseline.
         static member inline textTop = Interop.mkAttr "dominantBaseline" "text-top"
+
+    /// Defines a pragma directive.
+    [<Erase>]
+    type httpEquiv =
+        /// Allows page authors to define a content policy for the current page. 
+        ///
+        /// Content policies mostly specify allowed server origins and script endpoints which help guard against cross-site 
+        /// scripting attacks.
+        static member inline contentSecurityPolicy = Interop.mkAttr "http-equiv" "content-security-policy"
+        /// If specified, the content attribute must have the value "text/html; charset=utf-8". 
+        ///
+        /// Note: Can only be used in documents served with a text/html MIME type — not in documents served with an XML MIME type.
+        static member inline contentType = Interop.mkAttr "http-equiv" "content-type"
+        /// Sets the name of the default CSS style sheet set.
+        static member inline defaultStyle = Interop.mkAttr "http-equiv" "default-style"
+        /// This instruction specifies:
+        /// 
+        /// The number of seconds until the page should be reloaded - only if the content attribute contains a positive integer.
+        ///
+        /// The number of seconds until the page should redirect to another - only if the content attribute contains a positive integer followed by the string ';url=', and a valid URL.
+        static member inline refresh = Interop.mkAttr "http-equiv" "refresh"
+        /// If specified, the content attribute must have the value "IE=edge". User agents are required to ignore this pragma.
+        static member inline xUaCompatible = Interop.mkAttr "http-equiv" "x-ua-compatible"
 
     /// Provides a hint to browsers as to the type of virtual keyboard configuration to use when editing this element or its contents.
     [<Erase>]
