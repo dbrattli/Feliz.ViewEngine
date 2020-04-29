@@ -346,7 +346,7 @@ type Html =
     static member inline nav (children: #seq<ReactElement>) = Interop.reactElementWithChildren "nav" children
 
     /// The empty element, renders nothing on screen
-    static member inline none : ReactElement = unbox null
+    static member inline none : ReactElement = Interop.createTextElement ""
 
     static member inline noscript xs = Interop.createElement "noscript" xs
     static member inline noscript (children: #seq<ReactElement>) = Interop.reactElementWithChildren "noscript" children

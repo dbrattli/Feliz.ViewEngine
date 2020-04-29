@@ -199,6 +199,11 @@ let ``Void tag in HTML should be unary tag`` () =
     Assert.Equal("<br>", unary)
 
 [<Fact>]
+let ``None tag in HTML should render nothing`` () =
+    let result =  Html.none |> Render.htmlView
+    Assert.Equal("", result)
+
+[<Fact>]
 let ``Nested content should render correctly`` () =
     let nested =
         Html.div [

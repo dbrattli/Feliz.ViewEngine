@@ -15,17 +15,17 @@ type EraseAttribute () =
 [<RequireQualifiedAccess>]
 module Interop =
     /// Output a string where the content has been HTML encoded.
-    let inline mkText (content : 'a) = content.ToString() |> ViewBuilder.escape |> Text
+    let mkText (content : 'a) = content.ToString () |> ViewBuilder.escape |> Text
 
     let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) : ReactElement =
         Element (name, [ List.ofSeq children |> Children])
     let inline reactElementWithChild (name: string) (child: 'a) : ReactElement =
         Element (name, [ mkText child ])
 
-    let createElement name (props: ReactProperty list) : ReactElement =
+    let inline createElement name (props: ReactProperty list) : ReactElement =
         Element (name, props)
 
-    let createVoidElement name (props: ReactProperty list) : ReactElement =
+    let inline createVoidElement name (props: ReactProperty list) : ReactElement =
         VoidElement (name, props)
 
     let inline createRawTextElement (content : string) = TextElement content
@@ -38,7 +38,9 @@ module Interop =
             | _ -> value.ToString() |> ViewBuilder.escape
         KeyValue (key, result)
 
-    let mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
+    let inline mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
+
+    let inline mkChildren (props: #seq<ReactElement>) = props |> List.ofSeq |> Children
 
 type FunctionComponent<'Props> = 'Props -> ReactElement
 
