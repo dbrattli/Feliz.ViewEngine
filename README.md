@@ -85,11 +85,17 @@ them out and if you have any question, let us know!
 ## Common Pitfalls
 
 Feliz.ViewEngine (`ReactElement`) is not compatible with GiraffeViewEngine (`XmlNode`) so you cannot mix the two as you
-can with Feliz and React. Thus when you convert your existing server side rendering, then all the elements must be
-converted to Feliz.
+can with Feliz and Fable.React. Thus when you convert your existing server side rendering code, then all the elements
+must be converted to Feliz.
 
 ## License
 
 This work is dual-licensed under Apache 2.0 and MIT. You can choose between one of them if you use this work.
 
 `SPDX-License-Identifier: Apache-2.0 OR MIT`
+
+## Duplication of Code
+
+Yes, Feliz.ViewEngine duplicates a lot of code and violates the [DRY
+principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). This is currently [by
+design](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction).

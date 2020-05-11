@@ -17,19 +17,19 @@ module Interop =
     /// Output a string where the content has been HTML encoded.
     let mkText (content : 'a) = content.ToString () |> ViewBuilder.escape |> Text
 
+    let inline mkChildren (props: #seq<ReactElement>) = props |> List.ofSeq |> Children
+
     let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) : ReactElement =
-        Element (name, [ List.ofSeq children |> Children])
+        Element (name, [ mkChildren children ])
     let inline reactElementWithChild (name: string) (child: 'a) : ReactElement =
         Element (name, [ mkText child ])
 
     let inline createElement name (props: ReactProperty list) : ReactElement =
         Element (name, props)
-
     let inline createVoidElement name (props: ReactProperty list) : ReactElement =
         VoidElement (name, props)
-
-    let inline createRawTextElement (content : string) = TextElement content
     let inline createTextElement (content : string) = ViewBuilder.escape content |> TextElement
+    let inline createRawTextElement (content : string) = TextElement content
 
     let mkAttr (key: string) (value: obj) : ReactProperty =
         let result =
@@ -39,8 +39,6 @@ module Interop =
         KeyValue (key, result)
 
     let inline mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
-
-    let inline mkChildren (props: #seq<ReactElement>) = props |> List.ofSeq |> Children
 
 type FunctionComponent<'Props> = 'Props -> ReactElement
 
@@ -61,9 +59,9 @@ type CompositionEvent () = inherit Event ()
 type DragEvent () = inherit Event ()
 type IKeyboardKey = interface end
 type KeyboardEvent () = inherit Event ()
-type FocusEvent  () = inherit Event ()
-type MouseEvent  () = inherit Event ()
-type TouchEvent  () = inherit Event ()
-type TransitionEvent  () = inherit Event ()
-type WheelEvent  () = inherit Event ()
+type FocusEvent () = inherit Event ()
+type MouseEvent () = inherit Event ()
+type TouchEvent () = inherit Event ()
+type TransitionEvent () = inherit Event ()
+type WheelEvent () = inherit Event ()
 type File = class end

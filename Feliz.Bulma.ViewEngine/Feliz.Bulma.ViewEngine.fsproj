@@ -10,6 +10,7 @@
     <Copyright>Roman Provazník</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/dbrattli/Feliz.ViewEngine</RepositoryUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PropertyBuilders.fs" />

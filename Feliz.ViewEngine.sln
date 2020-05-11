@@ -7,6 +7,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.ViewEngine", "src\Fel
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests-Feliz.ViewEngine", "test\Tests.Feliz.ViewEngine.fsproj", "{477BDCE1-C00F-4A37-B52C-C2BC9AF05D57}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.ViewEngine", "Feliz.Bulma.ViewEngine\Feliz.Bulma.ViewEngine.fsproj", "{69A365F4-9078-4421-8ABA-0D6E5B6A030E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{477BDCE1-C00F-4A37-B52C-C2BC9AF05D57}.Release|x64.Build.0 = Release|Any CPU
 		{477BDCE1-C00F-4A37-B52C-C2BC9AF05D57}.Release|x86.ActiveCfg = Release|Any CPU
 		{477BDCE1-C00F-4A37-B52C-C2BC9AF05D57}.Release|x86.Build.0 = Release|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Debug|x64.Build.0 = Debug|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Debug|x86.Build.0 = Debug|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|x64.ActiveCfg = Release|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|x64.Build.0 = Release|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|x86.ActiveCfg = Release|Any CPU
+		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

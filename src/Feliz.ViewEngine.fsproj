@@ -8,6 +8,7 @@
     <Copyright>Brattli Labs</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/dbrattli/Feliz.ViewEngine</RepositoryUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ViewEngine.fs" />
