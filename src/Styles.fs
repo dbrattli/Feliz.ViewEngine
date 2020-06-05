@@ -93,7 +93,7 @@ type style () =
     /// **Tip**: A positioned element is an element with the position property set to: relative, absolute, or fixed.
     ///
     /// **Tip**: This property is useful if you want to create overlapping elements.
-    static member inline zIndex(value: int) = Interop.mkStyle "zIndex" value
+    static member inline zIndex(value: int) = Interop.mkStyle "z-index" value
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
     static member inline margin(value: int) = Interop.mkStyle "margin" (string value + "px")
@@ -317,26 +317,26 @@ type style () =
     /// Sets the width of the padding area on the right of an element.
     static member inline paddingRight(value: int) = Interop.mkStyle "padding-right" (string value + "px")
     /// Sets the width of the padding area on the right of an element.
-    static member inline paddingRight(value: ICssUnit) = Interop.mkStyle "paddingRight" value
+    static member inline paddingRight(value: ICssUnit) = Interop.mkStyle "padding-right" value
     /// Sets the height of the padding area on the top of an element.
     static member inline paddingTop(value: int) = Interop.mkStyle "padding-top" (string value + "px")
     /// Sets the height of the padding area on the top of an element.
     static member inline paddingTop(value: ICssUnit) = Interop.mkStyle "padding-top" value
     /// Sets the flex shrink factor of a flex item. If the size of all flex items is larger than
     /// the flex container, items shrink to fit according to flex-shrink.
-    static member inline flexShrink(value: int) = Interop.mkStyle "flexShrink" value
+    static member inline flexShrink(value: int) = Interop.mkStyle "flex-shrink" value
     /// Sets the initial main size of a flex item. It sets the size of the content box unless
     /// otherwise set with box-sizing.
-    static member inline flexBasis (value: int) = Interop.mkStyle "flexBasis" value
+    static member inline flexBasis (value: int) = Interop.mkStyle "flex-basis" value
     /// Sets the initial main size of a flex item. It sets the size of the content box unless
     /// otherwise set with box-sizing.
-    static member inline flexBasis (value: float) = Interop.mkStyle "flexBasis" value
+    static member inline flexBasis (value: float) = Interop.mkStyle "flex-basis" value
     /// Sets the initial main size of a flex item. It sets the size of the content box unless
     /// otherwise set with box-sizing.
-    static member inline flexBasis (value: ICssUnit) = Interop.mkStyle "flexBasis" value
+    static member inline flexBasis (value: ICssUnit) = Interop.mkStyle "flex-basis" value
     /// Sets the flex grow factor of a flex item main size. It specifies how much of the remaining
     /// space in the flex container should be assigned to the item (the flex grow factor).
-    static member inline flexGrow (value: int) = Interop.mkStyle "flexGrow" value
+    static member inline flexGrow (value: int) = Interop.mkStyle "flex-grow" value
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDuration(timespan: TimeSpan) =
@@ -591,7 +591,7 @@ type style () =
     /// Sets the color of an element's left border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
-    static member inline borderLeftColor (color: string) = Interop.mkStyle "borderLeftColor" color
+    static member inline borderLeftColor (color: string) = Interop.mkStyle "border-left-color" color
     /// Sets an element's border.
     ///
     /// It sets the values of border-width, border-style, and border-color.
@@ -2134,13 +2134,13 @@ module style =
     /// Sets whether or not to display borders on empty cells in a table.
     type emptyCells =
         /// Display borders on empty cells. This is default
-        static member show = Interop.mkStyle "emptyCells" "show"
+        static member show = Interop.mkStyle "empty-cells" "show"
         /// Hide borders on empty cells
-        static member hide = Interop.mkStyle "emptyCells" "hide"
+        static member hide = Interop.mkStyle "empty-cells" "hide"
         /// Sets this property to its default value
-        static member initial = Interop.mkStyle "emptyCells" "initial"
+        static member initial = Interop.mkStyle "empty-cells" "initial"
         /// Inherits this property from its parent element
-        static member inheritFromParent = Interop.mkStyle "emptyCells" "inherit"
+        static member inheritFromParent = Interop.mkStyle "empty-cells" "inherit"
 
 
     [<Erase>]
