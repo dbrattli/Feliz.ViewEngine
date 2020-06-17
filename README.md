@@ -88,6 +88,13 @@ Feliz.ViewEngine (`ReactElement`) is not compatible with GiraffeViewEngine (`Xml
 can with Feliz and Fable.React. Thus when you convert your existing server side rendering code, then all the elements
 must be converted to Feliz.
 
+## Projects and Examples
+
+Projects and examples using Feliz.ViewEngine:
+
+- [Felizia](https://github.com/dbrattli/Felizia) - Uses Feliz.ViewEngine server-side for SSR and Feliz client-side
+- [Giraffe server](https://github.com/dbrattli/Feliz.ViewEngine/tree/master/examples/giraffe) - simple example
+
 ## License
 
 This work is dual-licensed under Apache 2.0 and MIT. You can choose between one of them if you use this work.
