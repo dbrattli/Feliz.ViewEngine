@@ -19,14 +19,15 @@ namespace Feliz.ViewEngine
 open System
 open System.Text
 
-type ReactProperty =
+type IReactProperty =
     | KeyValue of string * obj
     | Children of ReactElement list
     | Text of string
 
+
 and ReactElement =
-    | Element of string * ReactProperty list // An element which may contain properties
-    | VoidElement of string * ReactProperty list // An empty self-closed element which may contain properties
+    | Element of string * IReactProperty list // An element which may contain properties
+    | VoidElement of string * IReactProperty list // An empty self-closed element which may contain properties
     | TextElement of string
 
 [<RequireQualifiedAccess>]
@@ -49,9 +50,9 @@ module ViewBuilder =
         if isHtml then ">" else " />"
 
     let rec private buildNode (isHtml : bool) (sb : StringBuilder) (node : ReactElement) : unit =
-        let splitProps (props: ReactProperty list) =
+        let splitProps (props: IReactProperty list) =
             let init = [], None, []
-            let folder (prop: ReactProperty) ((children, text, attrs) : ReactElement list * string option * (string*obj) list) =
+            let folder (prop: IReactProperty) ((children, text, attrs) : ReactElement list * string option * (string*obj) list) =
                 match prop with
                 | KeyValue (k, v) -> children, text,  (k, v) :: attrs
                 | Children ch -> List.append children ch, text, attrs
@@ -110,7 +111,7 @@ type Render =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNode sb node
         sb.ToString()
 
-    /// Create XML view
+    /// <summary>Create XML view</summary>
     static member xmlView (nodes: ReactElement list) : string =
         let sb = new StringBuilder() in ViewBuilder.buildXmlNodes sb nodes
         sb.ToString()

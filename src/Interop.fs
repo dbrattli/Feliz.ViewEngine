@@ -24,14 +24,14 @@ module Interop =
     let inline reactElementWithChild (name: string) (child: 'a) : ReactElement =
         Element (name, [ mkText child ])
 
-    let inline createElement name (props: ReactProperty list) : ReactElement =
+    let inline createElement name (props: IReactProperty list) : ReactElement =
         Element (name, props)
-    let inline createVoidElement name (props: ReactProperty list) : ReactElement =
+    let inline createVoidElement name (props: IReactProperty list) : ReactElement =
         VoidElement (name, props)
     let inline createTextElement (content : string) = ViewBuilder.escape content |> TextElement
     let inline createRawTextElement (content : string) = TextElement content
 
-    let mkAttr (key: string) (value: obj) : ReactProperty =
+    let mkAttr (key: string) (value: obj) : IReactProperty =
         let result =
             match value with
             | :? bool -> value.ToString().ToLower()
