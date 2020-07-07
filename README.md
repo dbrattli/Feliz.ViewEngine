@@ -97,20 +97,20 @@ Projects and examples using Feliz.ViewEngine:
 
 ## Porting an Existing Feliz Library to Feliz.ViewEngine
 
-To port an existing `Feliz` library to `Feliz.ViewEngine` you basically need to reimplement everything from the library you want to port. However this is
-usually not a lot of work since you can reuse most of the files from the existing library, and you can do the work incrementally and add support for more element and properties as needed.
+To port an existing `Feliz` library to `Feliz.ViewEngine` you basically need to reimplement everything from the library
+you want to port. However this is usually not a lot of work since you can reuse most of the files from the existing
+library, and you can do the work incrementally and add support for more elements and properties as needed.
 
-Start with the file that
-generates the HTML elements, comment out the whole file using `(* ... *)` and start enabling element by element. Then port properties, styles, colors, etc.
+Start with the file that generates the HTML elements, comment out the whole file using `(* ... *)` and start enabling
+element by element. Then port properties, styles, colors, etc.
 
-The Feliz.ViewEngine types are different from ReactElement:
-inter
+The `Feliz.ViewEngine` types are different from `ReactElement`:
+
 ```fs
 type IReactProperty =
     | KeyValue of string * obj
     | Children of ReactElement list
     | Text of string
-
 
 and ReactElement =
     | Element of string * IReactProperty list
