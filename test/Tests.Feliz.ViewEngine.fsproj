@@ -9,9 +9,11 @@
     <ProjectReference Include="../src/Feliz.ViewEngine.fsproj">
       <Name>Feliz.ViewEngine.fsproj</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Feliz.Bulma.ViewEngine\Feliz.Bulma.ViewEngine.fsproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewEngineTest.fs" />
+    <Compile Include="Bulma.ViewEngineTest.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />

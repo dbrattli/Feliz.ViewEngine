@@ -2,6 +2,6 @@
 
 open Feliz.ViewEngine
 
-let (++) (prop1:ReactProperty) (prop2:ReactProperty) =
+let (++) (prop1: IReactProperty) (prop2: IReactProperty) =
     ElementBuilders.Helpers.getClasses [prop1; prop2]
-    |> fun classes -> prop.classes classes
+    |> prop.classes
