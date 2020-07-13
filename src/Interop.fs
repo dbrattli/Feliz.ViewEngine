@@ -21,16 +21,16 @@ module Interop =
     let inline mkChildren (props: #seq<ReactElement>) = props |> List.ofSeq |> Children
 
     let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) : ReactElement =
-        Element (name, [ mkChildren children ]) :> _
+        Element (name, [ mkChildren children ]) :> ReactElement
     let inline reactElementWithChild (name: string) (child: 'a) : ReactElement =
-        Element (name, [ mkText child  ]) :> _
+        Element (name, [ mkText child  ]) :> ReactElement
 
     let inline createElement name (props: IReactProperty list) : ReactElement =
-        Element (name, props) :> _
+        Element (name, props) :> ReactElement
     let inline createVoidElement name (props: IReactProperty list) : ReactElement =
         VoidElement (name, props) :> _
-    let inline createTextElement (content : string) = ViewBuilder.escape content |> TextElement
-    let inline createRawTextElement (content : string) = TextElement content
+    let inline createTextElement (content : string) : ReactElement = ViewBuilder.escape content |> TextElement :> ReactElement
+    let inline createRawTextElement (content : string) = TextElement content :> ReactElement
 
     let mkAttr (key: string) (value: obj) : IReactProperty =
         let result =

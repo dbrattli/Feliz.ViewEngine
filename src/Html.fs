@@ -2,7 +2,6 @@ namespace Feliz.ViewEngine
 
 open Fable.React
 
-// fsharplint:disable
 
 type Html =
     static member inline a xs = Interop.createElement "a" xs
@@ -112,7 +111,7 @@ type Html =
 
     static member inline colgroup xs = Interop.createElement "colgroup" xs
     static member inline colgroup (children: #seq<ReactElement>) = Interop.reactElementWithChildren "colgroup" children
-    static member inline comment (content : string) = Interop.createRawTextElement (sprintf "<!-- %s -->" content) :> ReactElement
+    static member inline comment (content : string) = Interop.createRawTextElement (sprintf "<!-- %s -->" content)
 
     static member inline data xs = Interop.createElement "data" xs
     static member inline data (value: float) = Interop.reactElementWithChild "data" value
@@ -348,7 +347,7 @@ type Html =
     static member inline nav (children: #seq<ReactElement>) = Interop.reactElementWithChildren "nav" children
 
     /// The empty element, renders nothing on screen
-    static member inline none : ReactElement = Interop.createTextElement "" :> _
+    static member inline none : ReactElement = Interop.createTextElement ""
 
     static member inline noscript xs = Interop.createElement "noscript" xs
     static member inline noscript (children: #seq<ReactElement>) = Interop.reactElementWithChildren "noscript" children
@@ -564,11 +563,11 @@ type Html =
     static member inline template (children: #seq<ReactElement>) = Interop.reactElementWithChildren "template" children
 
     static member inline text xs = Interop.createElement "text" xs
-    static member inline text (value: float) : ReactElement = Interop.createTextElement (value.ToString ()) :> _
-    static member inline text (value: int) : ReactElement = Interop.createTextElement (value.ToString ()) :> _
-    static member inline text (value: string) : ReactElement = Interop.createTextElement value :> _
-    static member inline text (value: System.Guid) : ReactElement = Interop.createTextElement (string value) :> _
-    static member inline rawText (value: string) : ReactElement = Interop.createRawTextElement value :> _
+    static member inline text (value: float) : ReactElement = Interop.createTextElement (value.ToString ())
+    static member inline text (value: int) : ReactElement = Interop.createTextElement (value.ToString ())
+    static member inline text (value: string) : ReactElement = Interop.createTextElement value
+    static member inline text (value: System.Guid) : ReactElement = Interop.createTextElement (string value)
+    static member inline rawText (value: string) : ReactElement = Interop.createRawTextElement value
 
     static member inline textarea xs = Interop.createElement "textarea" xs
     static member inline textarea (children: #seq<ReactElement>) = Interop.reactElementWithChildren "textarea" children
