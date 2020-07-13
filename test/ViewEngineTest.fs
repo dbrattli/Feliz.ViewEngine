@@ -1,5 +1,6 @@
 module Tests.ViewEngine
 
+open Fable.React
 open Feliz.ViewEngine
 open Swensen.Unquote
 open Xunit

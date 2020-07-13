@@ -1,5 +1,6 @@
 namespace Feliz.ViewEngine
 
+open Fable.React
 open Feliz.ViewEngine.Styles
 
 [<RequireQualifiedAccess>]
@@ -1416,7 +1417,7 @@ module prop =
         static member inline words = Interop.mkAttr "autocapitalize" "words"
 
     [<Erase>]
-    type charset = 
+    type charset =
         static member inline utf8 = Interop.mkAttr "charset" "utf-8"
 
     /// A set of values specifying the coordinates of the hot-spot region.
@@ -1536,19 +1537,19 @@ module prop =
     /// Defines a pragma directive.
     [<Erase>]
     type httpEquiv =
-        /// Allows page authors to define a content policy for the current page. 
+        /// Allows page authors to define a content policy for the current page.
         ///
-        /// Content policies mostly specify allowed server origins and script endpoints which help guard against cross-site 
+        /// Content policies mostly specify allowed server origins and script endpoints which help guard against cross-site
         /// scripting attacks.
         static member inline contentSecurityPolicy = Interop.mkAttr "http-equiv" "content-security-policy"
-        /// If specified, the content attribute must have the value "text/html; charset=utf-8". 
+        /// If specified, the content attribute must have the value "text/html; charset=utf-8".
         ///
         /// Note: Can only be used in documents served with a text/html MIME type — not in documents served with an XML MIME type.
         static member inline contentType = Interop.mkAttr "http-equiv" "content-type"
         /// Sets the name of the default CSS style sheet set.
         static member inline defaultStyle = Interop.mkAttr "http-equiv" "default-style"
         /// This instruction specifies:
-        /// 
+        ///
         /// The number of seconds until the page should be reloaded - only if the content attribute contains a positive integer.
         ///
         /// The number of seconds until the page should redirect to another - only if the content attribute contains a positive integer followed by the string ';url=', and a valid URL.

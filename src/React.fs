@@ -1,6 +1,7 @@
 namespace Feliz.ViewEngine
 
 open System
+open Fable.React
 
 //fsharplint:disable
 

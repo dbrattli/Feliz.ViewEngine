@@ -1,6 +1,7 @@
 namespace Feliz.ViewEngine
 
 open System
+open Fable.React
 open Feliz.ViewEngine.Styles
 
 #if FABLE_COMPILER
@@ -15,19 +16,19 @@ type EraseAttribute () =
 [<RequireQualifiedAccess>]
 module Interop =
     /// Output a string where the content has been HTML encoded.
-    let mkText (content : 'a) = content.ToString () |> ViewBuilder.escape |> Text
+    let mkText (content : 'a) = content.ToString () |> ViewBuilder.escape |> IReactProperty.Text
 
     let inline mkChildren (props: #seq<ReactElement>) = props |> List.ofSeq |> Children
 
     let inline reactElementWithChildren (name: string) (children: #seq<ReactElement>) : ReactElement =
-        Element (name, [ mkChildren children ])
+        Element (name, [ mkChildren children ]) :> _
     let inline reactElementWithChild (name: string) (child: 'a) : ReactElement =
-        Element (name, [ mkText child ])
+        Element (name, [ mkText child  ]) :> _
 
     let inline createElement name (props: IReactProperty list) : ReactElement =
-        Element (name, props)
+        Element (name, props) :> _
     let inline createVoidElement name (props: IReactProperty list) : ReactElement =
-        VoidElement (name, props)
+        VoidElement (name, props) :> _
     let inline createTextElement (content : string) = ViewBuilder.escape content |> TextElement
     let inline createRawTextElement (content : string) = TextElement content
 
