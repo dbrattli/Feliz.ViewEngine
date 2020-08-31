@@ -219,3 +219,22 @@ let ``Nested content should render correctly`` () =
         nested
         |> Render.xmlView
     Assert.Equal("<div><!-- this is a test --><h1>Header</h1><p><br/><strong>Ipsum</strong> dollar</p></div>", html)
+
+[<Fact>]
+let ``Fragment works correctly`` () =
+    let withFragment =
+        Html.div [
+            prop.className "test-class"
+            prop.children [
+                Html.p "test outer p"
+                React.fragment [
+                    Html.p "test inner p"
+                    Html.span "test span"
+                ]
+            ]
+        ]
+    
+    let html =
+        withFragment
+        |> Render.htmlView
+    Assert.Equal("<div class=\"test-class\"><p>test outer p</p><p>test inner p</p><span>test span</span></div>", html)
