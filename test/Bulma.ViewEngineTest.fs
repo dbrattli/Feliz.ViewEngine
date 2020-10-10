@@ -56,3 +56,14 @@ let ``Test bulma modifiers with html elements are combined``() =
 
     // Assert
     test <@ result = "<div class=\"is-large is-danger\"></div>" @>
+
+
+[<Fact>]
+let ``Test bulma input text has correct classes``() =
+    // Arrange / Act
+    let result =
+        Bulma.input.text [ color.isDanger ]
+        |> Render.htmlView
+
+    // Assert
+    test <@ result = "<input type=\"text\" class=\"input is-danger\">" @>

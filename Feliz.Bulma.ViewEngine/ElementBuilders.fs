@@ -58,7 +58,7 @@ module Label =
 
 module Input =
     let inline propsWithType (cn:string) (typ: IReactProperty) (xs:IReactProperty list) =
-        Html.input [ yield! xs; typ; Helpers.combineClasses cn xs ]
+        Html.input [ typ; Helpers.combineClasses cn xs ]
 
 module Textarea =
     let inline props (cn:string) (xs:IReactProperty list) = Html.textarea [ yield! Helpers.partitionClasses xs ||> (fun c p -> Helpers.combineClasses cn c :: p) ]
