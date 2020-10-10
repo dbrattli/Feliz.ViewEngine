@@ -23,10 +23,13 @@ jobs:
     - name: Setup paket
       run: dotnet tool install Paket
     - name: Dotnet Pack
-      run: dotnet pack --output nuget-packages --configuration Release -p:PackageVersion=${GITHUB_REF##*/v}
+      run: dotnet pack -c release -p:PackageVersion=${GITHUB_REF##*/v}
 
-    - name: Dotnet Nuget Push
-      run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+    - name: Push Feliz.ViewEngine Nuget
+      run: dotnet nuget push src/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+      continue-on-error: false
+    - name: Push Feliz.Bulma.ViewEngine Nuget
+      run: dotnet nuget push Feliz.Bulma.ViewEngine/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
       continue-on-error: false
 
     - name: Create Release
