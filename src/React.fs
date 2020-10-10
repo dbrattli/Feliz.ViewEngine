@@ -42,3 +42,10 @@ type React =
     /// <param name='withKey'>A function to derive a component key from the props.</param>
     static member functionComponent(name: string, render: 'props -> #seq<ReactElement>, ?withKey: 'props -> string) =
         render
+        
+    /// <summary>
+    /// The `React.fragment` component lets you return multiple elements in your `render()` method without creating an additional DOM element.
+    /// </summary>
+    /// <param name='elements'>A collection of elements to render without parent</param>
+    static member fragment(elements : #seq<ReactElement>) =
+        Interop.createElements elements

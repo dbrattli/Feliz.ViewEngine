@@ -31,6 +31,7 @@ and HtmlElement =
     | Element of string * IReactProperty list // An element which may contain properties
     | VoidElement of string * IReactProperty list // An empty self-closed element which may contain properties
     | TextElement of string
+    | Elements of ReactElement seq
 
     interface ReactElement
 
@@ -91,6 +92,9 @@ module ViewBuilder =
             match children, text, attrs with
             | _, Some text, _ -> buildParentNode (name, attrs, TextElement text :> _ :: children)
             | _ -> buildParentNode (name, attrs, children)
+        | Elements elements ->
+            for element in elements do
+                buildNode isHtml sb element
 
     let buildXmlNode  = buildNode false
     let buildHtmlNode = buildNode true

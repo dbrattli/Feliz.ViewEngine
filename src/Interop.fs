@@ -27,6 +27,8 @@ module Interop =
 
     let inline createElement name (props: IReactProperty list) : ReactElement =
         Element (name, props) :> ReactElement
+    let inline createElements (elements : ReactElement seq) : ReactElement =
+        Elements elements :> ReactElement
     let inline createVoidElement name (props: IReactProperty list) : ReactElement =
         VoidElement (name, props) :> _
     let inline createTextElement (content : string) : ReactElement = ViewBuilder.escape content |> TextElement :> ReactElement
