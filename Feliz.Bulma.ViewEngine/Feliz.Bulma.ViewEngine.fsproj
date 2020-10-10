@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Feliz.Bulma.ViewEngine</PackageId>
+    <Author>Dag Brattli</Author>
+    <Company>Brattli Labs</Company>
+    <Copyright>Roman Provazník</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/dbrattli/Feliz.ViewEngine</RepositoryUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="PropertyBuilders.fs" />
+    <Compile Include="ElementBuilders.fs" />
+    <Compile Include="Modifiers.fs" />
+    <Compile Include="Operators.fs" />
+    <Compile Include="Bulma.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="*.fsproj; *.fs; *.js;" PackagePath="fable\" />
+  </ItemGroup>
+  <Import Project=".paket\Paket.Restore.targets" />
+</Project>

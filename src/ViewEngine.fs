@@ -31,7 +31,7 @@ and HtmlElement =
     | Element of string * IReactProperty list // An element which may contain properties
     | VoidElement of string * IReactProperty list // An empty self-closed element which may contain properties
     | TextElement of string
-    | Elements of ReactElement seq
+    | Elements of HtmlElement seq
 
     interface ReactElement
 
