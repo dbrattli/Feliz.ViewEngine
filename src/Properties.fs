@@ -674,7 +674,7 @@ type prop =
     static member inline onCheckedChange (handler: bool -> unit) = Interop.mkChildren []
 
     /// Fires on a mouse click on the element.
-    static member inline onClick (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onClick (handler: MouseEvent -> unit) = Interop.mkAttr "onClick" handler
 
     /// Fires when composition ends.
     static member inline onCompositionEnd (handler: CompositionEvent -> unit) = Interop.mkChildren []

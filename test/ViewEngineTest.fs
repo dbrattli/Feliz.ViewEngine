@@ -238,3 +238,45 @@ let ``Fragment works correctly`` () =
         withFragment
         |> Render.htmlView
     Assert.Equal("<div class=\"test-class\"><p>test outer p</p><p>test inner p</p><span>test span</span></div>", html)
+
+
+[<Fact>]
+let ``not implemented props are inserted in the ReactElement DOM but not rendered`` () =
+    
+    let onClick _ = printfn "click"
+    let onMouseOver _ = printfn "mouse-over"
+    
+    let withProps =
+        Html.button [
+            prop.className "counter"
+            prop.onClick onClick
+            prop.onMouseOver onMouseOver
+        ]
+
+    let props = 
+        match withProps with
+        | ReactElement.Element(tag, props)
+        | ReactElement.VoidElement(tag, props) ->
+            props
+        |_ -> failwith "unsupported"
+            
+    // are contained in DOM (RectElement)
+    Assert.Equal(3, props.Length)
+
+    let eventProps = props |> List.choose (function
+        |  IReactProperty.KeyValue ("className", v) -> 
+            None
+        | IReactProperty.KeyValue (k, v) ->
+            let ev: _ -> unit = unbox v
+            ev |> Some
+        | _ ->
+            None
+    )   
+
+    Assert.Equal(2, eventProps.Length)
+    
+    let html =
+        withProps
+        |> Render.htmlView
+
+    Assert.Equal("<button class=\"counter\"></button>", html)
