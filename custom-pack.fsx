@@ -14,10 +14,10 @@ DotNet.pack (fun packParams ->
                     "PackageId", "Feliz.ViewEngine.Jkone27"
                     "Version", "0.25.0-alpha"
                     "Authors", "Dag Brattli, jkone27"
-                    "Description", "A custom fork of Feliz.ViewEngine by jkone27 for experimental features."
                     "RepositoryUrl", "https://github.com/jkone27/Feliz.ViewEngine"
                     "PackageReleaseNotes", "Preview fork with custom changes by jkone27"
-                    "PackageLicenseFile", "./LICENSE.MIT"
+                    "PackageLicenseFile", "./LICENSE"
+                    "Readme", "./README.md"
                 ]
             }
     })

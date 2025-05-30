@@ -9,6 +9,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/dbrattli/Feliz.ViewEngine</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>A type-safe, F#-friendly DSL for building HTML views for both server-side and client-site rendering.</Description>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ViewEngine.fs" />
@@ -27,6 +28,7 @@
     <None Include="../LICENSE" Pack="true" Visible="false" PackagePath="" />
     <None Include="../LICENSE.Apache-2.0" Pack="true" Visible="false" PackagePath="" />
     <None Include="../LICENSE.MIT" Pack="true" Visible="false" PackagePath="" />
+    <None Include="../README.md" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="*.fsproj; *.fs; *.js;" PackagePath="fable\" />
