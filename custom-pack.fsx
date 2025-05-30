@@ -12,7 +12,7 @@ DotNet.pack (fun packParams ->
             { packParams.MSBuildParams with
                 Properties = [
                     "PackageId", "Feliz.ViewEngine.Jkone27"
-                    "Version", "0.25.0-alpha"
+                    "Version", "0.25.0-alpha.2"
                     "Authors", "Dag Brattli, jkone27"
                     "RepositoryUrl", "https://github.com/jkone27/Feliz.ViewEngine"
                     "PackageReleaseNotes", "Preview fork with custom changes by jkone27"
@@ -22,4 +22,3 @@ DotNet.pack (fun packParams ->
             }
     })
     proj
-

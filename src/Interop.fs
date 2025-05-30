@@ -42,11 +42,11 @@ module Interop =
 
     let mkEventHandler(name: string) (handler: obj -> unit) : IReactProperty =
         let event = EventHandlerType.Event(handler)
-        IReactProperty.EventHandler(name, event)
+        IReactProperty.KeyValue(name, event)
 
     let mkEventHandlerWithKey name key (handler: obj -> unit) =
         let keyEvent = EventHandlerType.KeyEvent(key, handler)
-        IReactProperty.EventHandler(name, keyEvent)
+        IReactProperty.KeyValue(name, keyEvent)
 
     let inline mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
 

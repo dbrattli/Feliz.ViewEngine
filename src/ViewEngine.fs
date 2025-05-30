@@ -27,7 +27,6 @@ type IReactProperty =
     | KeyValue of string * obj
     | Children of ReactElement list
     | Text of string
-    | EventHandler of string * EventHandlerType
 
 and ReactElement =
     | Element of string * IReactProperty list // An element which may contain properties
@@ -60,9 +59,12 @@ module ViewBuilder =
             let folder (prop: IReactProperty) ((children, text, attrs) : ReactElement list * string option * (string*obj) list) =
                 match prop with
                 | KeyValue (k, v) -> 
-                    children, text,  (k, v) :: attrs
-                | EventHandler (k, v) ->
-                    children, text, attrs // ignore event handlers in render
+                    match v with 
+                    | :? EventHandlerType -> 
+                        // ignore event handlers in render
+                        children, text, attrs
+                    | _ -> 
+                        children, text,  (k, v) :: attrs
                 | Children ch -> List.append children ch, text, attrs
                 | Text text -> children, Some text, attrs
             List.foldBack folder props init

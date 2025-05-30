@@ -264,10 +264,11 @@ let ``Event handlers props are included in the ReactElement DOM but not rendered
     Assert.Equal(3, props.Length)
 
     let eventNames = props |> List.choose (function
-        | IReactProperty.EventHandler (k, v) ->
-            k |> Some
-        | _ ->
-            None
+        | IReactProperty.KeyValue (k, v) ->
+            match v with
+            | :? EventHandlerType -> k |> Some
+            | _  -> None
+        | _ -> None
     )
 
     Assert.Equal(2, eventNames.Length)

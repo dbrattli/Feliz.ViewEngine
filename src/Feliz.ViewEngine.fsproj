@@ -10,6 +10,7 @@
     <RepositoryUrl>https://github.com/dbrattli/Feliz.ViewEngine</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>A type-safe, F#-friendly DSL for building HTML views for both server-side and client-site rendering.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ViewEngine.fs" />
