@@ -61,7 +61,7 @@ let ``p element with onchange handler is Ok``() =
     // Arrange / Act
     let result =
         Html.p [
-            prop.onChange (fun (ev: Event) -> ())
+            prop.onChange (fun (ev: obj) -> ())
             prop.text "test"
         ]
         |> Render.htmlView
@@ -241,7 +241,7 @@ let ``Fragment works correctly`` () =
 
 
 [<Fact>]
-let ``not implemented props are inserted in the ReactElement DOM but not rendered`` () =
+let ``Event handlers props are included in the ReactElement DOM but not rendered`` () =
     
     let onClick _ = printfn "click"
     let onMouseOver _ = printfn "mouse-over"
@@ -263,18 +263,18 @@ let ``not implemented props are inserted in the ReactElement DOM but not rendere
     // are contained in DOM (RectElement)
     Assert.Equal(3, props.Length)
 
-    let eventProps = props |> List.choose (function
-        |  IReactProperty.KeyValue ("className", v) -> 
-            None
-        | IReactProperty.KeyValue (k, v) ->
-            let ev: _ -> unit = unbox v
-            ev |> Some
+    let eventNames = props |> List.choose (function
+        | IReactProperty.EventHandler (k, v) ->
+            k |> Some
         | _ ->
             None
-    )   
+    )
 
-    Assert.Equal(2, eventProps.Length)
+    Assert.Equal(2, eventNames.Length)
+    Assert.Contains("onClick", eventNames)
+    Assert.Contains("onMouseOver", eventNames)
     
+
     let html =
         withProps
         |> Render.htmlView

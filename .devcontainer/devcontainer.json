@@ -24,8 +24,7 @@
 		"vscode": {
 			"extensions": [
 				"ionide.ionide-fsharp",
-				"ionide.ionide-paket",
-				"christian-kohler.path-intellisense",
+				"christian-kohler.path-intellisense"
 			]
 		}
 	},
