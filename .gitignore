@@ -6,3 +6,5 @@ examples/giraffe/obj
 bin
 obj
 .vs
+
+*.nupkg
