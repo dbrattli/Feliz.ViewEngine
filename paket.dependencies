@@ -19,3 +19,11 @@ group Test
     nuget Microsoft.NET.Test.Sdk ~> 16
     nuget MSTest.TestAdapter ~> 1
     nuget MSTest.TestFramework ~> 1
+
+group Bulma
+    source https://www.nuget.org/api/v2
+    storage: none
+    framework: netstandard2.0
+
+    nuget FSharp.Core ~> 4.7 lowest_matching: true
+    nuget Feliz.ViewEngine >= 0.15
