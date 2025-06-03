@@ -19,11 +19,14 @@ namespace Feliz.ViewEngine
 open System
 open System.Text
 
+type EventHandlerType = 
+    | Event of (obj -> unit)
+    | KeyEvent of (obj * (obj -> unit))
+
 type IReactProperty =
     | KeyValue of string * obj
     | Children of ReactElement list
     | Text of string
-
 
 and ReactElement =
     | Element of string * IReactProperty list // An element which may contain properties
@@ -55,7 +58,13 @@ module ViewBuilder =
             let init = [], None, []
             let folder (prop: IReactProperty) ((children, text, attrs) : ReactElement list * string option * (string*obj) list) =
                 match prop with
-                | KeyValue (k, v) -> children, text,  (k, v) :: attrs
+                | KeyValue (k, v) -> 
+                    match v with 
+                    | :? EventHandlerType -> 
+                        // ignore event handlers in render
+                        children, text, attrs
+                    | _ -> 
+                        children, text,  (k, v) :: attrs
                 | Children ch -> List.append children ch, text, attrs
                 | Text text -> children, Some text, attrs
             List.foldBack folder props init

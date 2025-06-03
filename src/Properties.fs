@@ -638,223 +638,207 @@ type prop =
     static member inline offset (value: int) = Interop.mkAttr "offset" value
 
     /// Fires when a media event is aborted.
-    static member inline onAbort (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onAbort (handler: obj -> unit) = Interop.mkEventHandler "onAbort" handler
 
     /// Fires when animation ends.
-    static member inline onAnimationEnd (handler: AnimationEvent -> unit) = Interop.mkChildren []
+    static member inline onAnimationEnd (handler: obj -> unit) = Interop.mkEventHandler "onAnimationEnd" handler
 
     /// Fires when animation iterates.
-    static member inline onAnimationIteration (handler: AnimationEvent -> unit) = Interop.mkChildren []
+    static member inline onAnimationIteration (handler: obj -> unit) = Interop.mkEventHandler  "onAnimationIteration" handler
 
     /// Fires when animation starts.
-    static member inline onAnimationStart (handler: AnimationEvent -> unit) = Interop.mkChildren []
+    static member inline onAnimationStart (handler: obj -> unit) = Interop.mkEventHandler "onAnimationStart" handler
 
     /// Fires the moment that the element loses focus.
-    static member inline onBlur (handler: FocusEvent -> unit) = Interop.mkChildren []
+    static member inline onBlur (handler: obj -> unit) = Interop.mkEventHandler "onBlur" handler
 
     /// Fires when a file is ready to start playing (when it has buffered enough to begin).
-    static member inline onCanPlay (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onCanPlay (handler: obj -> unit) = Interop.mkEventHandler "onCanPlay" handler
 
     /// Fires when a file can be played all the way to the end without pausing for buffering
-    static member inline onCanPlayThrough (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onCanPlayThrough (handler: obj -> unit) = Interop.mkEventHandler "onCanPlayThrough" handler
 
-    /// Same as `onChange` that takes an event as input but instead let's you deal with the `checked` value changed from the `input` element
-    /// directly when it is defined as a checkbox with `prop.inputType.checkbox`.
-    static member inline onChange (handler: bool -> unit) = Interop.mkChildren []
-    /// Fires the moment when the value of the element is changed
-    static member inline onChange (handler: Event -> unit) = Interop.mkChildren []
-    /// Same as `onChange` that takes an event as input but instead lets you deal with the selected file directly from the `input` element when it is defined as a checkbox with `prop.type'.file`.
-    static member inline onChange (handler: File -> unit) = Interop.mkChildren []
-    static member inline onChange (handler: File list -> unit) = Interop.mkChildren []
-    /// Same as `onChange` that takes an event as input but instead let's you deal with the text changed from the `input` element directly
-    /// instead of extracting it from the event arguments.
-    static member inline onChange (handler: string -> unit) = Interop.mkChildren []
-
-    /// Same as `onChange` but let's you deal with the `checked` value that has changed from the `input` element directly instead of extracting it from the event arguments.
-    static member inline onCheckedChange (handler: bool -> unit) = Interop.mkChildren []
+    /// Fires on on change
+    static member inline onChange (handler: obj -> unit) = Interop.mkEventHandler "onChange" handler
 
     /// Fires on a mouse click on the element.
-    static member inline onClick (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onClick (handler: obj -> unit) = Interop.mkEventHandler "onClick" handler
 
     /// Fires when composition ends.
-    static member inline onCompositionEnd (handler: CompositionEvent -> unit) = Interop.mkChildren []
+    static member inline onCompositionEnd (handler: obj -> unit) = Interop.mkEventHandler "onCompositionEnd" handler
 
     /// Fires when composition starts.
-    static member inline onCompositionStart (handler: CompositionEvent -> unit) = Interop.mkChildren []
+    static member inline onCompositionStart (handler: obj -> unit) = Interop.mkEventHandler "onCompositionStart" handler
 
     /// Fires when composition changes.
-    static member inline onCompositionUpdate (handler: CompositionEvent -> unit) = Interop.mkChildren []
+    static member inline onCompositionUpdate (handler: obj -> unit) = Interop.mkEventHandler "onCompositionUpdate" handler
 
     /// Fires when a context menu is triggered.
-    static member inline onContextMenu (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onContextMenu (handler: obj -> unit) = Interop.mkEventHandler "onContextMenu" handler
 
     /// Fires when the user copies the content of an element.
-    static member inline onCopy (handler: ClipboardEvent -> unit) = Interop.mkChildren []
+    static member inline onCopy (handler: obj -> unit) = Interop.mkEventHandler "onCopy" handler
 
     /// Fires when the user cuts the content of an element.
-    static member inline onCut (handler: ClipboardEvent -> unit) = Interop.mkChildren []
+    static member inline onCut (handler: obj -> unit) = Interop.mkEventHandler "onCut" handler
 
     /// Fires when a mouse is double clicked on the element.
-    static member inline onDoubleClick (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onDoubleClick (handler: obj -> unit) = Interop.mkEventHandler "onDoubleClick" handler
 
     /// Fires when an element is dragged.
-    static member inline onDrag (handler: DragEvent -> unit) = Interop.mkChildren []
+    static member inline onDrag (handler: obj -> unit) = Interop.mkEventHandler "onDrag" handler
 
     /// Fires when the a drag operation has ended.
-    static member inline onDragEnd (handler: DragEvent -> unit) = Interop.mkChildren []
+    static member inline onDragEnd (handler: obj -> unit) = Interop.mkEventHandler "onDragEnd" handler
 
     /// Fires when an element has been dragged to a valid drop target.
-    static member inline onDragEnter (handler: DragEvent -> unit) = Interop.mkChildren []
+    static member inline onDragEnter (handler: obj -> unit) = Interop.mkEventHandler "onDragEnter" handler
 
-    static member inline onDragExit (handler: DragEvent -> unit) = Interop.mkChildren []
+    static member inline onDragExit (handler: obj -> unit) = Interop.mkEventHandler "onDragExit" handler
 
     /// Fires when an element leaves a valid drop target.
-    static member inline onDragLeave (handler: DragEvent -> unit) = Interop.mkChildren []
+    static member inline onDragLeave (handler: obj -> unit) = Interop.mkEventHandler "onDragLeave" handler
 
     /// Fires when an element is being dragged over a valid drop target.
-    static member inline onDragOver (handler: DragEvent -> unit) = Interop.mkChildren []
+    static member inline onDragOver (handler: obj -> unit) = Interop.mkEventHandler "onDragOver" handler
 
     /// Fires when the a drag operation has begun.
-    static member inline onDragStart (handler: DragEvent -> unit) = Interop.mkChildren []
+    static member inline onDragStart (handler: obj -> unit) = Interop.mkEventHandler "onDragStart" handler
 
     /// Fires when dragged element is being dropped.
-    static member inline onDrop (handler: DragEvent -> unit) = Interop.mkChildren []
+    static member inline onDrop (handler: obj -> unit) = Interop.mkEventHandler "onDrop" handler
 
     /// Fires when the length of the media changes.
-    static member inline onDurationChange (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onDurationChange (handler: obj -> unit) = Interop.mkEventHandler "onDurationChange" handler
 
     /// Fires when something bad happens and the file is suddenly unavailable (like unexpectedly disconnects).
-    static member inline onEmptied (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onEmptied (handler: obj -> unit) = Interop.mkEventHandler "onEmptied" handler
 
-    static member inline onEncrypted (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onEncrypted (handler: obj -> unit) = Interop.mkEventHandler "onEncrypted" handler
 
     /// Fires when the media has reach the end (a useful event for messages like "thanks for listening").
-    static member inline onEnded (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onEnded (handler: obj -> unit) = Interop.mkEventHandler "onEnded" handler
 
     /// Fires when an error occurs.
-    static member inline onError (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onError (handler: obj -> unit) = Interop.mkEventHandler "onError" handler
 
     /// Fires the moment when the element gets focus.
-    static member inline onFocus (handler: FocusEvent -> unit) = Interop.mkChildren []
+    static member inline onFocus (handler: obj -> unit) = Interop.mkEventHandler "onFocus" handler
 
     /// Fires when an element gets user input.
-    static member inline onInput (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onInput (handler: obj -> unit) = Interop.mkEventHandler "onInput" handler
 
     /// Fires when a user is pressing a key.
-    static member inline onKeyDown (handler: KeyboardEvent -> unit) = Interop.mkChildren []
+    static member inline onKeyDown (handler: obj -> unit) = Interop.mkEventHandler "onKeyDown" handler
 
     /// Fires when a user pressing a key.
-    static member inline onKeyDown (key: IKeyboardKey, handler: KeyboardEvent -> unit) = Interop.mkChildren []
+    static member inline onKeyDown (key: obj, handler: obj -> unit) = Interop.mkEventHandlerWithKey "onKeyDown" key handler
 
     /// Fires when a user presses a key.
-    static member inline onKeyPress (handler: KeyboardEvent -> unit) = Interop.mkChildren []
+    static member inline onKeyPress (handler: obj -> unit) = Interop.mkEventHandler "onKeyPress" handler
 
     /// Fires when a user presses a key.
-    static member inline onKeyPress (key: IKeyboardKey, handler: KeyboardEvent -> unit) = Interop.mkChildren []
+    static member inline onKeyPress (key: obj, handler: obj -> unit) = Interop.mkEventHandlerWithKey "onKeyPress" key handler
 
     /// Fires when a user releases a key.
-    static member inline onKeyUp (handler: KeyboardEvent -> unit) = Interop.mkChildren []
+    static member inline onKeyUp (handler: obj -> unit) = Interop.mkEventHandler "onKeyUp" handler
 
     /// Fires when a user releases a key.
-    static member inline onKeyUp (key: IKeyboardKey, handler: KeyboardEvent -> unit) = Interop.mkChildren []
+    static member inline onKeyUp (key: obj, handler: obj -> unit) = Interop.mkEventHandlerWithKey "onKeyUp" key handler
 
     /// Fires after the page is finished loading.
-    static member inline onLoad (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onLoad (handler: obj -> unit) = Interop.mkEventHandler "onLoad" handler
 
     /// Fires when media data is loaded.
-    static member inline onLoadedData (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onLoadedData (handler: obj -> unit) = Interop.mkEventHandler "onLoadedData" handler
 
     /// Fires when meta data (like dimensions and duration) are loaded.
-    static member inline onLoadedMetadata (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onLoadedMetadata (handler: obj -> unit) = Interop.mkEventHandler "onLoadedMetadata" handler
 
     /// Fires when the file begins to load before anything is actually loaded.
-    static member inline onLoadStart (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onLoadStart (handler: obj -> unit) = Interop.mkEventHandler "onLoadStart" handler
 
     /// Fires when a mouse button is pressed down on an element.
-    static member inline onMouseDown (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onMouseDown (handler: obj -> unit) = Interop.mkEventHandler "onMouseDown" handler
 
     /// Fires when a pointer enters an element.
-    static member inline onMouseEnter (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onMouseEnter (handler: obj -> unit) = Interop.mkEventHandler "onMouseEnter" handler
 
     /// Fires when a pointer leaves an element.
-    static member inline onMouseLeave (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onMouseLeave (handler: obj -> unit) = Interop.mkEventHandler "onMouseLeave" handler
 
     /// Fires when the mouse pointer is moving while it is over an element.
-    static member inline onMouseMove (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onMouseMove (handler: obj -> unit) = Interop.mkEventHandler "onMouseMove" handler
 
     /// Fires when the mouse pointer moves out of an element.
-    static member inline onMouseOut (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onMouseOut (handler: obj -> unit) = Interop.mkEventHandler "onMouseOut" handler
 
     /// Fires when the mouse pointer moves over an element.
-    static member inline onMouseOver (handler: MouseEvent -> unit) = Interop.mkChildren []
+    static member inline onMouseOver (handler: obj -> unit) = Interop.mkEventHandler "onMouseOver" handler
 
     /// Fires when the user pastes some content in an element.
-    static member inline onPaste (handler: ClipboardEvent -> unit) = Interop.mkChildren []
+    static member inline onPaste (handler: obj -> unit) = Interop.mkEventHandler "onPaste" handler
 
     /// Fires when the media is paused either by the user or programmatically.
-    static member inline onPause (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onPause (handler: obj -> unit) = Interop.mkEventHandler "onPause" handler
 
     /// Fires when the media is ready to start playing.
-    static member inline onPlay (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onPlay (handler: obj -> unit) = Interop.mkEventHandler "onPlay" handler
 
     /// Fires when the media actually has started playing
-    static member inline onPlaying (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onPlaying (handler: obj -> unit) = Interop.mkEventHandler "onPlaying" handler
 
     /// Fires when the browser is in the process of getting the media data.
-    static member inline onProgress (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onProgress (handler: obj -> unit) = Interop.mkEventHandler "onProgress" handler
 
     /// Fires when the playback rate changes (like when a user switches to a slow motion or fast forward mode).
-    static member inline onRateChange (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onRateChange (handler: obj -> unit) = Interop.mkEventHandler "onRateChange" handler
 
     /// Fires when the Reset button in a form is clicked.
-    static member inline onReset (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onReset (handler: obj -> unit) = Interop.mkEventHandler "onReset" handler
 
     /// Fires when an element's scrollbar is being scrolled.
-    //static member inline onScroll (handler: UIEvent -> unit) = Interop.mkAttr "onScroll" handler
+    /// static member inline onScroll (handler: UIEvent -> unit) = Interop.mkAttr "onScroll" handler
 
     /// Fires when the seeking attribute is set to false indicating that seeking has ended.
-    static member inline onSeeked (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onSeeked (handler: obj -> unit) = Interop.mkEventHandler "onSeeked" handler
 
     /// Fires when the seeking attribute is set to true indicating that seeking is active.
-    static member inline onSeeking (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onSeeking (handler: obj -> unit) = Interop.mkEventHandler "onSeeking" handler
 
     /// Fires after some text has been selected in an element.
-    static member inline onSelect (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onSelect (handler: obj -> unit) = Interop.mkEventHandler "onSelect" handler
 
     /// Fires when the browser is unable to fetch the media data for whatever reason.
-    static member inline onStalled (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onStalled (handler: obj -> unit) = Interop.mkEventHandler "onStalled" handler
 
     /// Fires when fetching the media data is stopped before it is completely loaded for whatever reason.
-    static member inline onSuspend (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onSuspend (handler: obj -> unit) = Interop.mkEventHandler "onSuspend" handler
 
     /// Fires when a form is submitted.
-    static member inline onSubmit (handler: Event -> unit) = Interop.mkChildren []
-
-    /// Same as `onChange` but let's you deal with the text changed from the `input` element directly
-    /// instead of extracting it from the event arguments.
-    static member inline onTextChange (handler: string -> unit) = Interop.mkChildren []
+    static member inline onSubmit (handler: obj -> unit) = Interop.mkEventHandler "onSubmit" handler
 
     /// Fires when the playing position has changed (like when the user fast forwards to a different point in the media).
-    static member inline onTimeUpdate (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onTimeUpdate (handler: obj -> unit) = Interop.mkEventHandler "onTimeUpdate" handler
 
-    static member inline onTouchCancel (handler: TouchEvent -> unit) = Interop.mkChildren []
+    static member inline onTouchCancel (handler: obj -> unit) = Interop.mkEventHandler "onTouchCancel" handler
 
-    static member inline onTouchEnd (handler: TouchEvent -> unit) = Interop.mkChildren []
+    static member inline onTouchEnd (handler: obj -> unit) = Interop.mkEventHandler "onTouchEnd" handler
 
-    static member inline onTouchMove (handler: TouchEvent -> unit) = Interop.mkChildren []
+    static member inline onTouchMove (handler: obj -> unit) = Interop.mkEventHandler "onTouchMove" handler
 
-    static member inline onTouchStart (handler: TouchEvent -> unit) = Interop.mkChildren []
+    static member inline onTouchStart (handler: obj -> unit) = Interop.mkEventHandler "onTouchStart" handler
 
-    static member inline onTransitionEnd (handler: TransitionEvent -> unit) = Interop.mkChildren []
+    static member inline onTransitionEnd (handler: obj -> unit) = Interop.mkEventHandler "onTransitionEnd" handler
 
     /// Fires when the volume is changed which (includes setting the volume to "mute").
-    static member inline onVolumeChange (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onVolumeChange (handler: obj -> unit) = Interop.mkEventHandler "onVolumeChange" handler
 
     /// Fires when the media has paused but is expected to resume (like when the media pauses to buffer more data).
-    static member inline onWaiting (handler: Event -> unit) = Interop.mkChildren []
+    static member inline onWaiting (handler: obj -> unit) = Interop.mkEventHandler "onWaiting" handler
 
     /// Fires when the mouse wheel rolls up or down over an element.
-    static member inline onWheel (handler: WheelEvent -> unit) = Interop.mkChildren []
+    static member inline onWheel (handler: obj -> unit) = Interop.mkEventHandler "onWheel" handler
 
     /// This attribute indicates the optimal numeric value. It must be within the range (as defined by the min
     /// attribute and max attribute). When used with the low attribute and high attribute, it gives an indication
