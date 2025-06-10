@@ -9,6 +9,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/dbrattli/Feliz.ViewEngine</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PropertyBuilders.fs" />
@@ -18,6 +19,7 @@
     <Compile Include="Bulma.fs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="../README.md" Pack="true" Visible="false" PackagePath="" />
     <None Include="LICENSE" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
   <ItemGroup>

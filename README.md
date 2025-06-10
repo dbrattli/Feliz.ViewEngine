@@ -15,12 +15,14 @@ clients.
 Feliz.ViewEngine is available as a [NuGet package](https://www.nuget.org/packages/Feliz.ViewEngine/). To install:
 
 Using Package Manager:
-```sh
+
+```powershell
 Install-Package Feliz.ViewEngine
 ```
 
 Using .NET CLI:
-```sh
+
+```bash
 dotnet add package Feliz.ViewEngine
 ```
 
@@ -40,7 +42,7 @@ printfn "Output: %s" html
 // Will output "<h1 style=\"font-size:100px;color:#137373\">Hello, world!</h1>"
 ```
 
-Giraffe example at https://github.com/dbrattli/Feliz.ViewEngine/blob/master/examples/giraffe/Program.fs
+Giraffe example at <https://github.com/dbrattli/Feliz.ViewEngine/blob/master/examples/giraffe/Program.fs>
 
 ## Sharing views between client and server
 
@@ -74,7 +76,7 @@ type Render
   static member xmlView: node: ReactElement -> string (+ 1 overloads)
 ```
 
-Feliz has extensive documentation at https://zaid-ajaj.github.io/Feliz with live examples along side code samples, check
+Feliz has extensive documentation at <https://zaid-ajaj.github.io/Feliz> with live examples along side code samples, check
 them out and if you have any question, let us know!
 
 ## Extensions
@@ -199,7 +201,6 @@ let ``h1 element with text and style property with css unit is Ok``() =
     // Assert
     test <@ result = "<h1 style=\"font-size:100em\">examples</h1>" @>
 ```
-
 
 ## License
 

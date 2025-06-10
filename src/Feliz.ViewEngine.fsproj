@@ -9,6 +9,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/dbrattli/Feliz.ViewEngine</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ViewEngine.fs" />
@@ -24,6 +25,7 @@
     <Compile Include="Html.fs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="../README.md" Pack="true" Visible="false" PackagePath="" />
     <None Include="../LICENSE" Pack="true" Visible="false" PackagePath="" />
     <None Include="../LICENSE.Apache-2.0" Pack="true" Visible="false" PackagePath="" />
     <None Include="../LICENSE.MIT" Pack="true" Visible="false" PackagePath="" />

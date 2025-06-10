@@ -19,7 +19,7 @@ NUGET
   remote: https://www.nuget.org/api/v2
     coverlet.msbuild (6.0.4)
     FSharp.Core (4.7.2)
-    Microsoft.CodeCoverage (17.14) - restriction: || (>= net45) (>= netcoreapp1.0)
+    Microsoft.CodeCoverage (17.14.1) - restriction: || (>= net45) (>= netcoreapp1.0)
     Microsoft.CSharp (4.7) - restriction: || (&& (< netstandard1.3) (>= uap10.0)) (&& (< netstandard2.0) (>= uap10.0))
     Microsoft.NET.Test.Sdk (16.11)
       Microsoft.CodeCoverage (>= 16.11) - restriction: || (>= net45) (>= netcoreapp1.0)
@@ -30,10 +30,10 @@ NUGET
       System.Runtime.InteropServices.RuntimeInformation (>= 4.0) - restriction: >= uap10.0
     Microsoft.NETCore.Platforms (7.0.4) - restriction: || (&& (< monoandroid) (>= netcoreapp1.0) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (>= net461) (>= netcoreapp1.0)) (&& (>= netcoreapp1.0) (< netstandard1.0)) (&& (>= netcoreapp1.0) (< netstandard1.2)) (&& (>= netcoreapp1.0) (< netstandard1.3)) (&& (>= netcoreapp1.0) (< netstandard1.4)) (&& (>= netcoreapp1.0) (< netstandard1.5)) (&& (>= netcoreapp1.0) (< netstandard1.6)) (&& (>= netcoreapp1.0) (>= netstandard2.0)) (&& (>= netcoreapp1.0) (< netstandard2.0)) (&& (>= netcoreapp1.0) (< portable-net45+win8+wpa81)) (&& (>= netcoreapp1.0) (>= uap10.1)) (&& (>= netcoreapp1.0) (>= wp8)) (>= netcoreapp2.0)
     Microsoft.NETCore.Targets (5.0) - restriction: || (&& (< monoandroid) (>= netcoreapp1.0) (< netstandard1.1)) (&& (< monoandroid) (>= netcoreapp1.0) (< netstandard1.2)) (&& (< monoandroid) (>= netcoreapp1.0) (< netstandard1.3)) (&& (< monoandroid) (>= netcoreapp1.0) (< netstandard1.4)) (&& (< monoandroid) (>= netcoreapp1.0) (< netstandard1.5)) (&& (< monoandroid) (>= netcoreapp1.0) (< netstandard1.6)) (&& (< monoandroid) (>= netcoreapp1.0) (< netstandard2.0) (< xamarintvos) (< xamarinwatchos)) (&& (< monoandroid) (>= netcoreapp1.0) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (>= netcoreapp1.0) (< portable-net45+win8+wpa81))
-    Microsoft.TestPlatform.ObjectModel (17.14) - restriction: || (>= net462) (>= net8.0)
+    Microsoft.TestPlatform.ObjectModel (17.14.1) - restriction: || (>= net462) (>= net8.0)
       System.Reflection.Metadata (>= 8.0) - restriction: || (>= net462) (>= netstandard2.0)
-    Microsoft.TestPlatform.TestHost (17.14) - restriction: >= netcoreapp1.0
-      Microsoft.TestPlatform.ObjectModel (>= 17.14) - restriction: >= net8.0
+    Microsoft.TestPlatform.TestHost (17.14.1) - restriction: >= netcoreapp1.0
+      Microsoft.TestPlatform.ObjectModel (>= 17.14.1) - restriction: >= net8.0
       Newtonsoft.Json (>= 13.0.3) - restriction: >= net8.0
     Microsoft.Win32.Primitives (4.3) - restriction: || (&& (>= netcoreapp1.0) (< netstandard1.4)) (&& (>= netcoreapp1.0) (< netstandard1.5)) (&& (>= netcoreapp1.0) (< netstandard1.6)) (&& (>= netcoreapp1.0) (< netstandard2.0))
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: && (< monoandroid) (< monotouch) (< net46) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
@@ -156,7 +156,7 @@ NUGET
       System.Runtime.Extensions (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Threading (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Threading.Tasks (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< monoandroid) (< net45) (>= netstandard1.1) (< netstandard1.3) (< win8) (< wpa81))
-    System.Collections.Immutable (9.0.5) - restriction: >= net462
+    System.Collections.Immutable (9.0.6) - restriction: >= net462
       System.Memory (>= 4.5.5) - restriction: || (>= net462) (&& (< net8.0) (>= netstandard2.0))
       System.Runtime.CompilerServices.Unsafe (>= 6.0) - restriction: || (>= net462) (&& (< net8.0) (>= netstandard2.0))
     System.ComponentModel.Primitives (4.3) - restriction: >= uap10.0
@@ -172,7 +172,7 @@ NUGET
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: || (&& (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< monoandroid) (< net45) (>= netstandard1.0) (< netstandard1.3) (< win8) (< wp8) (< wpa81))
       Microsoft.NETCore.Targets (>= 1.1) - restriction: || (&& (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< monoandroid) (< net45) (>= netstandard1.0) (< netstandard1.3) (< win8) (< wp8) (< wpa81))
       System.Runtime (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< monoandroid) (< net45) (>= netstandard1.0) (< netstandard1.3) (< win8) (< wp8) (< wpa81))
-    System.Diagnostics.DiagnosticSource (9.0.5) - restriction: || (&& (>= netcoreapp1.0) (< netstandard1.2)) (&& (>= netcoreapp1.0) (< netstandard1.3)) (&& (>= netcoreapp1.0) (< netstandard1.4)) (&& (>= netcoreapp1.0) (< netstandard1.5)) (&& (>= netcoreapp1.0) (< netstandard1.6)) (&& (>= netcoreapp1.0) (< netstandard2.0) (< xamarintvos) (< xamarinwatchos))
+    System.Diagnostics.DiagnosticSource (9.0.6) - restriction: || (&& (>= netcoreapp1.0) (< netstandard1.2)) (&& (>= netcoreapp1.0) (< netstandard1.3)) (&& (>= netcoreapp1.0) (< netstandard1.4)) (&& (>= netcoreapp1.0) (< netstandard1.5)) (&& (>= netcoreapp1.0) (< netstandard1.6)) (&& (>= netcoreapp1.0) (< netstandard2.0) (< xamarintvos) (< xamarinwatchos))
     System.Diagnostics.TextWriterTraceListener (4.3) - restriction: >= netcoreapp1.0
       System.Diagnostics.TraceSource (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (>= net46)
       System.Globalization (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net46) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
@@ -361,8 +361,8 @@ NUGET
       Microsoft.NETCore.Targets (>= 1.1) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.0) (< win8) (< wp8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Reflection (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.0) (< win8) (< wp8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Runtime (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.0) (< win8) (< wp8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
-    System.Reflection.Metadata (9.0.5) - restriction: >= net462
-      System.Collections.Immutable (>= 9.0.5) - restriction: || (>= net462) (&& (>= net8.0) (< net9.0)) (&& (< net8.0) (>= netstandard2.0))
+    System.Reflection.Metadata (9.0.6) - restriction: >= net462
+      System.Collections.Immutable (>= 9.0.6) - restriction: || (>= net462) (&& (>= net8.0) (< net9.0)) (&& (< net8.0) (>= netstandard2.0))
       System.Memory (>= 4.5.5) - restriction: || (>= net462) (&& (< net8.0) (>= netstandard2.0))
     System.Reflection.Primitives (4.3) - restriction: || (&& (>= netcoreapp1.0) (< netstandard1.2)) (&& (>= netcoreapp1.0) (< netstandard1.3)) (&& (>= netcoreapp1.0) (< netstandard1.4)) (&& (>= netcoreapp1.0) (< netstandard1.5)) (&& (>= netcoreapp1.0) (< netstandard1.6)) (&& (>= netcoreapp1.0) (< netstandard2.0)) (&& (>= netcoreapp1.0) (< portable-net45+win8+wpa81))
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.0) (< win8) (< wp8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
@@ -403,7 +403,7 @@ NUGET
       System.Resources.ResourceManager (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Runtime (>= 4.3) - restriction: || (&& (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (&& (< monoandroid) (< net45) (>= netstandard1.1) (< netstandard1.3) (< win8) (< wpa81))
       System.Runtime.Extensions (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net45) (>= netstandard1.3) (< win8) (< wpa81) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
-    System.Runtime.Serialization.Formatters (9.0.5) - restriction: && (< netstandard2.0) (>= uap10.0)
+    System.Runtime.Serialization.Formatters (9.0.6) - restriction: && (< netstandard2.0) (>= uap10.0)
     System.Runtime.Serialization.Primitives (4.3) - restriction: || (&& (< netstandard1.3) (>= uap10.0)) (&& (< netstandard2.0) (>= uap10.0))
     System.Security.Cryptography.Algorithms (4.3.1) - restriction: || (&& (>= netcoreapp1.0) (< netstandard1.2)) (&& (>= netcoreapp1.0) (< netstandard1.3)) (&& (>= netcoreapp1.0) (< netstandard1.4)) (&& (>= netcoreapp1.0) (< netstandard1.5)) (&& (>= netcoreapp1.0) (< netstandard1.6)) (&& (>= netcoreapp1.0) (< netstandard2.0))
       Microsoft.NETCore.Platforms (>= 1.1) - restriction: && (< monotouch) (< net46) (>= netstandard1.6) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
@@ -581,7 +581,7 @@ NUGET
       xunit.core (2.9.3)
     xunit.abstractions (2.0.3) - restriction: >= netstandard1.1
       NETStandard.Library (>= 1.6) - restriction: && (< net35) (>= netstandard1.0) (< netstandard2.0)
-    xunit.analyzers (1.21)
+    xunit.analyzers (1.22)
     xunit.assert (2.9.3)
       NETStandard.Library (>= 1.6.1) - restriction: && (< net452) (>= netstandard1.1) (< netstandard2.0)
     xunit.core (2.9.3)
