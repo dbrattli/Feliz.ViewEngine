@@ -40,26 +40,14 @@ module Interop =
             | _ -> value.ToString() |> ViewBuilder.escape
         KeyValue (key, result)
 
+    let mkEventHandler(name: string) (handler: obj -> unit) : IReactProperty =
+        let event = EventHandlerType.Event(handler)
+        IReactProperty.KeyValue(name, event)
+
+    let mkEventHandlerWithKey name key (handler: obj -> unit) =
+        let keyEvent = EventHandlerType.KeyEvent(key, handler)
+        IReactProperty.KeyValue(name, keyEvent)
+
     let inline mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
 
 type FunctionComponent<'Props> = 'Props -> ReactElement
-
-// fsharplint:disable
-
-type Event () = class end
-    with
-        member x.preventDefault () = ()
-        member x.type' = "Event"
-
-type AnimationEvent () = inherit Event ()
-type ClipboardEvent () = inherit Event ()
-type CompositionEvent () = inherit Event ()
-type DragEvent () = inherit Event ()
-type IKeyboardKey = interface end
-type KeyboardEvent () = inherit Event ()
-type FocusEvent () = inherit Event ()
-type MouseEvent () = inherit Event ()
-type TouchEvent () = inherit Event ()
-type TransitionEvent () = inherit Event ()
-type WheelEvent () = inherit Event ()
-type File = class end

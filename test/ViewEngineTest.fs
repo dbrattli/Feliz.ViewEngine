@@ -61,7 +61,7 @@ let ``p element with onchange handler is Ok``() =
     // Arrange / Act
     let result =
         Html.p [
-            prop.onChange (fun (ev: Event) -> ())
+            prop.onChange (fun (ev: obj) -> ())
             prop.text "test"
         ]
         |> Render.htmlView
@@ -238,3 +238,46 @@ let ``Fragment works correctly`` () =
         withFragment
         |> Render.htmlView
     Assert.Equal("<div class=\"test-class\"><p>test outer p</p><p>test inner p</p><span>test span</span></div>", html)
+
+
+[<Fact>]
+let ``Event handlers props are included in the ReactElement DOM but not rendered`` () =
+    
+    let onClick _ = printfn "click"
+    let onMouseOver _ = printfn "mouse-over"
+    
+    let withProps =
+        Html.button [
+            prop.className "counter"
+            prop.onClick onClick
+            prop.onMouseOver onMouseOver
+        ]
+
+    let props = 
+        match withProps with
+        | ReactElement.Element(tag, props)
+        | ReactElement.VoidElement(tag, props) ->
+            props
+        |_ -> failwith "unsupported"
+            
+    // are contained in DOM (RectElement)
+    Assert.Equal(3, props.Length)
+
+    let eventNames = props |> List.choose (function
+        | IReactProperty.KeyValue (k, v) ->
+            match v with
+            | :? EventHandlerType -> k |> Some
+            | _  -> None
+        | _ -> None
+    )
+
+    Assert.Equal(2, eventNames.Length)
+    Assert.Contains("onClick", eventNames)
+    Assert.Contains("onMouseOver", eventNames)
+    
+
+    let html =
+        withProps
+        |> Render.htmlView
+
+    Assert.Equal("<button class=\"counter\"></button>", html)
