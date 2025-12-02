@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2](https://github.com/dbrattli/Feliz.ViewEngine/compare/v1.0.1...v1.0.2) (2025-12-02)
+
+
+### Bug Fixes
+
+* border style type mismatch in composite border functions ([6482068](https://github.com/dbrattli/Feliz.ViewEngine/commit/6482068416d96cda448440c95ccfc65f7094e762))
+* border style type mismatch in composite border functions ([d1e5845](https://github.com/dbrattli/Feliz.ViewEngine/commit/d1e584561c8bf7ac91407407059579644e6ae992))
+
 ## [1.0.1](https://github.com/dbrattli/Feliz.ViewEngine/compare/v1.0.0...v1.0.1) (2025-12-02)
 
 
