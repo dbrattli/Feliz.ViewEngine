@@ -3,6 +3,8 @@
 ![Build and Test](https://github.com/dbrattli/Feliz.ViewEngine/workflows/Build%20and%20Test/badge.svg)
 [![NuGet](https://img.shields.io/nuget/v/Feliz.ViewEngine.svg?maxAge=0&colorB=brightgreen)](https://www.nuget.org/packages/Feliz.ViewEngine)
 
+> Scalable HTML/XML rendering for F# - render the Feliz DSL to strings
+
 Feliz.ViewEngine lets you render [Feliz](https://github.com/Zaid-Ajaj/Feliz) DSL to plain HTML (or XML). Use with e.g
 Giraffe for handling Server Side Rendering (SSR), returning HTML or XML. You can use it for e.g generating HTML emails
 or any other use-case where you need to generate HTML output.
@@ -25,6 +27,31 @@ Using .NET CLI:
 ```bash
 dotnet add package Feliz.ViewEngine
 ```
+
+## Development
+
+This project uses [just](https://github.com/casey/just) as a command runner. Install it and run `just` to see available commands:
+
+```bash
+just          # List available commands
+just restore  # Restore dependencies
+just build    # Build all projects
+just test     # Run tests
+just check    # Build and run tests
+just bench    # Run benchmarks
+```
+
+### Contributing
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/). Please format your PR titles and commit messages accordingly:
+
+- `feat: add new feature` - for new features
+- `fix: resolve bug` - for bug fixes
+- `perf: improve performance` - for performance improvements
+- `docs: update readme` - for documentation
+- `chore: update dependencies` - for maintenance tasks
+
+Releases are automated via [release-please](https://github.com/googleapis/release-please).
 
 ## Getting started
 
