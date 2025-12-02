@@ -64,6 +64,14 @@ type CssUnit =
         let (CssUnit value) = x
         value
 
+type BorderStyle =
+    | BorderStyle of string
+    interface IBorderStyle
+
+    override x.ToString () =
+        let (BorderStyle value) = x
+        value
+
 type TextDecorationLine =
     | TextDecorationLine of string
     interface ITextDecorationLine
