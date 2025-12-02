@@ -5,13 +5,13 @@ group Main
 source https://www.nuget.org/api/v2
     storage: none
     framework: netstandard2.0
-    nuget FSharp.Core ~> 4.7 lowest_matching: true
+    nuget FSharp.Core >= 4.7 lowest_matching: true
 
 group Test
     source https://www.nuget.org/api/v2
     storage: none
 
-    nuget FSharp.Core ~> 4.7
+    nuget FSharp.Core >= 4.7
     nuget coverlet.msbuild
     nuget Unquote ~> 4
     nuget xunit ~> 2
@@ -25,5 +25,5 @@ group Bulma
     storage: none
     framework: netstandard2.0
 
-    nuget FSharp.Core ~> 4.7 lowest_matching: true
+    nuget FSharp.Core >= 4.7 lowest_matching: true
     nuget Feliz.ViewEngine >= 0.15

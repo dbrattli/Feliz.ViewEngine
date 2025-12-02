@@ -281,3 +281,19 @@ let ``Event handlers props are included in the ReactElement DOM but not rendered
         |> Render.htmlView
 
     Assert.Equal("<button class=\"counter\"></button>", html)
+
+[<Fact>]
+let ``Html.table with children renders correctly`` () =
+    let result =
+        Html.table [
+            Html.tr [
+                Html.th "Company"
+                Html.th "Contact"
+            ]
+            Html.tr [
+                Html.td "Alfreds"
+                Html.td "Maria"
+            ]
+        ]
+        |> Render.htmlView
+    Assert.Equal("<table><tr><th>Company</th><th>Contact</th></tr><tr><td>Alfreds</td><td>Maria</td></tr></table>", result)

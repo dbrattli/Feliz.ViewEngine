@@ -67,3 +67,13 @@ let ``Test bulma input text has correct classes``() =
 
     // Assert
     test <@ result = "<input type=\"text\" class=\"input is-danger\">" @>
+
+[<Fact>]
+let ``Test bulma input text has correct properties``() =
+    // Arrange / Act
+    let result =
+        Bulma.input.text [ prop.name "theName"; prop.placeholder "a placeholder" ]
+        |> Render.htmlView
+
+    // Assert
+    test <@ result = "<input type=\"text\" class=\"input\" name=\"theName\" placeholder=\"a placeholder\">" @>

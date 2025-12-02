@@ -2,26 +2,27 @@ name: Build and Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 9.0.300
-    - name: Restore tools
-      run: dotnet tool restore
-    - name: Install dependencies
-      run: dotnet paket restore
-    - name: Build
-      run: dotnet build --configuration Release
-    - name: Test
-      run: dotnet test --verbosity normal
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Install just
+        uses: extractions/setup-just@v2
+
+      - name: Restore dependencies
+        run: just restore
+
+      - name: Build and test
+        run: just check
