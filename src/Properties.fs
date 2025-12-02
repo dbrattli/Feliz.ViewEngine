@@ -1031,19 +1031,27 @@ type prop =
     /// SVG attribute to define the width of the stroke to be applied to the shape.
     static member inline strokeWidth (value: int) = Interop.mkAttr "strokeWidth" value
 
+    // Performance note: Using StringBuilder with imperative loop instead of
+    // List.map |> String.concat to avoid intermediate list allocations.
     static member inline style (properties: #IStyleAttribute list) =
-        properties
-        |> List.map string
-        |> String.concat ";"
-        |> Interop.mkAttr "style"
+        let sb = System.Text.StringBuilder()
+        let mutable first = true
+        for prop in properties do
+            if not first then sb.Append(';') |> ignore
+            sb.Append(string prop) |> ignore
+            first <- false
+        Interop.mkAttr "style" (sb.ToString())
 
     static member style (properties: (bool * IStyleAttribute list) list) =
-        properties
-        |> List.filter fst
-        |> List.collect snd
-        |> List.map string
-        |> String.concat ";"
-        |> Interop.mkAttr "style"
+        let sb = System.Text.StringBuilder()
+        let mutable first = true
+        for (condition, props) in properties do
+            if condition then
+                for prop in props do
+                    if not first then sb.Append(';') |> ignore
+                    sb.Append(string prop) |> ignore
+                    first <- false
+        Interop.mkAttr "style" (sb.ToString())
 
     /// The `tabindex` global attribute indicates that its element can be focused,
     /// and where it participates in sequential keyboard navigation (usually with the Tab key, hence the name).

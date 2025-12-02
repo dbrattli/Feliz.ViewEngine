@@ -5,9 +5,15 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.ViewEngine", "src\Feliz.ViewEngine.fsproj", "{B9BCF160-840B-449C-B6D8-07909A4161EB}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests-Feliz.ViewEngine", "test\Tests.Feliz.ViewEngine.fsproj", "{477BDCE1-C00F-4A37-B52C-C2BC9AF05D57}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests.Feliz.ViewEngine", "test\Tests.Feliz.ViewEngine.fsproj", "{477BDCE1-C00F-4A37-B52C-C2BC9AF05D57}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.Bulma.ViewEngine", "Feliz.Bulma.ViewEngine\Feliz.Bulma.ViewEngine.fsproj", "{69A365F4-9078-4421-8ABA-0D6E5B6A030E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{66320409-64EC-F7C5-3DEF-65E7510DAAD1}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Benchmarks", "benchmarks\Benchmarks.fsproj", "{28B368AD-E461-423E-8341-454A31D95927}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B9BCF160-840B-449C-B6D8-07909A4161EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +61,23 @@ Global
 		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|x64.Build.0 = Release|Any CPU
 		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|x86.ActiveCfg = Release|Any CPU
 		{69A365F4-9078-4421-8ABA-0D6E5B6A030E}.Release|x86.Build.0 = Release|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Debug|x64.Build.0 = Debug|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Debug|x86.Build.0 = Debug|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Release|x64.ActiveCfg = Release|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Release|x64.Build.0 = Release|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Release|x86.ActiveCfg = Release|Any CPU
+		{28B368AD-E461-423E-8341-454A31D95927}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28B368AD-E461-423E-8341-454A31D95927} = {66320409-64EC-F7C5-3DEF-65E7510DAAD1}
 	EndGlobalSection
 EndGlobal
