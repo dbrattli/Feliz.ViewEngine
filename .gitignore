@@ -6,3 +6,4 @@ examples/giraffe/obj
 bin
 obj
 .vs
+BenchmarkDotNet.Artifacts/
