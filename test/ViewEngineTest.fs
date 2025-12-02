@@ -297,3 +297,15 @@ let ``Html.table with children renders correctly`` () =
         ]
         |> Render.htmlView
     Assert.Equal("<table><tr><th>Company</th><th>Contact</th></tr><tr><td>Alfreds</td><td>Maria</td></tr></table>", result)
+
+[<Fact>]
+let ``borderBottom with style.borderStyle works correctly`` () =
+    // Regression test for https://github.com/dbrattli/Feliz.ViewEngine/issues/17
+    let result =
+        Html.div [
+            prop.style [
+                style.borderBottom(1, style.borderStyle.solid, "#888")
+            ]
+        ]
+        |> Render.htmlView
+    Assert.Equal("<div style=\"border-bottom:1px solid #888\"></div>", result)

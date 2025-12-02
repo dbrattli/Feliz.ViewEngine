@@ -50,4 +50,6 @@ module Interop =
 
     let inline mkStyle (key: string) (value: obj) : IStyleAttribute = Style (key, value) :> _
 
+    let inline mkBorderStyle (value: string) : IBorderStyle = BorderStyle value :> _
+
 type FunctionComponent<'Props> = 'Props -> ReactElement
