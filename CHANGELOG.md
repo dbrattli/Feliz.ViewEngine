@@ -1,3 +1,8 @@
+---
+last_commit_released: 304800ecb2ab9c78f6062472f4cb2f76316bfaff
+name: Feliz.ViewEngine
+---
+
 # Changelog
 
 All notable changes to this project will be documented in this file.

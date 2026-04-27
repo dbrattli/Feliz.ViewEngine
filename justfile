@@ -1,6 +1,8 @@
 # Feliz.ViewEngine build commands
 # Install just: https://github.com/casey/just
 
+set dotenv-load
+
 src_path := "src"
 test_path := "test"
 bulma_path := "Feliz.Bulma.ViewEngine"
@@ -35,13 +37,25 @@ test:
 # Build and run tests
 check: build test
 
-# Create NuGet packages
+# Create NuGet packages with version from CHANGELOG.md
 pack:
-    dotnet pack -c Release
+    #!/usr/bin/env bash
+    set -euo pipefail
+    VERSION=$(grep -m1 '^## ' CHANGELOG.md | sed 's/^## \[\?\([^] ]*\).*/\1/')
+    dotnet pack -c Release -p:PackageVersion=$VERSION -p:InformationalVersion=$VERSION
 
-# Create NuGet packages with specific version (used in CI)
+# Create NuGet packages with specific version
 pack-version version:
-    dotnet pack -c Release -p:PackageVersion={{version}}
+    dotnet pack -c Release -p:PackageVersion={{version}} -p:InformationalVersion={{version}}
+
+# Release: pack and push both packages to NuGet (used in CI)
+release: pack
+    dotnet nuget push '{{src_path}}/bin/Release/*.nupkg' -s https://api.nuget.org/v3/index.json -k $NUGET_KEY
+    dotnet nuget push '{{bulma_path}}/bin/Release/*.nupkg' -s https://api.nuget.org/v3/index.json -k $NUGET_KEY
+
+# Run EasyBuild.ShipIt for release management
+shipit *args:
+    dotnet shipit {{args}}
 
 # Full setup and test
 setup: restore build test
